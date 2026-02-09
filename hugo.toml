@@ -1,0 +1,124 @@
+baseURL = "https://johndschultz.com/"
+languageCode = "en-us"
+title = "John Schultz"
+theme = "PaperMod"
+[pagination]
+  pagerSize = 10
+timeZone = "America/Chicago"
+
+enableRobotsTXT = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+
+[taxonomies]
+  tag = "tags"
+  series = "series"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+  author = "John Schultz"
+  description = "Essays and ideas from an auctioneer, technologist, and lifelong learner."
+  env = "production"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+  ShowWordCount = false
+  UseHugoToc = true
+  displayFullLangName = true
+
+  [params.homeInfoParams]
+    Title = "John Schultz"
+    Content = """
+Auctioneer. Technologist. Writer.\n\n\
+Partner & CMTO at [Grafe Auction Company](https://grafeauction.com). Past President, [National Auctioneers Association](https://auctioneers.org).\n\n\
+I write about leadership, decision-making, and what the auction industry teaches you about everything else."""
+
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:john.schultz@grafeauction.com"
+
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://linkedin.com/in/johndschultz"
+
+  [params.profileMode]
+    enabled = true
+    title = "John Schultz"
+    subtitle = "Auctioneer. Technologist. Writer."
+    imageUrl = ""
+    imageTitle = ""
+    imageWidth = 120
+    imageHeight = 120
+
+    [[params.profileMode.buttons]]
+      name = "Essays"
+      url = "/essays/"
+
+    [[params.profileMode.buttons]]
+      name = "Thought Cards"
+      url = "/thoughts/"
+
+    [[params.profileMode.buttons]]
+      name = "About"
+      url = "/about/"
+
+  [params.cover]
+    linkFullImages = true
+
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = ["title", "permalink", "summary", "content"]
+
+[[menu.main]]
+  identifier = "essays"
+  name = "Essays"
+  url = "/essays/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "thoughts"
+  name = "Thought Cards"
+  url = "/thoughts/"
+  weight = 20
+
+[[menu.main]]
+  identifier = "speaking"
+  name = "Speaking"
+  url = "/speaking/"
+  weight = 30
+
+[[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 40
+
+[[menu.main]]
+  identifier = "search"
+  name = "Search"
+  url = "/search/"
+  weight = 50
+
+[[menu.main]]
+  identifier = "tags"
+  name = "Tags"
+  url = "/tags/"
+  weight = 60

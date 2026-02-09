@@ -1,0 +1,61 @@
+/* Typography refinements for essays */
+.post-content {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  margin-top: 2.5rem;
+}
+
+/* Blockquote styling */
+.post-content blockquote {
+  border-left: 3px solid var(--primary);
+  padding-left: 1.2rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--secondary);
+}
+
+/* Horizontal rules as section breaks */
+.post-content hr {
+  margin: 2.5rem 0;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+/* Post title */
+.post-title {
+  font-size: 2rem;
+}
+
+/* Post description/subtitle */
+.post-description {
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Profile mode homepage tweaks */
+.profile .profile_inner h1 {
+  font-size: 2.2rem;
+}
+
+/* Thought cards: slightly smaller feel */
+.post-content ol,
+.post-content ul {
+  padding-left: 1.5rem;
+}
+
+/* Strong text in essays */
+.post-content strong {
+  font-weight: 700;
+}
+
+/* TOC styling */
+.toc {
+  margin-bottom: 2rem;
+}
