@@ -9,7 +9,7 @@ I've been in the auction industry for nearly 30 years.
 
 Today I serve as Partner and Chief Marketing & Technology Officer at [Grafe Auction Company](https://grafeauction.com), a nationally recognized leader conducting over 300 commercial and industrial online auctions annually across retail, hospitality, healthcare, and manufacturing.
 
-I served as President of the [National Auctioneers Association](https://auctioneers.org) from 2024 to 2025 and currently serve as Chairman of the Board. I hold the CAI (Certified Auctioneers Institute) and AMM (Auction Marketing Management) designations.
+I served as President of the [National Auction Association](https://auctioneers.org) from 2024 to 2025 and currently serve as Chairman of the Board. I hold the CAI (Certified Auctioneers Institute) and AMM (Auction Marketing Management) designations.
 
 ## What I Write About
 
@@ -25,9 +25,10 @@ The essays here started as handwritten thought cards, index-card-sized observati
 
 ## Speaking
 
-I speak regularly at state and national auction conferences on AI adoption, technology strategy, and leadership. Recent engagements include:
+I speak regularly at state and national auction conferences on AI adoption, digital marketing, technology strategy, and leadership. Recent engagements include:
 
 - **Schrader Real Estate & Auction** (2026) -- "Using AI Within the Auction Industry"
+- **NAA Digital Marketing Summit** (2026) -- "Data That Drives Decisions: Mastering Google Analytics & Search Console"
 - **Michigan Auctioneers Association Conference** (2026) -- "AI Unveiled: From Old School to New School"
 - **Wisconsin Auctioneers Association Conference** (2026) -- "AI Unveiled" + "Ethics & AI"
 - **Minnesota State Auctioneers Association Conference** (2026) -- "The 1-Hour AI Advantage"
