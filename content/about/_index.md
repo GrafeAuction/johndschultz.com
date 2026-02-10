@@ -38,5 +38,5 @@ If you're interested in having me speak at your event, reach out at [john.schult
 ## Connect
 
 - Email: [john.schultz@grafeauction.com](mailto:john.schultz@grafeauction.com)
-- LinkedIn: [linkedin.com/in/johndschultz](https://linkedin.com/in/johndschultz)
+- LinkedIn: [linkedin.com/in/jdschultz](https://www.linkedin.com/in/jdschultz/)
 - Company: [grafeauction.com](https://grafeauction.com)
