@@ -49,7 +49,7 @@
       <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
       {{- end }}
     </ul>
-    {{- if (.Param "ShowPostNavLinks") }}
+    {{- if and (.Param "ShowPostNavLinks") (and (ne .Section "essays") (ne .Section "thoughts")) }}
     {{- partial "post_nav_links.html" . }}
     {{- end }}
     {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
