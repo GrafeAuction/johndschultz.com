@@ -25,7 +25,7 @@ The chain: **forced constraint → windshield time → self-knowledge → securi
 
 You can teach someone that silence is valuable. But they don't *learn* it until they're sitting in their own Blue Bomber with no radio and no choice. Teaching is not learning. The valley is where learning happens.
 
-Ryan George of Biplane Productions: *"If everything is bold, nothing is bold."* Without valleys, there are no peaks. Without contrast, there is no meaning.
+A friend who runs a marketing company in the auction space: *"If everything is bold, nothing is bold."* Without valleys, there are no peaks. Without contrast, there is no meaning.
 
 ---
 

@@ -67,7 +67,7 @@ In 2026, most people optimize for speed. We jump to conclusions that confirm our
 
 But the Chinese balloons were hiding in the filtered data. The threats we don't anticipate live in the noise we dismiss. The opportunities we miss are categorized as irrelevant before we ever see them.
 
-Frank Imholte, who spent years as Executive Director of the Minnesota State Auctioneers Association, used to tell me: "There are three sides to every story: his side, her side, and the truth somewhere in between."
+A former executive director of a state auctioneer association used to tell me: "There are three sides to every story: his side, her side, and the truth somewhere in between."
 
 Most people camp on their side and argue. Fewer try to understand the other side. Almost nobody goes looking for the third thing, the truth that neither perspective fully holds. That search requires slowing down. It requires admitting your view is incomplete.
 

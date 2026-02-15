@@ -10,7 +10,7 @@ draft: false
 
 Every time you drive past a license plate reader, walk by a Ring camera, or carry your phone into a room, you're producing exhaust. Not the kind you choose to share. Not a social media post or an email or a photo you uploaded. This is the byproduct of simply existing in 2026.
 
-Scott called it "digital exhaust," and the metaphor is almost too good. Car exhaust isn't a decision. It's a consequence of going somewhere. You don't think about the fumes trailing behind you. You're focused on the road ahead.
+A friend called it "digital exhaust," and the metaphor is almost too good. Car exhaust isn't a decision. It's a consequence of going somewhere. You don't think about the fumes trailing behind you. You're focused on the road ahead.
 
 That's exactly how most people treat their data trail. They're focused on the destination (the errand, the commute, the phone call) while something invisible accumulates behind them.
 

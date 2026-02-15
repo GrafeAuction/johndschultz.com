@@ -25,13 +25,13 @@ My uncle and I call it "windshield time." I didn't know it had a name until he g
 
 ## If Everything Is Bold, Nothing Is Bold
 
-My friend Ryan George, who owns a company called Biplane Productions, has a design principle I keep borrowing for things that have nothing to do with design: *"If everything is bold, nothing is bold."*
+A friend of mine, who runs a marketing company in the auction space, has a design principle I keep borrowing for things that have nothing to do with design: *"If everything is bold, nothing is bold."*
 
 It's a statement about contrast. In design, bold only works because most of the page isn't. The emphasis depends on the de-emphasis. Take the contrast away and the whole thing goes flat.
 
 Life works the same way.
 
-I was driving to the North Dakota Auctioneers Association conference, two speaking sessions in the morning and afternoon, when I called my friend John John Genovese. John John is an auctioneer from Hawaii and an NAA Board Director. We serve together on the board. The call was supposed to be a check-in. It turned into four hours.
+I was driving to the North Dakota Auctioneers Association conference, two speaking sessions in the morning and afternoon, when I called a friend. He's a fellow auctioneer, and we serve together on a national industry board. The call was supposed to be a check-in. It turned into four hours.
 
 At some point, we landed on something I've been thinking about since at least September 2025, when I wrote it on a thought card after listening to Jimmy Carr and Chris Williamson on the Modern Wisdom podcast:
 
@@ -39,7 +39,7 @@ At some point, we landed on something I've been thinking about since at least Se
 
 I'd added a note underneath: *"You truly need the downs. They create the full story."*
 
-John John and I were circling the same idea from a different angle. The valleys in life aren't just things you survive. They're what give the peaks their altitude. Without contrast, there's no height. Without the downs, the ups are just a flat line.
+We were circling the same idea from a different angle. The valleys in life aren't just things you survive. They're what give the peaks their altitude. Without contrast, there's no height. Without the downs, the ups are just a flat line.
 
 If everything is a peak, nothing is a peak.
 
@@ -51,7 +51,7 @@ We talked about social media, the way everyone projects their peak moments. Cura
 
 The paradox is that this makes everyone feel more isolated, not less. When all you see are other people's highlights, you start comparing your behind-the-scenes to their showreel. The contrast between your real life and their projected life creates a gap that feels personal but is actually structural. Everyone's doing it. Everyone's feeling it. Nobody's talking about it.
 
-What John John and I kept coming back to was this: the more people know about your down moments, the more relatable you become. Empathy doesn't grow from admiring someone's peaks. It grows from recognizing their valleys, and seeing your own reflected in them.
+What we kept coming back to was this: the more people know about your down moments, the more relatable you become. Empathy doesn't grow from admiring someone's peaks. It grows from recognizing their valleys, and seeing your own reflected in them.
 
 My best today is an accumulation of everything that's come before me. The bad decisions. The crazy years. The valleys. All of it. If you're happy with who I am as a person today, you need to be willing and comfortable accepting all of the bad and crazy things I did in my younger years, because all of those things shaped who I am.
 
@@ -67,7 +67,7 @@ My wife sometimes says, "You can't share the reality because then people will ju
 
 Her valley taught her to protect herself. My valleys taught me to sit with myself. Same mechanism, different lessons. And if I'm going to hold the principle that who we are today is shaped by everything that came before, including the bad, then I have to extend that grace to her too. Her caution isn't a flaw. It's the product of her experience, just as my openness is the product of mine.
 
-But there's another category entirely. John John and I talked about people who've lived sheltered lives, people who haven't experienced real lows because they were insulated from them. The "Karens" of the world aren't always mean-spirited. Sometimes they simply lack exposure to valleys. They've never been in the depths, so they can't recognize them in others. Empathy requires a reference point, and they don't have one.
+But there's another category entirely. We talked about people who've lived sheltered lives, people who haven't experienced real lows because they were insulated from them. The "Karens" of the world aren't always mean-spirited. Sometimes they simply lack exposure to valleys. They've never been in the depths, so they can't recognize them in others. Empathy requires a reference point, and they don't have one.
 
 So the bottleneck isn't just willingness. It's sometimes ability, a capacity that was never built because the raw material was never provided.
 
@@ -101,7 +101,7 @@ Two ingredients are required for a valley to become something generative:
 
 Without the valley, there's nothing to name. But without the namer, the valley is just suffering you survived. It doesn't become wisdom until someone helps you see what it built.
 
-John John is a namer. Four hours on the phone isn't just conversation. It's two people naming each other's valleys and saying, *"Yeah, that thing you went through? That's part of what makes you who you are."* The valleys are where the teaching happens. Not the peaks.
+My friend is a namer. Four hours on the phone isn't just conversation. It's two people naming each other's valleys and saying, *"Yeah, that thing you went through? That's part of what makes you who you are."* The valleys are where the teaching happens. Not the peaks.
 
 ---
 
@@ -109,7 +109,7 @@ John John is a namer. Four hours on the phone isn't just conversation. It's two 
 
 Here's where the principle turns recursive.
 
-I've been playing the namer role without fully recognizing it. In speaking. In deep conversations. In the way I show up with friends like John John. I look at someone's valley and try to name what it built in them.
+I've been playing the namer role without fully recognizing it. In speaking. In deep conversations. In the way I show up with close friends. I look at someone's valley and try to name what it built in them.
 
 But I didn't name that role for myself. It took this conversation, this dialogue, tonight, working through these threads, for someone to say back to me, *"That thing you're doing? That's important. There's a name for it."*
 

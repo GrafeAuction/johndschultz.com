@@ -23,7 +23,7 @@ Most people stop at the first version. It feels smart. It's not.
 
 ## Where This Started
 
-Peter Gehres said something during early COVID that stuck with me: "History repeats itself." Simple observation, and at the time I nodded along. But as I sat with it, something felt off. The details never line up perfectly. The mechanics shift. The players change.
+A colleague said something during early COVID that stuck with me: "History repeats itself." Simple observation, and at the time I nodded along. But as I sat with it, something felt off. The details never line up perfectly. The mechanics shift. The players change.
 
 Then I started reading Ray Dalio and listening to James Holland, and the nuance clicked.
 

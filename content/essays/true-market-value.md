@@ -13,7 +13,7 @@ draft: false
 
 Let's talk about something every auctioneer thinks about: Are we actually finding true market value?
 
-I had an interesting conversation recently with Russ Hilk about whether auctions reveal what something's really worth. Sure, they can. But here's what bothers me. We're calling it "true market value" when maybe 5–10% of potential buyers ever see our marketing. How's that the true value?
+I had an interesting conversation recently with a colleague about whether auctions reveal what something's really worth. Sure, they can. But here's what bothers me. We're calling it "true market value" when maybe 5–10% of potential buyers ever see our marketing. How's that the true value?
 
 This isn't just theory. It creates real problems.
 

@@ -10,9 +10,9 @@ draft: false
 
 Five Guys fills your fry cup, drops it in the bag, then scoops another ladle on top. The generosity is staged so you *witness* it. Jerry Murrell didn't give customers more fries. He gave them the same fries in a way that *felt* like more.
 
-The question John John Genovese posed: is there an auction industry version of this? Can a business with two customer types (sellers who want maximum return, buyers who want fair access) create a single "fries" moment that lands for both?
+The question a friend posed: is there an auction industry version of this? Can a business with two customer types (sellers who want maximum return, buyers who want fair access) create a single "fries" moment that lands for both?
 
-The breakthrough came from John John's reframe. Buyers and sellers aren't on opposite sides of the table. They're both patrons at the same restaurant ordering different meals. The fries sit underneath both experiences, in the service layer that has nothing to do with the transaction outcome.
+The breakthrough came from his reframe. Buyers and sellers aren't on opposite sides of the table. They're both patrons at the same restaurant ordering different meals. The fries sit underneath both experiences, in the service layer that has nothing to do with the transaction outcome.
 
 Then he named the mechanism: **the contract is the fry cup.** Auction contracts explicitly set a low baseline. "We are not responsible for cleanup." "Bring your own help to load." "Bring your own packing materials." The customer signs it. Expectations are set. Then the day of the auction, there are three guys with dollies and straps helping you load, boxes already packed, and the warehouse is broom-swept when the seller walks back in.
 
