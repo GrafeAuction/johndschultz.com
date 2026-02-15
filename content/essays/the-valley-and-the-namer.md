@@ -31,7 +31,7 @@ It's a statement about contrast. In design, bold only works because most of the 
 
 Life works the same way.
 
-I was driving to the North Dakota Auctioneers Association conference, two speaking sessions in the morning and afternoon, when I called a friend. He's a fellow auctioneer, and we serve together on a national industry board. The call was supposed to be a check-in. It turned into four hours.
+I was driving to a state auctioneer association conference, two speaking sessions in the morning and afternoon, when I called a friend. He's a fellow auctioneer, and we serve together on a national industry board. The call was supposed to be a check-in. It turned into four hours.
 
 At some point, we landed on something I've been thinking about since at least September 2025, when I wrote it on a thought card after listening to Jimmy Carr and Chris Williamson on the Modern Wisdom podcast:
 
