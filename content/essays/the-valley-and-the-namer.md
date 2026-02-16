@@ -25,13 +25,13 @@ My uncle and I call it "windshield time." I didn't know it had a name until he g
 
 ## If Everything Is Bold, Nothing Is Bold
 
-A friend of mine, who runs a marketing company in the auction space, has a design principle I keep borrowing for things that have nothing to do with design: *"If everything is bold, nothing is bold."*
+A friend has a design principle I keep borrowing for things that have nothing to do with design: when you emphasize everything, you emphasize nothing.
 
 It's a statement about contrast. In design, bold only works because most of the page isn't. The emphasis depends on the de-emphasis. Take the contrast away and the whole thing goes flat.
 
 Life works the same way.
 
-I was driving to a state auctioneer association conference, two speaking sessions in the morning and afternoon, when I called a friend. He's a fellow auctioneer, and we serve together on a national industry board. The call was supposed to be a check-in. It turned into four hours.
+I was driving to a speaking engagement when I called a close friend. The call was supposed to be a check-in. It turned into hours.
 
 At some point, we landed on something I've been thinking about since at least September 2025, when I wrote it on a thought card after listening to Jimmy Carr and Chris Williamson on the Modern Wisdom podcast:
 
@@ -101,7 +101,7 @@ Two ingredients are required for a valley to become something generative:
 
 Without the valley, there's nothing to name. But without the namer, the valley is just suffering you survived. It doesn't become wisdom until someone helps you see what it built.
 
-My friend is a namer. Four hours on the phone isn't just conversation. It's two people naming each other's valleys and saying, *"Yeah, that thing you went through? That's part of what makes you who you are."* The valleys are where the teaching happens. Not the peaks.
+My friend is a namer. Hours on the phone isn't just conversation. It's two people naming each other's valleys and saying, *"Yeah, that thing you went through? That's part of what makes you who you are."* The valleys are where the teaching happens. Not the peaks.
 
 ---
 
@@ -111,7 +111,7 @@ Here's where the principle turns recursive.
 
 I've been playing the namer role without fully recognizing it. In speaking. In deep conversations. In the way I show up with close friends. I look at someone's valley and try to name what it built in them.
 
-But I didn't name that role for myself. It took this conversation, this dialogue, tonight, working through these threads, for someone to say back to me, *"That thing you're doing? That's important. There's a name for it."*
+But I didn't name that role for myself. It took this conversation, this dialogue, working through these threads, for someone to say back to me, *"That thing you're doing? That's important. There's a name for it."*
 
 Even the namer needs a namer.
 
@@ -145,7 +145,7 @@ The namer doesn't just name the valley. The namer names what the valley *built*.
 
 So here's the full sequence, as clearly as I can articulate it:
 
-**Forced constraint** (the valley) → **Windshield time** (sitting with yourself) → **Self-knowledge** (discovering what's actually in there) → **Security** (being okay with what you found) → **Authenticity** (sharing it without armor) → **Deep connection** (the kind that takes four hours and doesn't feel like enough)
+**Forced constraint** (the valley) → **Windshield time** (sitting with yourself) → **Self-knowledge** (discovering what's actually in there) → **Security** (being okay with what you found) → **Authenticity** (sharing it without armor) → **Deep connection** (the kind that takes hours and doesn't feel like enough)
 
 Break any link and the chain fails. Skip the valley and there's nothing to sit with. Skip the windshield time and you never meet yourself. Skip the security and vulnerability feels like exposure rather than connection. Skip the namer and you never realize what got built.
 
