@@ -9,10 +9,6 @@ TocOpen: false
 draft: false
 ---
 
-*What a novel about strings, a rental car, and a three-year-old's text message taught me about the box I've already opened.*
-
----
-
 ## The Box
 
 There are five of us in a rental car heading from the airport to the hotel. A friend is talking about a book. Nikki Erlick's The Measure. The premise is simple: one morning, everyone on Earth wakes up to find a small wooden box on their doorstep. Inside is a string. The length of the string is the length of your remaining life.
