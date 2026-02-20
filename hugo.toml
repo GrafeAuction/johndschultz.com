@@ -54,6 +54,10 @@ I write about leadership, decision-making, and what the auction industry teaches
     name = "linkedin"
     url = "https://www.linkedin.com/in/jdschultz/"
 
+  [[params.socialIcons]]
+    name = "rss"
+    url = "https://johndschultz.com/index.xml"
+
   [params.profileMode]
     enabled = true
     title = "John Schultz"

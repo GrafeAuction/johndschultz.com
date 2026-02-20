@@ -83,3 +83,76 @@
 .reply-via-email a:hover {
   color: var(--primary);
 }
+
+/* Subscribe CTA on post pages */
+.post-subscribe {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--secondary);
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+.post-subscribe a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.post-subscribe a:hover {
+  opacity: 0.85;
+}
+
+/* Homepage subscribe form */
+.subscribe-home {
+  margin-top: 1.25rem;
+  text-align: center;
+}
+
+.subscribe-home .subscribe-form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.subscribe-home .subscribe-form input[type="email"] {
+  flex: 1;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--theme);
+  color: var(--primary);
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.subscribe-home .subscribe-form input[type="email"]::placeholder {
+  color: var(--secondary);
+  opacity: 0.6;
+}
+
+.subscribe-home .subscribe-form button {
+  padding: 0.45rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: var(--theme);
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.subscribe-home .subscribe-form button:hover {
+  opacity: 0.85;
+}
+
+.subscribe-home .subscribe-text {
+  color: var(--secondary);
+  font-size: 13px;
+  margin-top: 0.5rem;
+}

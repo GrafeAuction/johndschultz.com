@@ -57,6 +57,9 @@
     {{- end }}
 
     {{- if or (eq .Section "essays") (eq .Section "thoughts") }}
+    <div class="post-subscribe">
+      If this resonated, <a href="https://buttondown.com/schultz">subscribe</a> to get future pieces by email.
+    </div>
     <div class="reply-via-email">
       <a href="mailto:john.schultz@grafeauction.com?subject=Re: {{ .Title | plainify }}">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
