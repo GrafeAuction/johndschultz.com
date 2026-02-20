@@ -36,6 +36,7 @@ enableRobotsTXT = true
   ShowToc = true
   TocOpen = false
   ShowWordCount = false
+  ShowFullTextinRSS = true
   UseHugoToc = true
   displayFullLangName = true
 
