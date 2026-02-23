@@ -5,7 +5,7 @@ ShowToc: false
 ShowReadingTime: false
 ---
 
-I speak at state and national auction industry conferences on AI adoption, technology strategy, leadership, and ethics. My sessions are built for practitioners, not theorists. Live demos, real workflows, and actionable takeaways you can use the next day.
+I speak at state and national auction industry conferences and teach at auction schools on AI adoption, technology strategy, marketing, leadership, and ethics. My sessions are built for practitioners, not theorists. Live demos, real workflows, and actionable takeaways you can use the next day.
 
 ## Topics
 
@@ -26,8 +26,9 @@ Lessons from running a national trade association and building an auction compan
 | Date | Event | Topic | Format |
 |------|-------|-------|--------|
 | Mar 2026 | Schrader Real Estate & Auction Annual Meeting | Using AI Within the Auction Industry | 75 min |
-| Feb 2026 | North Dakota Auctioneers Association Conference | AI in the Auction Industry + Digital Marketing for Auctions | Half day |
+| Mar 2026 | World Wide College of Auctioneering | Auction Marketing: A Strategic Approach | Half day |
 | Feb 2026 | NAA Digital Marketing Summit | Data That Drives Decisions: Mastering Google Analytics & Search Console | 1 hr |
+| Feb 2026 | North Dakota Auctioneers Association Conference | AI in the Auction Industry + Digital Marketing for Auctions | Half day |
 | Jan 2026 | Michigan Auctioneers Association Conference | AI Unveiled: From Old School to New School | 3 hr |
 | Jan 2026 | Wisconsin Auctioneers Association Conference | AI Unveiled + Ethics & AI | 2 hr + 1 hr |
 | Jan 2026 | Minnesota State Auctioneers Association Conference | The 1-Hour AI Advantage | 1 hr |

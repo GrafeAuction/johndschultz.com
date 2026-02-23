@@ -25,11 +25,12 @@ The essays here started as handwritten thought cards, index-card-sized observati
 
 ## Speaking
 
-I speak regularly at state and national auction conferences on AI adoption, digital marketing, technology strategy, and leadership. Recent engagements include:
+I speak regularly at state and national auction conferences and teach at auction schools on AI adoption, digital marketing, technology strategy, and leadership. Recent engagements include:
 
 - **Schrader Real Estate & Auction** (2026) -- "Using AI Within the Auction Industry"
-- **North Dakota Auctioneers Association Conference** (2026) -- "AI in the Auction Industry" + "Digital Marketing for Auctions"
+- **World Wide College of Auctioneering** (2026) -- "Auction Marketing: A Strategic Approach"
 - **NAA Digital Marketing Summit** (2026) -- "Data That Drives Decisions: Mastering Google Analytics & Search Console"
+- **North Dakota Auctioneers Association Conference** (2026) -- "AI in the Auction Industry" + "Digital Marketing for Auctions"
 - **Michigan Auctioneers Association Conference** (2026) -- "AI Unveiled: From Old School to New School"
 - **Wisconsin Auctioneers Association Conference** (2026) -- "AI Unveiled" + "Ethics & AI"
 - **Minnesota State Auctioneers Association Conference** (2026) -- "The 1-Hour AI Advantage"
