@@ -67,6 +67,13 @@
             </form>
             <p class="subscribe-text">Get new essays and thoughts by email.</p>
         </div>
+
+        {{- $latestEssay := (where site.RegularPages "Section" "essays" | first 1) }}
+        {{- range $latestEssay }}
+        <div class="latest-essay">
+            Latest: <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </div>
+        {{- end }}
     </div>
     {{- end}}
 </div>

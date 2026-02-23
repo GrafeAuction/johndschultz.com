@@ -1,0 +1,33 @@
+{{- define "main" }}
+
+{{- if .Title }}
+<header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">
+        {{ .Description }}
+    </div>
+    {{- end }}
+</header>
+{{- end }}
+
+<ul class="terms-tags">
+    {{- $type := .Type }}
+    {{- range $key, $value := .Data.Terms.ByCount }}
+    {{- $name := .Name }}
+    {{- $count := .Count }}
+    {{- $tier := "low" }}
+    {{- if ge $count 5 }}
+      {{- $tier = "high" }}
+    {{- else if ge $count 3 }}
+      {{- $tier = "medium" }}
+    {{- end }}
+    {{- with site.GetPage (printf "/%s/%s" $type $name) }}
+    <li data-count="{{ $tier }}">
+        <a href="{{ .Permalink }}">{{ .Name }} <sup>{{ $count }}</sup></a>
+    </li>
+    {{- end }}
+    {{- end }}
+</ul>
+
+{{- end }}{{/* end main */ -}}

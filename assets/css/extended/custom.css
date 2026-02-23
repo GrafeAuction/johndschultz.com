@@ -1,133 +1,165 @@
-/* Typography refinements for essays */
+/* ==========================================================================
+   johndschultz.com Design System
+   Built on PaperMod. Custom typography, accent color, content differentiation.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties
+   -------------------------------------------------------------------------- */
+
+:root {
+  /* Accent palette */
+  --accent: #B45309;
+  --accent-light: #D97706;
+  --accent-subtle: #FEF3C7;
+
+  /* Typography stacks */
+  --font-heading: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Spacing scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+}
+
+.dark {
+  --accent: #D97706;
+  --accent-light: #F59E0B;
+  --accent-subtle: rgba(180, 83, 9, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   2. Base Typography
+   -------------------------------------------------------------------------- */
+
+body {
+  font-family: var(--font-ui);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
 .post-content {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-body);
   font-size: 1.05rem;
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 .post-content h2,
 .post-content h3,
 .post-content h4 {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-  margin-top: 2.5rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  margin-top: var(--space-2xl);
 }
 
-/* Blockquote styling */
-.post-content blockquote {
-  border-left: 3px solid var(--primary);
-  padding-left: 1.2rem;
-  margin: 1.5rem 0;
-  font-style: italic;
-  color: var(--secondary);
+.post-content strong {
+  font-weight: 600;
 }
 
-/* Horizontal rules as section breaks */
-.post-content hr {
-  margin: 2.5rem 0;
-  border: none;
-  border-top: 1px solid var(--border);
-}
-
-/* Post title */
-.post-title {
-  font-size: 2rem;
-}
-
-/* Post description/subtitle */
-.post-description {
-  font-style: italic;
-  opacity: 0.8;
-}
-
-/* Profile mode homepage tweaks */
-.profile .profile_inner h1 {
-  font-size: 2.2rem;
-}
-
-/* Thought cards: slightly smaller feel */
 .post-content ol,
 .post-content ul {
-  padding-left: 1.5rem;
+  padding-left: var(--space-lg);
 }
 
-/* Strong text in essays */
-.post-content strong {
-  font-weight: 700;
+code, pre, .post-content code, .post-content pre {
+  font-family: var(--font-mono);
 }
 
-/* TOC styling */
-.toc {
-  margin-bottom: 2rem;
+/* --------------------------------------------------------------------------
+   3. Header & Navigation
+   -------------------------------------------------------------------------- */
+
+.nav .logo a {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
-/* Reply via email */
-.reply-via-email {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border);
-  text-align: center;
-}
-
-.reply-via-email a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--secondary);
+#menu a {
+  font-family: var(--font-ui);
   font-size: 14px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-  letter-spacing: 0.5px;
   text-transform: uppercase;
-  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease;
 }
 
-.reply-via-email a:hover {
-  color: var(--primary);
+#menu a:hover {
+  color: var(--accent);
 }
 
-/* Subscribe CTA on post pages */
-.post-subscribe {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border);
-  text-align: center;
-  color: var(--secondary);
-  font-size: 14px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+#menu .active {
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 2px;
 }
 
-.post-subscribe a {
-  color: var(--primary);
-  text-decoration: underline;
-  text-underline-offset: 2px;
+/* --------------------------------------------------------------------------
+   4. Homepage
+   -------------------------------------------------------------------------- */
+
+.profile .profile_inner h1 {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  font-weight: 600;
 }
 
-.post-subscribe a:hover {
-  opacity: 0.85;
+.profile .profile_inner > span {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1.1rem;
 }
 
-/* Homepage subscribe form */
+/* Buttons: transparent, outlined */
+.profile .buttons .button {
+  background: transparent;
+  border: 1.5px solid var(--border);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.profile .buttons .button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Subscribe form */
 .subscribe-home {
-  margin-top: 1.25rem;
+  margin-top: var(--space-lg);
   text-align: center;
 }
 
 .subscribe-home .subscribe-form {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  gap: var(--space-sm);
   max-width: 360px;
   margin: 0 auto;
 }
 
 .subscribe-home .subscribe-form input[type="email"] {
   flex: 1;
-  padding: 0.45rem 0.75rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--theme);
+  padding: 0.5rem 0;
+  border: none;
+  border-bottom: 1.5px solid var(--border);
+  border-radius: 0;
+  background: transparent;
   color: var(--primary);
   font-size: 14px;
-  font-family: inherit;
+  font-family: var(--font-ui);
+  transition: border-color 0.2s ease;
+}
+
+.subscribe-home .subscribe-form input[type="email"]:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
 }
 
 .subscribe-home .subscribe-form input[type="email"]::placeholder {
@@ -136,23 +168,494 @@
 }
 
 .subscribe-home .subscribe-form button {
-  padding: 0.45rem 1.1rem;
-  border: 1px solid var(--border);
+  padding: 0.5rem 1.25rem;
+  border: none;
   border-radius: var(--radius);
-  background: var(--primary);
-  color: var(--theme);
+  background: var(--accent);
+  color: #fff;
   font-size: 14px;
-  font-family: inherit;
+  font-family: var(--font-ui);
+  font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
+  transition: background 0.2s ease;
 }
 
 .subscribe-home .subscribe-form button:hover {
-  opacity: 0.85;
+  background: var(--accent-light);
 }
 
 .subscribe-home .subscribe-text {
   color: var(--secondary);
   font-size: 13px;
-  margin-top: 0.5rem;
+  font-family: var(--font-ui);
+  margin-top: var(--space-sm);
+}
+
+/* Latest essay callout */
+.latest-essay {
+  margin-top: var(--space-lg);
+  text-align: center;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--secondary);
+}
+
+.latest-essay a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--accent);
+  transition: color 0.2s ease;
+}
+
+.latest-essay a:hover {
+  color: var(--accent-light);
+}
+
+/* --------------------------------------------------------------------------
+   5. List Pages
+   -------------------------------------------------------------------------- */
+
+/* --- Essays: editorial, no cards --- */
+.essays-list .post-entry {
+  background: none;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-lg) 0;
+  margin: 0;
+}
+
+.essays-list .post-entry:last-child {
+  border-bottom: none;
+}
+
+.essays-list .entry-header h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.essays-list .post-entry:hover .entry-header h2 {
+  color: var(--accent);
+}
+
+.essays-list .entry-content p {
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--secondary);
+  margin-top: var(--space-xs);
+}
+
+.essays-list .entry-footer {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  margin-top: var(--space-xs);
+}
+
+/* --- Thoughts: compact cards with accent border --- */
+.thoughts-list .post-entry {
+  border-left: 3px solid var(--accent);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+.thoughts-list .entry-header h2 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.thoughts-list .post-entry:hover .entry-header h2 {
+  color: var(--accent);
+}
+
+.thoughts-list .entry-content p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--secondary);
+  margin-top: var(--space-xs);
+}
+
+.thoughts-list .entry-footer {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  margin-top: var(--space-xs);
+}
+
+/* --------------------------------------------------------------------------
+   6. Single Post (Reading Experience)
+   -------------------------------------------------------------------------- */
+
+.post-title {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.post-description {
+  font-family: var(--font-body);
+  font-style: italic;
+  opacity: 0.8;
+  font-size: 1.1rem;
+}
+
+.post-meta {
+  font-family: var(--font-ui);
+}
+
+/* Links in body */
+.post-content a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.post-content a:hover {
+  color: var(--accent-light);
+}
+
+/* Drop caps on essays only */
+.post-single.essays .post-content > p:first-of-type::first-letter {
+  font-family: var(--font-heading);
+  font-size: 3.5em;
+  font-weight: 600;
+  float: left;
+  line-height: 0.8;
+  margin-right: 0.08em;
+  margin-top: 0.05em;
+  color: var(--accent);
+}
+
+/* TOC */
+.toc {
+  margin-bottom: var(--space-xl);
+}
+
+/* --------------------------------------------------------------------------
+   7. Blockquotes & Horizontal Rules
+   -------------------------------------------------------------------------- */
+
+.post-content blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1.2rem;
+  margin: var(--space-lg) 0;
+  font-style: italic;
+  color: var(--secondary);
+}
+
+.post-content hr {
+  border: none;
+  margin: var(--space-2xl) auto;
+  width: 40px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   8. Code Blocks
+   -------------------------------------------------------------------------- */
+
+.post-content code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+.post-content pre {
+  font-family: var(--font-mono);
+  border-radius: var(--radius);
+}
+
+/* --------------------------------------------------------------------------
+   9. Tags Page
+   -------------------------------------------------------------------------- */
+
+.terms-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  list-style: none;
+  padding: 0;
+}
+
+.terms-tags li {
+  list-style: none;
+}
+
+.terms-tags a {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--primary);
+  background: transparent;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.terms-tags a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* High-count tags get accent treatment */
+.terms-tags li[data-count="high"] a {
+  color: var(--accent);
+  border-color: var(--accent);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.terms-tags li[data-count="medium"] a {
+  font-size: 14px;
+}
+
+.terms-tags li[data-count="low"] a {
+  font-size: 13px;
+  color: var(--secondary);
+}
+
+/* --------------------------------------------------------------------------
+   10. About & Speaking Pages
+   -------------------------------------------------------------------------- */
+
+/* Accent bar before h2s on about/speaking */
+.post-single.about .post-content h2::before,
+.post-single.speaking .post-content h2::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin-bottom: var(--space-sm);
+}
+
+/* Slightly larger intro paragraph */
+.post-single.about .post-content > p:first-of-type,
+.post-single.speaking .post-content > p:first-of-type {
+  font-size: 1.1rem;
+}
+
+/* Speaking tables */
+.post-single.speaking .post-content table tr:hover {
+  background: var(--accent-subtle);
+}
+
+/* Speaking topic sections get left border */
+.post-single.speaking .post-content h3 {
+  border-left: 3px solid var(--accent);
+  padding-left: var(--space-md);
+}
+
+/* Book-me CTA styling */
+.post-single.speaking .post-content > p:last-of-type a[href^="mailto"] {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border: 1.5px solid var(--accent);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--accent);
+  font-family: var(--font-ui);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.post-single.speaking .post-content > p:last-of-type a[href^="mailto"]:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   11. Footer
+   -------------------------------------------------------------------------- */
+
+footer.footer {
+  font-family: var(--font-ui);
+}
+
+/* --------------------------------------------------------------------------
+   12. Subscribe & Reply (Post Footer)
+   -------------------------------------------------------------------------- */
+
+.post-subscribe {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--secondary);
+  font-size: 14px;
+  font-family: var(--font-ui);
+}
+
+.post-subscribe a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--accent);
+}
+
+.post-subscribe a:hover {
+  color: var(--accent-light);
+}
+
+.reply-via-email {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.reply-via-email a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--secondary);
+  font-size: 14px;
+  font-family: var(--font-ui);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.reply-via-email a:hover {
+  color: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   13. Pullquote Shortcode
+   -------------------------------------------------------------------------- */
+
+.pullquote {
+  text-align: center;
+  margin: var(--space-2xl) auto;
+  padding: 0 var(--space-xl);
+  max-width: 85%;
+}
+
+.pullquote p {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: var(--accent);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   14. Transitions & Hover States
+   -------------------------------------------------------------------------- */
+
+a {
+  transition: color 0.2s ease;
+}
+
+.post-entry {
+  transition: border-color 0.2s ease;
+}
+
+/* Post tags */
+.post-tags a {
+  font-family: var(--font-ui);
+  transition: color 0.2s ease;
+}
+
+.post-tags a:hover {
+  color: var(--accent);
+}
+
+/* Breadcrumbs */
+.breadcrumbs a:hover {
+  color: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   15. Dark Mode Adjustments
+   -------------------------------------------------------------------------- */
+
+.dark .subscribe-home .subscribe-form button {
+  color: #fff;
+}
+
+.dark .post-single.essays .post-content > p:first-of-type::first-letter {
+  color: var(--accent);
+}
+
+.dark .terms-tags a:hover {
+  background: var(--accent-subtle);
+}
+
+.dark .post-single.speaking .post-content table tr:hover {
+  background: var(--accent-subtle);
+}
+
+/* --------------------------------------------------------------------------
+   16. Mobile & Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .profile .profile_inner h1 {
+    font-size: 2rem;
+  }
+
+  .post-title {
+    font-size: 1.8rem;
+  }
+
+  .post-content {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .post-single.essays .post-content > p:first-of-type::first-letter {
+    font-size: 2.8em;
+  }
+
+  .essays-list .entry-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .thoughts-list .entry-header h2 {
+    font-size: 1.15rem;
+  }
+
+  .pullquote p {
+    font-size: 1.2rem;
+  }
+
+  .pullquote {
+    padding: 0 var(--space-md);
+    max-width: 100%;
+  }
+
+  .subscribe-home .subscribe-form {
+    flex-direction: column;
+    max-width: 280px;
+  }
+
+  .subscribe-home .subscribe-form button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  .profile .profile_inner h1 {
+    font-size: 1.8rem;
+  }
+
+  .post-title {
+    font-size: 1.6rem;
+  }
+
+  .nav .logo a {
+    font-size: 1.2rem;
+  }
 }
