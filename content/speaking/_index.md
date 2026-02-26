@@ -27,6 +27,7 @@ Lessons from running a national trade association and building an auction compan
 |------|-------|-------|--------|
 | Mar 2026 | Schrader Real Estate & Auction Annual Meeting | Using AI Within the Auction Industry | 75 min |
 | Mar 2026 | World Wide College of Auctioneering | Auction Marketing: A Strategic Approach | Half day |
+| Feb 2026 | Weichert Realtors / H. Barry Smith Co. | AI for Real Estate Agents | 1 hr |
 | Feb 2026 | NAA Digital Marketing Summit | Data That Drives Decisions: Mastering Google Analytics & Search Console | 1 hr |
 | Feb 2026 | North Dakota Auctioneers Association Conference | AI in the Auction Industry + Digital Marketing for Auctions | Half day |
 | Jan 2026 | Michigan Auctioneers Association Conference | AI Unveiled: From Old School to New School | 3 hr |
