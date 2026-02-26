@@ -27,6 +27,7 @@ The essays here started as handwritten thought cards, index-card-sized observati
 
 I speak regularly at state and national auction conferences and teach at auction schools on AI adoption, digital marketing, technology strategy, and leadership. Recent engagements include:
 
+- **Weichert Realtors / H. Barry Smith Co.** (2026) -- "AI for Real Estate Agents"
 - **Schrader Real Estate & Auction** (2026) -- "Using AI Within the Auction Industry"
 - **World Wide College of Auctioneering** (2026) -- "Auction Marketing: A Strategic Approach"
 - **NAA Digital Marketing Summit** (2026) -- "Data That Drives Decisions: Mastering Google Analytics & Search Console"
