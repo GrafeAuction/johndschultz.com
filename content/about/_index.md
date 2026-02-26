@@ -25,18 +25,7 @@ The essays here started as handwritten thought cards, index-card-sized observati
 
 ## Speaking
 
-I speak regularly at state and national auction conferences and teach at auction schools on AI adoption, digital marketing, technology strategy, and leadership. Recent engagements include:
-
-- **Weichert Realtors / H. Barry Smith Co.** (2026) -- "AI for Real Estate Agents"
-- **Schrader Real Estate & Auction** (2026) -- "Using AI Within the Auction Industry"
-- **World Wide College of Auctioneering** (2026) -- "Auction Marketing: A Strategic Approach"
-- **NAA Digital Marketing Summit** (2026) -- "Data That Drives Decisions: Mastering Google Analytics & Search Console"
-- **North Dakota Auctioneers Association Conference** (2026) -- "AI in the Auction Industry" + "Digital Marketing for Auctions"
-- **Michigan Auctioneers Association Conference** (2026) -- "AI Unveiled: From Old School to New School"
-- **Wisconsin Auctioneers Association Conference** (2026) -- "AI Unveiled" + "Ethics & AI"
-- **Minnesota State Auctioneers Association Conference** (2026) -- "The 1-Hour AI Advantage"
-
-If you're interested in having me speak at your event, reach out at [john.schultz@grafeauction.com](mailto:john.schultz@grafeauction.com).
+I speak regularly at state and national auction conferences, auction schools, and industry events on AI adoption, digital marketing, and leadership. See the full list of [recent engagements](/speaking/).
 
 ## Connect
 
