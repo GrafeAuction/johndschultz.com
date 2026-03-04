@@ -67,7 +67,7 @@ Then there's the voice profile. I capture samples of my actual writing (emails, 
 
 The profile doesn't make the AI into me. It gets it close enough that I can spot the gaps.
 
-Here's where the friction shows up. A friend read an email I'd drafted with the system and flagged a single word: "precedent." He said it sounded like AI. He was right. The sentence had passed every automated check: register scan, banned-phrase scan, the "would I say this out loud" test. But it still felt wrong to a human reader. I wouldn't say "there's precedent for it" in conversation. I'd say "it's been done before."
+Here's where the friction shows up. A friend read an email I'd drafted with the system and flagged a single word: "precedent." She said it sounded like AI. She was right. The sentence had passed every automated check: register scan, banned-phrase scan, the "would I say this out loud" test. But it still felt wrong to a human reader. I wouldn't say "there's precedent for it" in conversation. I'd say "it's been done before."
 
 That correction became a learning via `/compound`, a skill that captures discrete insights from mistakes, corrections, and workarounds. Now `/review-content` includes register-shift detection that catches formal words where conversational ones belong. The friend caught it, the learning got captured, the system got better.
 
