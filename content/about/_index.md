@@ -11,6 +11,8 @@ Today I serve as Partner and Chief Marketing & Technology Officer at [Grafe Auct
 
 I served as the 76th President of the [National Auction Association](https://auctioneers.org) (2024–2025) and currently serve as Board Chair. Before that, I served as the 60th President of the Minnesota State Auctioneers Association. I hold the CAI (Certified Auctioneers Institute) and AMM (Auction Marketing Management) designations.
 
+I live in southern Minnesota with my wife Billie Jo and our daughter Anna Claire.
+
 ## What I Write About
 
 Most of my writing circles a few recurring themes:
