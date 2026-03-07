@@ -217,18 +217,15 @@ code, pre, .post-content code, .post-content pre {
    5. List Pages
    -------------------------------------------------------------------------- */
 
-/* --- Essays: editorial, no cards --- */
+/* --- Essays: editorial cards with top accent --- */
 .essays-list .post-entry {
-  background: none;
-  border: none;
-  border-radius: 0;
-  border-bottom: 1px solid var(--border);
-  padding: var(--space-lg) 0;
-  margin: 0;
+  border-top: 2px solid var(--accent);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .essays-list .post-entry:last-child {
-  border-bottom: none;
+  margin-bottom: 0;
 }
 
 .essays-list .entry-header h2 {
