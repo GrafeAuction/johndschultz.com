@@ -25,7 +25,7 @@ The essays here started as handwritten thought cards, index-card-sized observati
 
 ## Speaking
 
-I speak regularly at state and national auction conferences, auction schools, and industry events on AI adoption, digital marketing, and leadership. See the full list of [recent engagements](/speaking/).
+I speak regularly at auction conferences, auction schools, and industry events on AI adoption, digital marketing, ethics, and leadership. Occasionally I get invited outside the auction world to talk about AI for other traditional industries. See the full list of [recent engagements](/speaking/).
 
 ## Connect
 
