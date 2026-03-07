@@ -261,7 +261,7 @@ code, pre, .post-content code, .post-content pre {
 
 .thoughts-list .entry-header h2 {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 600;
   transition: color 0.2s ease;
 }
@@ -272,7 +272,7 @@ code, pre, .post-content code, .post-content pre {
 
 .thoughts-list .entry-content p {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-style: italic;
   color: var(--secondary);
   margin-top: var(--space-xs);
 }
@@ -621,7 +621,7 @@ a {
   }
 
   .thoughts-list .entry-header h2 {
-    font-size: 1.15rem;
+    font-size: 1.3rem;
   }
 
   .pullquote p {

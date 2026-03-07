@@ -25,6 +25,8 @@ Lessons from running a national trade association and building an auction compan
 
 | Date | Event | Topic | Format |
 |------|-------|-------|--------|
+| Apr 2026 | NAA Certified Auctioneers Institute (CAI) | Partnerships, Joint Ventures, and Referrals | 1.5 hr |
+| Mar 2026 | NAA Certified Auctioneers Institute (CAI) | Marketing & AI | 3.5 hr |
 | Mar 2026 | Schrader Real Estate & Auction Annual Meeting | Using AI Within the Auction Industry | 75 min |
 | Mar 2026 | World Wide College of Auctioneering | Auction Marketing: A Strategic Approach | Half day |
 | Feb 2026 | Weichert Realtors / H. Barry Smith Co. | AI for Real Estate Agents | 1 hr |
