@@ -5,11 +5,11 @@ ShowToc: false
 ShowReadingTime: false
 ---
 
-I've been in the auction industry for nearly 30 years.
+I've been in the auction industry for more than three decades.
 
-Today I serve as Partner and Chief Marketing & Technology Officer at [Grafe Auction Company](https://grafeauction.com), a nationally recognized leader conducting over 300 commercial and industrial online auctions annually across retail, hospitality, healthcare, and manufacturing.
+Today I serve as Partner and Chief Marketing & Technology Officer at [Grafe Auction Company](https://grafeauction.com), a nationally recognized leader conducting nearly 300 commercial and industrial online auctions annually across retail, hospitality, healthcare, and manufacturing.
 
-I served as President of the [National Auction Association](https://auctioneers.org) from 2024 to 2025 and currently serve as Chairman of the Board. I hold the CAI (Certified Auctioneers Institute) and AMM (Auction Marketing Management) designations.
+I served as the 76th President of the [National Auction Association](https://auctioneers.org) (2024–2025) and currently serve as Board Chair. Before that, I served as the 60th President of the Minnesota State Auctioneers Association. I hold the CAI (Certified Auctioneers Institute) and AMM (Auction Marketing Management) designations.
 
 ## What I Write About
 
