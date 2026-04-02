@@ -25,7 +25,9 @@ Lessons from running a national trade association and building an auction compan
 
 | Date | Event | Topic | Format |
 |------|-------|-------|--------|
+| Nov 2026 | Indiana Auctioneers Association Annual Convention | Practical AI for the Auction Professional | 1.5 hr |
 | Apr 2026 | NAA Certified Auctioneers Institute (CAI) | Partnerships, Joint Ventures, and Referrals | 1.5 hr |
+| Mar 2026 | Sauk County Institute of Leadership (UW-Madison Extension) | AI for Leadership | 1 hr |
 | Mar 2026 | NAA Certified Auctioneers Institute (CAI) | Marketing & AI | 3.5 hr |
 | Mar 2026 | Schrader Real Estate & Auction Annual Meeting | Using AI Within the Auction Industry | 75 min |
 | Mar 2026 | World Wide College of Auctioneering | Auction Marketing: A Strategic Approach | Half day |
