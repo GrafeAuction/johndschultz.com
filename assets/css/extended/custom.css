@@ -339,6 +339,182 @@ code, pre, .post-content code, .post-content pre {
 }
 
 /* --------------------------------------------------------------------------
+   5b. About Page
+   -------------------------------------------------------------------------- */
+
+.about-page .post-title {
+  margin-bottom: var(--space-xl);
+}
+
+.about-lede p {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--accent);
+  margin-bottom: var(--space-xl);
+  line-height: 1.5;
+}
+
+.about-topics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin: var(--space-lg) 0 var(--space-xl);
+}
+
+.about-topic {
+  padding: var(--space-md) var(--space-lg);
+  border-left: 2px solid var(--accent);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.about-topic p {
+  margin: 0;
+}
+
+.about-connect {
+  display: flex;
+  gap: var(--space-xl);
+  margin-top: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.connect-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.connect-item:hover {
+  color: var(--accent);
+}
+
+.connect-item svg {
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.connect-item:hover svg {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   5c. Speaking Page
+   -------------------------------------------------------------------------- */
+
+.speaking-page .post-title {
+  margin-bottom: var(--space-xl);
+}
+
+.speaking-intro p {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.speaking-topics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin: var(--space-lg) 0 var(--space-2xl);
+}
+
+.topic-card {
+  padding: var(--space-lg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color 0.2s ease;
+}
+
+.topic-card:hover {
+  border-color: var(--accent);
+}
+
+.topic-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 var(--space-sm) 0;
+  color: var(--primary);
+}
+
+.topic-card p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--secondary);
+  margin: 0;
+}
+
+.speaking-engagements {
+  margin: var(--space-lg) 0 var(--space-2xl);
+}
+
+.engagement {
+  display: flex;
+  gap: var(--space-lg);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--border);
+  align-items: baseline;
+}
+
+.engagement:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.engagement-date {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--secondary);
+  white-space: nowrap;
+  min-width: 70px;
+  flex-shrink: 0;
+}
+
+.engagement-detail {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.engagement-detail strong {
+  color: var(--primary);
+}
+
+.speaking-cta {
+  border-top: 2px solid var(--accent);
+  padding-top: var(--space-xl);
+  margin-top: var(--space-2xl);
+}
+
+.speaking-cta p {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.speaking-cta a {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.speaking-cta a:hover {
+  color: var(--accent-light);
+}
+
+/* --------------------------------------------------------------------------
    6. Single Post (Reading Experience)
    -------------------------------------------------------------------------- */
 
@@ -681,6 +857,34 @@ a {
 
   .concepts-list .entry-header h2 {
     font-size: 1.3rem;
+  }
+
+  /* About page mobile */
+  .about-topics {
+    grid-template-columns: 1fr;
+  }
+
+  .about-lede p {
+    font-size: 1.2rem;
+  }
+
+  .about-connect {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  /* Speaking page mobile */
+  .speaking-topics {
+    grid-template-columns: 1fr;
+  }
+
+  .engagement {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .engagement-date {
+    min-width: auto;
   }
 
   .pullquote p {
