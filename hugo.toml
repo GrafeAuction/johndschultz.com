@@ -77,6 +77,10 @@ I write about leadership, decision-making, and what the auction industry teaches
       url = "/thoughts/"
 
     [[params.profileMode.buttons]]
+      name = "Concepts"
+      url = "/concepts/"
+
+    [[params.profileMode.buttons]]
       name = "About"
       url = "/about/"
 
@@ -103,6 +107,12 @@ I write about leadership, decision-making, and what the auction industry teaches
   name = "Thought Cards"
   url = "/thoughts/"
   weight = 20
+
+[[menu.main]]
+  identifier = "concepts"
+  name = "Concepts"
+  url = "/concepts/"
+  weight = 25
 
 [[menu.main]]
   identifier = "speaking"

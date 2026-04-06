@@ -283,6 +283,41 @@ code, pre, .post-content code, .post-content pre {
   margin-top: var(--space-xs);
 }
 
+/* --- Concepts: synthesis cards with bottom accent --- */
+.concepts-list .post-entry {
+  border-bottom: 2px solid var(--accent);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+.concepts-list .post-entry:last-child {
+  margin-bottom: 0;
+}
+
+.concepts-list .entry-header h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.concepts-list .post-entry:hover .entry-header h2 {
+  color: var(--accent);
+}
+
+.concepts-list .entry-content p {
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--secondary);
+  margin-top: var(--space-xs);
+}
+
+.concepts-list .entry-footer {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  margin-top: var(--space-xs);
+}
+
 /* --------------------------------------------------------------------------
    6. Single Post (Reading Experience)
    -------------------------------------------------------------------------- */
@@ -621,6 +656,10 @@ a {
   }
 
   .thoughts-list .entry-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .concepts-list .entry-header h2 {
     font-size: 1.3rem;
   }
 

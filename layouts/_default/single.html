@@ -49,14 +49,14 @@
       <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
       {{- end }}
     </ul>
-    {{- if and (.Param "ShowPostNavLinks") (and (ne .Section "essays") (ne .Section "thoughts")) }}
+    {{- if and (.Param "ShowPostNavLinks") (and (ne .Section "essays") (ne .Section "thoughts") (ne .Section "concepts")) }}
     {{- partial "post_nav_links.html" . }}
     {{- end }}
     {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
     {{- partial "share_icons.html" . -}}
     {{- end }}
 
-    {{- if or (eq .Section "essays") (eq .Section "thoughts") }}
+    {{- if or (eq .Section "essays") (eq .Section "thoughts") (eq .Section "concepts") }}
     <div class="post-subscribe">
       If this resonated, <a href="https://buttondown.com/schultz">subscribe</a> to get future pieces by email.
     </div>
