@@ -34,23 +34,21 @@
         <span>{{ .subtitle | markdownify }}</span>
         {{- partial "social_icons.html" -}}
 
-        {{- with .buttons }}
-        <div class="buttons">
-            {{- range . }}
-            <a class="button" href="{{ trim .url " " }}" rel="noopener" title="{{ .name }}">
-                <span class="button-inner">
-                    {{ .name }}
-                    {{- if (findRE "://" .url) }}&nbsp;
-                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="14" width="14">
-                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                        <path d="M15 3h6v6"></path>
-                        <path d="M10 14L21 3"></path>
-                    </svg>
+        {{- $recent := (where site.RegularPages "Section" "in" (slice "essays" "thoughts" "concepts")) | first 5 }}
+        {{- if $recent }}
+        <div class="recent-posts">
+            <h3>Recent</h3>
+            <ul>
+            {{- range $recent }}
+                <li>
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    {{- if .Description }}
+                    <span class="recent-desc">{{ .Description | truncate 100 }}</span>
                     {{- end }}
-                </span>
-            </a>
+                    <span class="recent-meta">{{ if eq .Section "essays" }}Essay{{ else if eq .Section "thoughts" }}Thought{{ else }}Concept{{ end }} · {{ .Date.Format "Jan 2" }}</span>
+                </li>
             {{- end }}
+            </ul>
         </div>
         {{- end }}
 
@@ -65,23 +63,7 @@
                 <input type="email" name="email" placeholder="your@email.com" required />
                 <button type="submit">Subscribe</button>
             </form>
-            <p class="subscribe-text">Get new essays, thoughts, and concepts by email.</p>
         </div>
-
-        {{- $recent := (where site.RegularPages "Section" "in" (slice "essays" "thoughts" "concepts")) | first 5 }}
-        {{- if $recent }}
-        <div class="recent-posts">
-            <h3>Recent</h3>
-            <ul>
-            {{- range $recent }}
-                <li>
-                    <span class="recent-label">{{ if eq .Section "essays" }}Essay{{ else if eq .Section "thoughts" }}Thought Card{{ else }}Concept{{ end }}</span>
-                    <a href="{{ .Permalink }}">{{ .Title }}</a>
-                </li>
-            {{- end }}
-            </ul>
-        </div>
-        {{- end }}
     </div>
     {{- end}}
 </div>

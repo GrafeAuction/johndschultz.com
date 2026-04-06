@@ -68,21 +68,6 @@ I write about leadership, decision-making, and what the auction industry teaches
     imageWidth = 120
     imageHeight = 120
 
-    [[params.profileMode.buttons]]
-      name = "Essays"
-      url = "/essays/"
-
-    [[params.profileMode.buttons]]
-      name = "Thought Cards"
-      url = "/thoughts/"
-
-    [[params.profileMode.buttons]]
-      name = "Concepts"
-      url = "/concepts/"
-
-    [[params.profileMode.buttons]]
-      name = "About"
-      url = "/about/"
 
   [params.cover]
     linkFullImages = true

@@ -118,21 +118,9 @@ code, pre, .post-content code, .post-content pre {
   font-size: 1.1rem;
 }
 
-/* Buttons: transparent, outlined */
-.profile .buttons .button {
-  background: transparent;
-  border: 1.5px solid var(--border);
-  transition: border-color 0.2s ease, color 0.2s ease;
-}
-
-.profile .buttons .button:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
 /* Subscribe form */
 .subscribe-home {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-xl);
   text-align: center;
 }
 
@@ -169,27 +157,21 @@ code, pre, .post-content code, .post-content pre {
 
 .subscribe-home .subscribe-form button {
   padding: 0.5rem 1.25rem;
-  border: none;
+  border: 1.5px solid var(--border);
   border-radius: var(--radius);
-  background: var(--accent);
-  color: #fff;
-  font-size: 14px;
+  background: transparent;
+  color: var(--primary);
+  font-size: 13px;
   font-family: var(--font-ui);
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
 .subscribe-home .subscribe-form button:hover {
-  background: var(--accent-light);
-}
-
-.subscribe-home .subscribe-text {
-  color: var(--secondary);
-  font-size: 13px;
-  font-family: var(--font-ui);
-  margin-top: var(--space-sm);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* Latest essay callout */
@@ -201,11 +183,11 @@ code, pre, .post-content code, .post-content pre {
 
 .recent-posts h3 {
   font-family: var(--font-ui);
-  font-size: 14px;
+  font-size: 13px;
   color: var(--secondary);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: var(--space-md);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-lg);
 }
 
 .recent-posts ul {
@@ -215,30 +197,40 @@ code, pre, .post-content code, .post-content pre {
 }
 
 .recent-posts li {
-  font-family: var(--font-body);
-  font-size: 15px;
-  margin-bottom: var(--space-sm);
-}
-
-.recent-posts .recent-label {
-  font-family: var(--font-ui);
-  font-size: 12px;
-  color: var(--secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  margin-right: var(--space-xs);
+  margin-bottom: var(--space-lg);
 }
 
 .recent-posts a {
+  font-family: var(--font-body);
+  font-size: 16px;
   color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-color: var(--accent);
   transition: color 0.2s ease;
+  display: block;
 }
 
 .recent-posts a:hover {
   color: var(--accent-light);
+}
+
+.recent-posts .recent-desc {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--secondary);
+  margin-top: 3px;
+  line-height: 1.4;
+}
+
+.recent-posts .recent-meta {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--secondary);
+  margin-top: 3px;
+  opacity: 0.7;
 }
 
 /* --------------------------------------------------------------------------
