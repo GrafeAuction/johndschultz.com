@@ -65,13 +65,21 @@
                 <input type="email" name="email" placeholder="your@email.com" required />
                 <button type="submit">Subscribe</button>
             </form>
-            <p class="subscribe-text">Get new essays and thoughts by email.</p>
+            <p class="subscribe-text">Get new essays, thoughts, and concepts by email.</p>
         </div>
 
-        {{- $latestEssay := (where site.RegularPages "Section" "essays" | first 1) }}
-        {{- range $latestEssay }}
-        <div class="latest-essay">
-            Latest: <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{- $recent := (where site.RegularPages "Section" "in" (slice "essays" "thoughts" "concepts")) | first 5 }}
+        {{- if $recent }}
+        <div class="recent-posts">
+            <h3>Recent</h3>
+            <ul>
+            {{- range $recent }}
+                <li>
+                    <span class="recent-label">{{ if eq .Section "essays" }}Essay{{ else if eq .Section "thoughts" }}Thought Card{{ else }}Concept{{ end }}</span>
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </li>
+            {{- end }}
+            </ul>
         </div>
         {{- end }}
     </div>

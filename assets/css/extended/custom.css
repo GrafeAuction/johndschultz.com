@@ -193,15 +193,43 @@ code, pre, .post-content code, .post-content pre {
 }
 
 /* Latest essay callout */
-.latest-essay {
-  margin-top: var(--space-lg);
+/* --- Recent posts on homepage --- */
+.recent-posts {
+  margin-top: var(--space-xl);
   text-align: center;
+}
+
+.recent-posts h3 {
   font-family: var(--font-ui);
   font-size: 14px;
   color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-md);
 }
 
-.latest-essay a {
+.recent-posts ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recent-posts li {
+  font-family: var(--font-body);
+  font-size: 15px;
+  margin-bottom: var(--space-sm);
+}
+
+.recent-posts .recent-label {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-right: var(--space-xs);
+}
+
+.recent-posts a {
   color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -209,7 +237,7 @@ code, pre, .post-content code, .post-content pre {
   transition: color 0.2s ease;
 }
 
-.latest-essay a:hover {
+.recent-posts a:hover {
   color: var(--accent-light);
 }
 
