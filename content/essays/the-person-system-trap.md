@@ -19,6 +19,8 @@ A few days later it hit me. I've been one of the few people who can maintain and
 
 ---
 
+## Same Trap, Different Company
+
 A few days after that call, I was on the phone with a friend in the auction space. He's been with a company where the founder built everything from scratch.
 
 But the founder is getting close to stepping back. The team resists change. Every time my friend raises the topic of what comes next, the conversation gets deflected. Not because the founder is selfish. He probably looks at what "modernizing" means and thinks, where would I even begin?
@@ -29,6 +31,8 @@ Two different businesses. Two different people. Same trap.
 
 ---
 
+## The Grip and the Surrender
+
 I've been thinking about this pattern, and it shows up in one of two ways.
 
 The first is the grip. This is the founder who holds everything because letting go feels like losing control. The person I was helping is this version. So is the company founder my friend works for. These aren't lazy people. They're usually the hardest workers in the building. But they never separated the valuable human judgment from the mundane operational routing that just happens to live in the same brain. Over time, the two become inseparable. Their competence becomes the company's constraint.
@@ -38,6 +42,8 @@ The second is the surrender. This is the person who hands everything to the tool
 Both versions are responses to the same thing: the pace of technological change. Some people freeze and grip tighter. Others overcorrect and hand everything over. The first group ends up irreplaceable in the wrong way. The second group ends up replaceable without knowing it.
 
 ---
+
+## What's Actually Left
 
 Here's what's actually happening underneath both failure modes.
 
@@ -50,6 +56,8 @@ I think the answer is judgment. The ability to read a situation, make a call tha
 So protecting the human element takes deliberate effort. The judgment, the critical thinking, the relationships. None of it survives on autopilot. The default is technology replacing humans, because it's faster and cheaper and doesn't need to be convinced.
 
 ---
+
+## The Intentional Version
 
 So what does the intentional version look like?
 
@@ -66,6 +74,8 @@ I built it so I could copy and paste. But it's hard to do that based on how it w
 That friction is the point. I don't want a tool that replaces my thinking. I want one that makes me think harder. The distinction sounds small. In practice, it's the difference between the grip and the surrender.
 
 ---
+
+## The Scariest Gap
 
 The question I keep circling is whether this is teachable.
 
