@@ -17,7 +17,7 @@ I had an interesting conversation recently with a colleague about whether auctio
 
 This isn't just theory. It creates real problems.
 
-Take used equipment sales. The same machine can bring wildly different prices depending on who's selling it. A specialized dealer with an established buyer list? They've got a huge advantage. Their marketing hits the target every time. They know exactly where their buyers are. But a first-time seller? They're throwing everything at the wall hoping something sticks. The result: massive price variations for identical assets.
+Take used equipment sales. The same machine can bring wildly different prices depending on who's selling it. A specialized dealer with an established buyer list? They've got a huge advantage. Their marketing hits the target every time. They know exactly where their buyers are. But a first-time seller? They're throwing everything at the wall hoping something sticks. The result: massive price variations for the same piece of equipment.
 
 The obvious answer is to spend more on advertising. But that's just throwing money at the problem, not solving it.
 
@@ -25,7 +25,7 @@ The obvious answer is to spend more on advertising. But that's just throwing mon
 
 ## Smarter, Not More
 
-We need smarter marketing, not more marketing. This means understanding where your buyers actually spend their time and meeting them there. Good strategy can definitely improve your reach. But even the best traditional approach hits a ceiling. Budgets, timelines, and market inefficiencies limit what we can achieve.
+We need smarter marketing, not more marketing. This means understanding where our buyers actually spend their time and meeting them there. Good strategy can definitely improve our reach. But even the best traditional approach hits a ceiling, and we run into budget limits and timing problems that cap what's possible.
 
 So if small improvements aren't enough, we need to think differently.
 
@@ -43,9 +43,9 @@ These questions force you out of the standard playbook. For Grafe, this has mean
 
 Charlie Munger had it right: "Fish where the fish are."
 
-Maybe the answer isn't being a slightly better fisherman in the same overfished pond. Maybe it's finding your own lake. Build a dedicated community in your niche, and you create your own market. True market value becomes less of a ghost to chase because you've built a place where value is consistently understood and realized.
+Maybe the answer isn't being a slightly better fisherman in the same overfished pond. Maybe it's finding your own lake. Build a dedicated community in your niche, and you create your own market. True market value becomes less of a ghost to chase because you've built a place where value actually gets found.
 
-The bottom line: We might never achieve perfect market saturation. But by building trusted communities and targeting the right buyers intelligently, we can get a lot closer to real value discovery than the current spray-and-pray approach most of the industry uses.
+The bottom line: We might never achieve perfect market saturation. But by building trusted communities and targeting the right buyers intelligently, we can get a lot closer to real value discovery than the current spray-and-pray approach that's easy to fall into.
 
 ---
 

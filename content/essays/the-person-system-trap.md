@@ -19,9 +19,9 @@ A few days later it hit me. I've been one of the few people who can maintain and
 
 ---
 
-A few days after that call, I was on the phone with a friend in the auction space. He's been with the same company for a long time. Sharp mind for technology and operations. The kind of person who sees how the pieces fit together.
+A few days after that call, I was on the phone with a friend in the auction space. He's been with a company where the founder built everything from scratch.
 
-But the company's founder is getting close to retirement. The workforce resists new technology. Every time my friend raises the topic of succession or modernization, the conversation gets deflected. Not because the founder is selfish. He probably looks at what "modernizing" means and thinks, where would I even begin?
+But the founder is getting close to stepping back. The team resists change. Every time my friend raises the topic of what comes next, the conversation gets deflected. Not because the founder is selfish. He probably looks at what "modernizing" means and thinks, where would I even begin?
 
 So my friend is stuck. He's got the skills to build something new, but he's working inside a company that can't imagine what comes after the person who built it.
 
@@ -33,9 +33,9 @@ I've been thinking about this pattern, and it shows up in one of two ways.
 
 The first is the grip. This is the founder who holds everything because letting go feels like losing control. The person I was helping is this version. So is the company founder my friend works for. These aren't lazy people. They're usually the hardest workers in the building. But they never separated the valuable human judgment from the mundane operational routing that just happens to live in the same brain. Over time, the two become inseparable. Their competence becomes the company's constraint.
 
-The second is the surrender. This is the person who hands everything to the tool and stops thinking. Social selling platforms are full of this version right now. Countdown timers, competitive bidding, property transferring to the highest bidder. The platforms handle the mechanics. The sellers skip the legal framework, the ethical structure, the professional judgment that separates a real auction from a garage sale with a timer on it. They didn't grip too tight. They let go of things they never understood they were holding.
+The second is the surrender. This is the person who hands everything to the tool and stops thinking. Social selling platforms are full of this version right now. Countdown timers, competitive bidding, items going to the highest bidder. The platforms handle the mechanics. The sellers skip the legal framework, the ethical structure, the professional judgment that separates a real auction from a garage sale with a timer on it. They didn't grip too tight. They let go of things they never understood they were holding.
 
-Both versions are responses to the same thing: the overwhelming pace of technological change. Some people freeze and grip tighter. Others overcorrect and hand everything over. The first group ends up irreplaceable in the wrong way. The second group ends up replaceable without knowing it.
+Both versions are responses to the same thing: the pace of technological change. Some people freeze and grip tighter. Others overcorrect and hand everything over. The first group ends up irreplaceable in the wrong way. The second group ends up replaceable without knowing it.
 
 ---
 
@@ -47,7 +47,7 @@ So the question becomes: what's left?
 
 I think the answer is judgment. The ability to read a situation, make a call that a system can't make, and take responsibility for the outcome. That's the part of being an auctioneer (or any professional) that doesn't come apart. But here's the problem: judgment is invisible until something goes wrong. Nobody notices the experienced auctioneer's decision to pull a lot, restructure terms, or walk away from a bad deal. They notice the sale price. And the platform can show you a sale price too.
 
-So protecting the human element requires intentionality. The judgment, the critical thinking, the relationships. None of it survives on autopilot. The default is technology replacing humans, because it's faster and cheaper and doesn't need to be convinced.
+So protecting the human element takes deliberate effort. The judgment, the critical thinking, the relationships. None of it survives on autopilot. The default is technology replacing humans, because it's faster and cheaper and doesn't need to be convinced.
 
 ---
 
