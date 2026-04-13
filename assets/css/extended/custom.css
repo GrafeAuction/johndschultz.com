@@ -8,10 +8,22 @@
    -------------------------------------------------------------------------- */
 
 :root {
-  /* Accent palette */
-  --accent: #B45309;
-  --accent-light: #D97706;
-  --accent-subtle: #FEF3C7;
+  /* Flexoki base palette (light mode) */
+  --theme: #FFFCF0;
+  --entry: #FFFCF0;
+  --primary: #100F0F;
+  --secondary: #575653;
+  --tertiary: #DAD8CE;
+  --content: #100F0F;
+  --code-block-bg: #1C1B1A;
+  --code-bg: #F2F0E5;
+  --border: #E6E4D9;
+  color-scheme: light;
+
+  /* Flexoki Orange accent */
+  --accent: #BC5215;
+  --accent-light: #DA702C;
+  --accent-subtle: #F2E5BC;
 
   /* Typography stacks */
   --font-heading: 'Newsreader', Georgia, 'Times New Roman', serif;
@@ -29,10 +41,24 @@
   --space-3xl: 4rem;
 }
 
-.dark {
-  --accent: #D97706;
-  --accent-light: #F59E0B;
-  --accent-subtle: rgba(180, 83, 9, 0.15);
+.dark,
+:root[data-theme="dark"] {
+  /* Flexoki base palette (dark mode) */
+  --theme: #100F0F;
+  --entry: #1C1B1A;
+  --primary: #CECDC3;
+  --secondary: #878580;
+  --tertiary: #403E3C;
+  --content: #DAD8CE;
+  --code-block-bg: #1C1B1A;
+  --code-bg: #282726;
+  --border: #343331;
+  color-scheme: dark;
+
+  /* Flexoki Orange accent (dark mode) */
+  --accent: #DA702C;
+  --accent-light: #E89455;
+  --accent-subtle: rgba(218, 112, 44, 0.15);
 }
 
 /* --------------------------------------------------------------------------
@@ -50,8 +76,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .post-content {
   font-family: var(--font-body);
-  font-size: 1.05rem;
-  line-height: 1.85;
+  font-size: 1.15rem;
+  line-height: 1.75;
 }
 
 .post-content h2,
@@ -88,8 +114,9 @@ code, pre, .post-content code, .post-content pre {
 #menu a {
   font-family: var(--font-ui);
   font-size: 14px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   transition: color 0.2s ease;
 }
 
@@ -520,7 +547,7 @@ code, pre, .post-content code, .post-content pre {
 
 .post-title {
   font-family: var(--font-heading);
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   font-weight: 600;
 }
 
@@ -698,7 +725,7 @@ code, pre, .post-content code, .post-content pre {
 
 .post-single.speaking .post-content > p:last-of-type a[href^="mailto"]:hover {
   background: var(--accent);
-  color: #fff;
+  color: #FFFCF0;
 }
 
 /* --------------------------------------------------------------------------
@@ -810,7 +837,7 @@ a {
    -------------------------------------------------------------------------- */
 
 .dark .subscribe-home .subscribe-form button {
-  color: #fff;
+  color: #CECDC3;
 }
 
 .dark .post-single.essays .post-content > p:first-of-type::first-letter {
