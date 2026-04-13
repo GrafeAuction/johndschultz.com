@@ -77,6 +77,11 @@ Why the person one step ahead in the fog teaches better than the expert who mapp
 
 <div class="engagement">
 <span class="engagement-date">Apr 2026</span>
+<span class="engagement-detail"><strong>Nebraska Auctioneers Association Conference</strong> · Marketing in a Changed World + The AI Advantage · 3 hr</span>
+</div>
+
+<div class="engagement">
+<span class="engagement-date">Apr 2026</span>
 <span class="engagement-detail"><strong>NAA Certified Auctioneers Institute (CAI)</strong> · Partnerships, Joint Ventures, and Referrals · 1.5 hr</span>
 </div>
 

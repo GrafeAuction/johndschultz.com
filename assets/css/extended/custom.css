@@ -229,7 +229,7 @@ code, pre, .post-content code, .post-content pre {
 
 .recent-posts a {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 17px;
   color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -245,7 +245,7 @@ code, pre, .post-content code, .post-content pre {
 .recent-posts .recent-desc {
   display: block;
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 15px;
   color: var(--secondary);
   margin-top: 3px;
   line-height: 1.4;
@@ -394,7 +394,7 @@ code, pre, .post-content code, .post-content pre {
   padding: var(--space-md) var(--space-lg);
   border-left: 2px solid var(--accent);
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.6;
 }
 
@@ -444,7 +444,7 @@ code, pre, .post-content code, .post-content pre {
 
 .speaking-intro p {
   font-family: var(--font-body);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   line-height: 1.7;
 }
 
@@ -476,7 +476,7 @@ code, pre, .post-content code, .post-content pre {
 
 .topic-card p {
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   line-height: 1.6;
   color: var(--secondary);
   margin: 0;
@@ -509,7 +509,7 @@ code, pre, .post-content code, .post-content pre {
 
 .engagement-detail {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.5;
 }
 
@@ -525,7 +525,7 @@ code, pre, .post-content code, .post-content pre {
 
 .speaking-cta p {
   font-family: var(--font-body);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   line-height: 1.7;
 }
 
@@ -555,7 +555,7 @@ code, pre, .post-content code, .post-content pre {
   font-family: var(--font-body);
   font-style: italic;
   opacity: 0.8;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }
 
 .post-meta {
