@@ -1,11 +1,13 @@
 ---
-title: "1% Life, 1% Work"
+title: "1% Life, 1% Sacrifice"
 date: 2026-05-05
 description: "Gary Vee names the missing face of 1-percenter mode: sacrifice, what you subtract to make room for what you add. No shortcut at the elite tier."
 tags: ["principles", "work-ethic", "leadership"]
 ShowToc: false
 ShowReadingTime: true
 draft: false
+aliases:
+  - /thoughts/one-percent-life-one-percent-work/
 ---
 
 > "I just don't understand how people are asking for a 1% life without understanding it takes 1% sacrifice effort. You have to be a 1-percenter if you want a 1% outcome..."
