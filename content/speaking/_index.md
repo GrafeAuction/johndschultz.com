@@ -76,6 +76,11 @@ Why the person one step ahead in the fog teaches better than the expert who mapp
 </div>
 
 <div class="engagement">
+<span class="engagement-date">May 2026</span>
+<span class="engagement-detail"><strong>Industrial Auctioneers Association European Members' Meeting</strong> · Rome · AI for Industrial Auctioneers · 1 hr</span>
+</div>
+
+<div class="engagement">
 <span class="engagement-date">Apr 2026</span>
 <span class="engagement-detail"><strong>Nebraska Auctioneers Association Conference</strong> · Marketing in a Changed World + The AI Advantage · 3 hr</span>
 </div>
