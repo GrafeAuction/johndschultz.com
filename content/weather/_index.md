@@ -1,5 +1,5 @@
 ---
-title: "NWI Weather"
+title: "Weather"
 layout: "list"
 summary: "On-demand Nice Weather Index (NWI) comfort checker."
 hideMeta: true
@@ -14,7 +14,7 @@ sitemap:
 <div class="nwi-glass-card">
 <div class="nwi-header">
 <div class="nwi-title-area">
-<h1>Nice Weather Index <span class="nwi-beta-badge">NWI</span></h1>
+<h1>Nice Weather Index</h1>
 <p class="nwi-subtitle">On-Demand Comfort Index & Action Plan</p>
 </div>
 <div class="nwi-location-info">
@@ -75,16 +75,6 @@ Loading outdoor activity recommendations...
 </div>
 </div>
 <div class="nwi-timeline-legend">
-  <div class="nwi-comfort-scale">
-    <div class="nwi-scale-bar"></div>
-    <div class="nwi-scale-labels">
-      <span>Unpleasant</span>
-      <span>Mediocre</span>
-      <span>Pleasant</span>
-      <span>Great</span>
-      <span>Glorious</span>
-    </div>
-  </div>
   <div class="nwi-indicator-legend">
     <div class="nwi-legend-item">
       <span class="nwi-indicator-dot active-window" style="display:inline-block; width: 8px; height: 8px; border-radius: 50%;"></span>
@@ -171,16 +161,6 @@ line-height: 1.1;
 display: flex;
 align-items: center;
 gap: 0.75rem;
-}
-.nwi-beta-badge {
-font-size: 0.75rem;
-font-weight: 700;
-background: linear-gradient(135deg, #70A6FF, #0055FF);
-color: #fff;
-padding: 0.2rem 0.6rem;
-border-radius: 12px;
-text-transform: uppercase;
-letter-spacing: 0.05em;
 }
 .nwi-subtitle {
 font-size: 1rem;
@@ -586,42 +566,11 @@ color: #0055ff;
 .dark .nwi-timeline-legend {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
-.nwi-comfort-scale {
-  width: 100%;
-  max-width: 480px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.nwi-scale-bar {
-  height: 8px;
-  border-radius: 4px;
-  background: linear-gradient(to right, #64748b 0%, #6366f1 25%, #10b981 50%, #3b82f6 75%, #f97316 100%);
-  width: 100%;
-}
-.nwi-scale-labels {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0 2px;
-}
-.nwi-scale-labels span {
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: #86868b;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-}
 .nwi-indicator-legend {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
   width: 100%;
-  border-top: 1px dashed rgba(0, 0, 0, 0.08);
-  padding-top: 1rem;
-}
-.dark .nwi-indicator-legend {
-  border-top: 1px dashed rgba(255, 255, 255, 0.08);
 }
 .nwi-legend-item {
   display: flex;
