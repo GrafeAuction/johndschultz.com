@@ -87,30 +87,7 @@ Loading outdoor activity recommendations...
   </div>
 </div>
 </div>
-<!-- Hourly Snapshots -->
-<div class="nwi-section-title">🕒 Comfort Snapshots</div>
-<div class="nwi-snapshots-grid">
-<div class="nwi-snapshot-card">
-<div class="nwi-snap-time">8:00 AM</div>
-<div id="nwi-snap-score-8a" class="nwi-snap-score">-.--</div>
-<div id="nwi-snap-details-8a" class="nwi-snap-details">--°F | Dew: --°F<br>-- mph | --</div>
-</div>
-<div class="nwi-snapshot-card">
-<div class="nwi-snap-time">12:00 PM</div>
-<div id="nwi-snap-score-12p" class="nwi-snap-score">-.--</div>
-<div id="nwi-snap-details-12p" class="nwi-snap-details">--°F | Dew: --°F<br>-- mph | --</div>
-</div>
-<div class="nwi-snapshot-card">
-<div class="nwi-snap-time">4:00 PM</div>
-<div id="nwi-snap-score-4p" class="nwi-snap-score">-.--</div>
-<div id="nwi-snap-details-4p" class="nwi-snap-details">--°F | Dew: --°F<br>-- mph | --</div>
-</div>
-<div class="nwi-snapshot-card">
-<div class="nwi-snap-time">8:00 PM</div>
-<div id="nwi-snap-score-8p" class="nwi-snap-score">-.--</div>
-<div id="nwi-snap-details-8p" class="nwi-snap-details">--°F | Dew: --°F<br>-- mph | --</div>
-</div>
-</div>
+
 </div>
 </div>
 <style>
@@ -621,64 +598,7 @@ transform: translate(-50%, -100%) translateY(0);
 .bg-pleasant { background: linear-gradient(to top, #059669, #34d399); }
 .bg-mediocre { background: linear-gradient(to top, #4f46e5, #818cf8); }
 .bg-unpleasant { background: linear-gradient(to top, #475569, #94a3b8); }
-/* Snapshots Layout */
-.nwi-snapshots-grid {
-display: grid !important;
-grid-template-columns: repeat(4, 1fr) !important;
-gap: 1.2rem !important;
-width: 100% !important;
-box-sizing: border-box;
-}
-@media (max-width: 768px) {
-.nwi-snapshots-grid {
-grid-template-columns: repeat(2, 1fr) !important;
-}
-}
-@media (max-width: 480px) {
-.nwi-snapshots-grid {
-grid-template-columns: 1fr !important;
-}
-}
-.nwi-snapshot-card {
-background: #ffffff;
-border: 1px solid rgba(0, 0, 0, 0.08);
-border-radius: 18px;
-padding: 1.5rem 1.2rem;
-text-align: center;
-transition: all 0.2s ease;
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-}
-.dark .nwi-snapshot-card {
-background: rgba(255, 255, 255, 0.02);
-border: 1px solid rgba(255, 255, 255, 0.08);
-box-shadow: none;
-}
-.nwi-snapshot-card:hover {
-transform: translateY(-3px);
-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
-}
-.nwi-snap-time {
-font-size: 0.85rem;
-font-weight: 700;
-color: #86868b;
-text-transform: uppercase;
-margin-bottom: 0.6rem;
-}
-.nwi-snap-score {
-font-size: 1.8rem;
-font-weight: 800;
-letter-spacing: -0.03em;
-margin-bottom: 0.6rem;
-}
-.nwi-snap-details {
-font-size: 0.8rem;
-line-height: 1.4;
-color: #515154;
-font-weight: 500;
-}
-.dark .nwi-snap-details {
-color: #d2d2d7;
-}
+
 /* Dynamic color definitions */
 .color-glorious { color: #f97316; }
 .color-great { color: #3b82f6; }
@@ -963,31 +883,7 @@ document.getElementById("nwi-advice-windows").innerHTML = windowsAdvice;
 // Action Plan: Outdoor Advice
 const outdoorAdvice = calculateOutdoorAdvice(hourly);
 document.getElementById("nwi-advice-outdoors").innerHTML = outdoorAdvice;
-// 3. Hourly Snapshot Cards (8am, 12pm, 4pm, 8pm)
-const hours = [8, 12, 16, 20];
-const hourIds = ["8a", "12p", "4p", "8p"];
-hours.forEach((h, index) => {
-const id = hourIds[index];
-// Clamp snap hours within available response limits
-const safeH = Math.min(h, hourlyLen - 1);
-if (safeH < 0) return;
-const t = hourly.temperature_2m?.[safeH] ?? 70;
-const dp = hourly.dewpoint_2m?.[safeH] ?? 50;
-const p = hourly.precipitation_probability?.[safeH] ?? 0;
-const w = hourly.wind_speed_10m?.[safeH] ?? 5;
-const wc = hourly.weathercode?.[safeH] ?? 0;
-const hScore = calculateNwiScore(t, dp, p, w, wc);
-const hClass = getNwiClassification(hScore);
-const hText = getWeatherWmoText(wc);
-const scoreEl = document.getElementById(`nwi-snap-score-${id}`);
-scoreEl.innerText = hScore.toFixed(1);
-scoreEl.className = `nwi-snap-score ${hClass.class}`;
-document.getElementById(`nwi-snap-details-${id}`).innerHTML = 
-`<strong>${Math.round(t)}°F</strong> | Dew: <strong>${Math.round(dp)}°F</strong><br>` +
-`Wind: <strong>${Math.round(w)} mph</strong><br>` +
-`<span style="color:#86868b">${hText} (${p}%)</span>`;
-});
-// 4. Render 24-Hour Timeline Chart
+// 3. Render 24-Hour Timeline Chart
 renderNwiTimeline(hourly);
 } catch (err) {
 console.error("Dashboard calculation error:", err);
