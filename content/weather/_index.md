@@ -32,6 +32,12 @@ sitemap:
 <div id="nwi-search-results" class="nwi-search-results-dropdown"></div>
 </div>
 </div>
+<!-- Day Selector Filters -->
+<div class="nwi-day-filters">
+<button id="nwi-day-today" class="nwi-day-btn active" onclick="setNwiDay(0)">Today</button>
+<button id="nwi-day-tomorrow" class="nwi-day-btn" onclick="setNwiDay(1)">Tomorrow</button>
+<button id="nwi-day-next" class="nwi-day-btn" onclick="setNwiDay(2)">Next Day</button>
+</div>
 <!-- Main Score Display -->
 <div class="nwi-main-dashboard">
 <div id="nwi-hero-gradient" class="nwi-hero-card">
@@ -52,7 +58,7 @@ sitemap:
 </div>
 </div>
 <!-- Action Plan Card -->
-<div class="nwi-section-title">⚡ Today's Action Plan</div>
+<div id="nwi-action-title" class="nwi-section-title">⚡ Today's Action Plan</div>
 <div class="nwi-action-plan-grid">
 <div class="nwi-action-card">
 <div id="nwi-advice-windows" class="nwi-action-content">
@@ -66,7 +72,7 @@ Loading outdoor activity recommendations...
 </div>
 </div>
 <!-- 24-Hour Timeline Section -->
-<div class="nwi-section-title">📈 24-Hour Comfort Timeline</div>
+<div id="nwi-timeline-title" class="nwi-section-title">📈 24-Hour Comfort Timeline</div>
 <div class="nwi-timeline-card">
 <div id="nwi-timeline-tooltip" class="nwi-timeline-tooltip"></div>
 <div class="nwi-timeline-scroll-container">
@@ -610,6 +616,52 @@ transform: translate(-50%, -100%) translateY(0);
 .dark .color-pleasant { color: #34d399; }
 .dark .color-mediocre { color: #818cf8; }
 .dark .color-unpleasant { color: #94a3b8; }
+
+/* Day Selector Filters */
+.nwi-day-filters {
+  display: flex;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 14px;
+  padding: 4px;
+  margin-bottom: 2rem;
+  width: fit-content;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+.dark .nwi-day-filters {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+.nwi-day-btn {
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #86868b;
+  outline: none;
+}
+.dark .nwi-day-btn {
+  color: #86868b;
+}
+.nwi-day-btn:hover {
+  color: #1d1d1f;
+}
+.dark .nwi-day-btn:hover {
+  color: #fff;
+}
+.nwi-day-btn.active {
+  background: #ffffff;
+  color: #1d1d1f;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.dark .nwi-day-btn.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
 </style>
 <!-- SVG Gradients for circular gauge -->
 <svg style="width:0; height:0; position:absolute;" aria-hidden="true" focusable="false">
@@ -643,6 +695,8 @@ home: { lat: 43.71, lon: -92.28, name: "Grand Meadow, MN (Home)" },
 office: { lat: 43.86, lon: -92.19, name: "Stewartville, MN (Office)" }
 };
 let currentNwiLocation = nwiLocations.home;
+let currentWeatherData = null;
+let selectedDayIndex = 0;
 // Execute calculations on page load
 document.addEventListener("DOMContentLoaded", () => {
 fetchNwiWeather(currentNwiLocation.lat, currentNwiLocation.lon, currentNwiLocation.name);
@@ -653,6 +707,32 @@ document.getElementById("nwi-search-results").style.display = "none";
 }
 });
 });
+function setNwiDay(dayIndex) {
+selectedDayIndex = dayIndex;
+document.querySelectorAll(".nwi-day-btn").forEach((btn, idx) => {
+if (idx === dayIndex) {
+btn.classList.add("active");
+} else {
+btn.classList.remove("active");
+}
+});
+if (currentWeatherData) {
+renderNwiDashboard(currentWeatherData);
+}
+}
+function sliceHourlyForDay(hourly, dayIndex) {
+const sliced = {};
+const start = dayIndex * 24;
+const end = start + 24;
+for (const key in hourly) {
+if (Array.isArray(hourly[key])) {
+sliced[key] = hourly[key].slice(start, end);
+} else {
+sliced[key] = hourly[key];
+}
+}
+return sliced;
+}
 function calculateNwiScore(temp, dewPoint, precipProb, windSpeed, weatherCode) {
 // 1. Temperature Score (30%) - Continuous Bounds
 let tempScore = 0;
@@ -724,10 +804,7 @@ if (code >= 95 && code <= 99) return "Thunderstorm";
 return "Overcast";
 }
 function formatHourAmPm(h) {
-if (h === 0) return "12:00 AM";
-if (h === 12) return "12:00 PM";
-if (h > 12) return `${h - 12}:00 PM`;
-return `${h}:00 AM`;
+return `${h.toString().padStart(2, "0")}:00`;
 }
 function setNwiLocation(tabId, lat, lon, name) {
 // Update active tab styles
@@ -818,13 +895,14 @@ document.getElementById("nwi-score-num").innerText = "-.-";
 document.getElementById("nwi-classification-text").innerText = "Calculating...";
 document.getElementById("nwi-summary-stats").innerText = "Connecting to Open-Meteo...";
 document.getElementById("nwi-gauge-fill").style.strokeDashoffset = "339.29"; // 0 progress
-const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode,dewpoint_2m_mean,wind_speed_10m_max&hourly=temperature_2m,relative_humidity_2m,dewpoint_2m,precipitation_probability,weathercode,wind_speed_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=auto&forecast_days=1`;
+const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode,dewpoint_2m_mean,wind_speed_10m_max&hourly=temperature_2m,relative_humidity_2m,dewpoint_2m,precipitation_probability,weathercode,wind_speed_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=auto&forecast_days=3`;
 fetch(weatherUrl)
 .then(res => {
 if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
 return res.json();
 })
 .then(data => {
+currentWeatherData = data;
 renderNwiDashboard(data);
 })
 .catch(err => {
@@ -840,7 +918,18 @@ if (!data || !data.hourly || !data.daily) {
 throw new Error(data?.reason || "Received an invalid or truncated dataset from Open-Meteo.");
 }
 const daily = data.daily;
-const hourly = data.hourly;
+const hourlyAll = data.hourly;
+// Get data sliced specifically for the selected day (24 hours)
+const hourly = sliceHourlyForDay(hourlyAll, selectedDayIndex);
+// Update section titles dynamically
+const actionTitleEl = document.getElementById("nwi-action-title");
+const timelineTitleEl = document.getElementById("nwi-timeline-title");
+if (actionTitleEl) {
+actionTitleEl.innerText = selectedDayIndex === 0 ? "⚡ Today's Action Plan" : (selectedDayIndex === 1 ? "⚡ Tomorrow's Action Plan" : "⚡ Next Day's Action Plan");
+}
+if (timelineTitleEl) {
+timelineTitleEl.innerText = selectedDayIndex === 0 ? "📈 24-Hour Comfort Timeline" : (selectedDayIndex === 1 ? "📈 Tomorrow's Comfort Timeline" : "📈 Next Day's Comfort Timeline");
+}
 // 1. Calculate Current Score with boundary checks
 const hourlyLen = hourly.temperature_2m?.length || 0;
 if (hourlyLen === 0) {
@@ -866,22 +955,25 @@ fillEl.style.stroke = `url(#${classification.grad})`;
 const offset = 339.29 - (339.29 * (currentNwi / 10));
 fillEl.style.strokeDashoffset = offset;
 fillEl.setAttribute("stroke-dashoffset", offset);
-// Conditions Text Summary with safe defaults
+// Conditions Text Summary with safe defaults based on selectedDayIndex
 const weatherText = getWeatherWmoText(currentWeatherCode);
-const dailyTempMax = daily.temperature_2m_max?.[0] ?? 75;
-const dailyTempMin = daily.temperature_2m_min?.[0] ?? 55;
-const dailyWeatherCode = daily.weathercode?.[0] ?? 0;
-const dailyPrecipProbMax = daily.precipitation_probability_max?.[0] ?? 0;
+const dailyTempMax = daily.temperature_2m_max?.[selectedDayIndex] ?? 75;
+const dailyTempMin = daily.temperature_2m_min?.[selectedDayIndex] ?? 55;
+const dailyWeatherCode = daily.weathercode?.[selectedDayIndex] ?? 0;
+const dailyPrecipProbMax = daily.precipitation_probability_max?.[selectedDayIndex] ?? 0;
 const dailyWeatherText = getWeatherWmoText(dailyWeatherCode);
+// Format time label contextually
+const hourLabel = formatHourAmPm(currentHour);
+const timeLabel = selectedDayIndex === 0 ? "Current" : (selectedDayIndex === 1 ? `Tomorrow at ${hourLabel}` : `Next Day at ${hourLabel}`);
 document.getElementById("nwi-summary-stats").innerHTML = 
-`Current: <strong>${Math.round(currentTemp)}°F</strong> | Dew Point: <strong>${Math.round(currentDewPoint)}°F</strong> | Wind: <strong>${Math.round(currentWindSpeed)} mph</strong><br>` +
+`${timeLabel}: <strong>${Math.round(currentTemp)}°F</strong> | Dew Point: <strong>${Math.round(currentDewPoint)}°F</strong> | Wind: <strong>${Math.round(currentWindSpeed)} mph</strong><br>` +
 `Sky: <strong>${weatherText}</strong> (Precip: <strong>${currentPrecipProb}%</strong>)<br>` +
 `<span style="font-size: 0.85rem; opacity: 0.8;">Forecast: <strong>${Math.round(dailyTempMin)}°F to ${Math.round(dailyTempMax)}°F</strong> | Sky: <strong>${dailyWeatherText}</strong> (Max Precip: <strong>${dailyPrecipProbMax}%</strong>)</span>`;
-// 2. Action Plan: Windows Advice
-const windowsAdvice = calculateWindowsAdvice(hourly);
+// 2. Action Plan: Windows & Outdoor Advice
+const dayWord = selectedDayIndex === 0 ? "today" : (selectedDayIndex === 1 ? "tomorrow" : "the next day");
+const windowsAdvice = calculateWindowsAdvice(hourly, dayWord);
 document.getElementById("nwi-advice-windows").innerHTML = windowsAdvice;
-// Action Plan: Outdoor Advice
-const outdoorAdvice = calculateOutdoorAdvice(hourly);
+const outdoorAdvice = calculateOutdoorAdvice(hourly, dayWord);
 document.getElementById("nwi-advice-outdoors").innerHTML = outdoorAdvice;
 // 3. Render 24-Hour Timeline Chart
 renderNwiTimeline(hourly);
@@ -893,7 +985,7 @@ document.getElementById("nwi-summary-stats").innerHTML =
 `<pre style="font-size: 0.75rem; text-align: left; background: rgba(0,0,0,0.05); padding: 0.5rem; border-radius: 8px; margin-top: 0.5rem; overflow-x: auto;">${err.stack}</pre>`;
 }
 }
-function calculateWindowsAdvice(hourly) {
+function calculateWindowsAdvice(hourly, dayWord) {
 const comfortableHours = [];
 let rainRisk = false;
 let highHumid = false;
@@ -932,7 +1024,7 @@ const lastComma = reasonStr.lastIndexOf(", ");
 reasonStr = reasonStr.substring(0, lastComma) + ", and " + reasonStr.substring(lastComma + 2);
 }
 return `<div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🚪 Windows Closed</div>` +
-`<span style="color: #ef4444; font-weight: 700;">Keep windows closed today</span> due to ${reasonStr || "uncomfortable weather"}.`;
+`<span style="color: #ef4444; font-weight: 700;">Keep windows closed ${dayWord}</span> due to ${reasonStr || "uncomfortable weather"}.`;
 }
 // Group into continuous ranges
 const ranges = [];
@@ -948,11 +1040,11 @@ prev = comfortableHours[i];
 }
 }
 ranges.push([start, prev]);
-const rangeStrings = ranges.map(([s, e]) => `${formatHourAmPm(s)} – ${formatHourAmPm(e + 1 === 24 ? 23 : e + 1)}`);
+const rangeStrings = ranges.map(([s, e]) => `${formatHourAmPm(s)} – ${formatHourAmPm(e + 1)}`);
 return `<div style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #10b981;">🚪 Windows Open</div>` +
-`Ideal window hours today: <strong style="color: #10b981;">${rangeStrings.join(", ")}</strong>. Keep windows open during these times for crisp, comfortable indoor ventilation.`;
+`Ideal window hours ${dayWord}: <strong style="color: #10b981;">${rangeStrings.join(", ")}</strong>. Keep windows open during these times for crisp, comfortable indoor ventilation.`;
 }
-function calculateOutdoorAdvice(hourly) {
+function calculateOutdoorAdvice(hourly, dayWord) {
 const hourlyScores = [];
 let maxScore = 0;
 const len = Math.min(24, hourly.temperature_2m?.length || 0);
@@ -970,11 +1062,11 @@ const threshold = maxScore >= 6.0 ? 6.0 : maxScore - 0.8;
 const comfortableHours = hourlyScores.filter(h => h.score >= threshold).map(h => h.hour);
 if (maxScore < 4.5) {
 return `<div style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #ef4444;">🌳 Outdoor Window</div>` +
-`<span style="color: #ef4444; font-weight: 700;">No comfortable outdoor windows today</span> due to unpleasant weather. Keep outdoor plans short and stay comfortable inside.`;
+`<span style="color: #ef4444; font-weight: 700;">No comfortable outdoor windows ${dayWord}</span> due to unpleasant weather. Keep outdoor plans short and stay comfortable inside.`;
 }
 if (comfortableHours.length === 0) {
 return `<div style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #0071e3;">🌳 Outdoor Window</div>` +
-`No ideal outdoor windows today. Minimize outdoor activities if possible.`;
+`No ideal outdoor windows ${dayWord}. Minimize outdoor activities if possible.`;
 }
 const ranges = [];
 let start = comfortableHours[0];
@@ -989,11 +1081,11 @@ prev = comfortableHours[i];
 }
 }
 ranges.push([start, prev]);
-const rangeStrings = ranges.map(([s, e]) => `${formatHourAmPm(s)} – ${formatHourAmPm(e + 1 === 24 ? 23 : e + 1)}`);
+const rangeStrings = ranges.map(([s, e]) => `${formatHourAmPm(s)} – ${formatHourAmPm(e + 1)}`);
 const statusColor = maxScore >= 7.5 ? '#3b82f6' : (maxScore >= 6.0 ? '#10b981' : '#6366f1');
 const statusText = maxScore >= 7.5 ? 'Excellent outdoor hours' : (maxScore >= 6.0 ? 'Comfortable outdoor hours' : 'Best available times');
 return `<div style="font-size: 1.5rem; margin-bottom: 0.5rem; color: ${statusColor};">🌳 Outdoor Window</div>` +
-`Best times for outdoors today: <strong style="color: ${statusColor};">${rangeStrings.join(", ")}</strong>.<br>` +
+`Best times for outdoors ${dayWord}: <strong style="color: ${statusColor};">${rangeStrings.join(", ")}</strong>.<br>` +
 `<span style="color: #86868b; font-size: 0.9rem;">(${statusText} with NWI scores peaking at <strong>${maxScore.toFixed(1)}/10</strong>)</span>`;
 }
 function renderNwiTimeline(hourly) {
@@ -1029,7 +1121,7 @@ const bgClass = "bg-" + classification.text.toLowerCase();
 const formattedHour = formatHourAmPm(i);
 const shortHour = formatHourShort(i);
 const weatherText = getWeatherWmoText(wc);
-const isCurrent = i === currentHour;
+const isCurrent = (i === currentHour) && (selectedDayIndex === 0);
 const col = document.createElement("div");
 col.className = "nwi-timeline-column" + (isCurrent ? " current-hour" : "");
 const heightPercent = score === 0 ? 3 : score * 10;
@@ -1081,9 +1173,6 @@ if (globalTooltip) globalTooltip.classList.remove("visible");
 }
 }
 function formatHourShort(h) {
-if (h === 0) return "12a";
-if (h === 12) return "12p";
-if (h > 12) return `${h - 12}p`;
-return `${h}a`;
+return `${h.toString().padStart(2, "0")}:00`;
 }
 </script>
