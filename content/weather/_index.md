@@ -804,7 +804,11 @@ if (code >= 95 && code <= 99) return "Thunderstorm";
 return "Overcast";
 }
 function formatHourAmPm(h) {
-return `${h.toString().padStart(2, "0")}:00`;
+const normHour = h % 24;
+if (normHour === 0) return "12a";
+if (normHour === 12) return "12p";
+if (normHour > 12) return `${normHour - 12}p`;
+return `${normHour}a`;
 }
 function setNwiLocation(tabId, lat, lon, name) {
 // Update active tab styles
@@ -1173,6 +1177,6 @@ if (globalTooltip) globalTooltip.classList.remove("visible");
 }
 }
 function formatHourShort(h) {
-return `${h.toString().padStart(2, "0")}:00`;
+return formatHourAmPm(h);
 }
 </script>
