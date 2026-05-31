@@ -1117,7 +1117,7 @@ timelineTitleEl.innerText = selectedDayIndex === 0 ? "📈 24-Hour Comfort Timel
     document.getElementById("nwi-summary-stats").innerHTML = 
       `${timeLabel}: <strong>${Math.round(currentTemp)}°F</strong> (Feels: <strong>${Math.round(currentApparentTemp)}°F</strong>) | Dew Point: <strong>${Math.round(currentDewPoint)}°F</strong> | Wind: <strong>${Math.round(currentWindSpeed)} mph</strong><br>` +
       `Sky: <strong>${weatherText}</strong> (Precip: <strong>${currentPrecipProb}%</strong>)<br>` +
-      `☀️ **Daylight Comfort**: <strong class="${selectedDaylightClass.class}">${selectedDayDaylightNwi.toFixed(1)}/10</strong> (${selectedDaylightClass.text}) <span style="font-size: 0.85rem; opacity: 0.6; font-weight: normal;">(sun up from ${formattedSunrise} to ${formattedSunset})</span><br>` +
+      `☀️ <strong>Daylight Comfort</strong>: <strong class="${selectedDaylightClass.class}">${selectedDayDaylightNwi.toFixed(1)}/10</strong> (${selectedDaylightClass.text}) <span style="font-size: 0.85rem; opacity: 0.6; font-weight: normal;">(sun up from ${formattedSunrise} to ${formattedSunset})</span><br>` +
       `<span style="font-size: 0.85rem; opacity: 0.8;">Forecast: <strong>${Math.round(dailyTempMin)}°F to ${Math.round(dailyTempMax)}°F</strong> | Sky: <strong>${dailyWeatherText}</strong> (Max Precip: <strong>${dailyPrecipProbMax}%</strong>)</span>`;
 // 2. Action Plan: Windows & Outdoor Advice
 const dayWord = selectedDayIndex === 0 ? "today" : (selectedDayIndex === 1 ? "tomorrow" : "the next day");
