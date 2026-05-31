@@ -1090,16 +1090,19 @@ timelineTitleEl.innerText = selectedDayIndex === 0 ? "📈 24-Hour Comfort Timel
     const currentWeatherCode = hourly.weathercode?.[currentHour] ?? 0;
     const currentNwi = calculateNwiScore(currentTemp, currentApparentTemp, currentDewPoint, currentPrecipProb, currentWindSpeed, currentWeatherCode);
     const classification = getNwiClassification(currentNwi);
-    // Update Hero Gauge and Description (Driven by overall daylight comfort score instead of current hour)
-    document.getElementById("nwi-score-num").innerText = selectedDayDaylightNwi.toFixed(1);
+    // Use current hour's score for Today (index 0), but overall daylight average for Tomorrow/Next Day
+    const displayScore = selectedDayIndex === 0 ? currentNwi : selectedDayDaylightNwi;
+    const displayClass = selectedDayIndex === 0 ? classification : selectedDaylightClass;
+    // Update Hero Gauge and Description
+    document.getElementById("nwi-score-num").innerText = displayScore.toFixed(1);
     const classTextEl = document.getElementById("nwi-classification-text");
-    classTextEl.innerText = `${selectedDaylightClass.text}`;
-    classTextEl.className = `nwi-hero-meta h2 ${selectedDaylightClass.class}`;
+    classTextEl.innerText = `${displayClass.text}`;
+    classTextEl.className = `nwi-hero-meta h2 ${displayClass.class}`;
     // Set Gauge SVG stroke
     const fillEl = document.getElementById("nwi-gauge-fill");
-    fillEl.style.stroke = `url(#${selectedDaylightClass.grad})`;
+    fillEl.style.stroke = `url(#${displayClass.grad})`;
     // Circular dash-array offset: 2 * PI * 54 = ~339.29
-    const offset = 339.29 - (339.29 * (selectedDayDaylightNwi / 10));
+    const offset = 339.29 - (339.29 * (displayScore / 10));
     fillEl.style.strokeDashoffset = offset;
     fillEl.setAttribute("stroke-dashoffset", offset);
     // Conditions Text Summary with safe defaults based on selectedDayIndex
