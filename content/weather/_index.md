@@ -740,11 +740,11 @@ function calculateRelativeHumidity(tempF, dewPointF) {
   const e = 6.112 * Math.exp((17.67 * tdC) / (tdC + 243.5));
   return Math.min(100, Math.max(0, Math.round((e / es) * 100)));
 }
-
+  //
 function calculateNwiScore(temp, apparentTemp, dewPoint, precipProb, windSpeed, weatherCode) {
   // Calculate relative humidity for hybrid comfort logic
   const relativeHumidity = calculateRelativeHumidity(temp, dewPoint);
-
+  //
   // 1. Temperature Score (30%) - Continuous Bounds based on Apparent Temperature (RealFeel)
   let tempScore = 0;
   if (apparentTemp >= 64 && apparentTemp <= 72) tempScore = 10;
@@ -753,7 +753,7 @@ function calculateNwiScore(temp, apparentTemp, dewPoint, precipProb, windSpeed, 
   else if ((apparentTemp >= 50 && apparentTemp < 55) || (apparentTemp > 80 && apparentTemp <= 85)) tempScore = 5;
   else if ((apparentTemp >= 40 && apparentTemp < 50) || (apparentTemp > 85 && apparentTemp <= 90)) tempScore = 3;
   else tempScore = 0;
-
+  //
   // 2. Humidity Score (25%) - Hybrid Temperature-Split Model
   let dewScore = 0;
   if (temp >= 72) {
@@ -772,7 +772,7 @@ function calculateNwiScore(temp, apparentTemp, dewPoint, precipProb, windSpeed, 
     else if (relativeHumidity > 75 && relativeHumidity <= 85) dewScore = 4; // Raw, clammy
     else dewScore = 1; // Bone-chilling, cold/wet
   }
-
+  //
   // 3. Precipitation Score (25%) - Continuous Bounds
   let precipScore = 0;
   if (precipProb >= 0 && precipProb <= 5) precipScore = 10;
@@ -781,7 +781,7 @@ function calculateNwiScore(temp, apparentTemp, dewPoint, precipProb, windSpeed, 
   else if (precipProb > 30 && precipProb <= 50) precipScore = 4;
   else if (precipProb > 50 && precipProb <= 70) precipScore = 2;
   else precipScore = 0;
-
+  //
   // 4. Wind Score (10%) - Continuous Bounds (baseline component)
   let windScore = 0;
   if (windSpeed <= 5) windScore = 10;
@@ -789,7 +789,7 @@ function calculateNwiScore(temp, apparentTemp, dewPoint, precipProb, windSpeed, 
   else if (windSpeed > 11 && windSpeed <= 15) windScore = 6;
   else if (windSpeed > 15 && windSpeed <= 20) windScore = 3;
   else windScore = 0;
-
+  //
   // 5. Sky Conditions Score (10%) - Kept well-calibrated (base component)
   let skyScore = 7;
   if (weatherCode === 0 || weatherCode === 1) skyScore = 10;
@@ -807,11 +807,11 @@ function calculateNwiScore(temp, apparentTemp, dewPoint, precipProb, windSpeed, 
   else if ((weatherCode >= 61 && weatherCode <= 65) || (weatherCode >= 80 && weatherCode <= 82)) skyScore = 2;
   else if ((weatherCode >= 71 && weatherCode <= 77) || (weatherCode >= 85 && weatherCode <= 86)) skyScore = 1;
   else if (weatherCode >= 95 && weatherCode <= 99) skyScore = 0;
-
+  //
   // Calculate weighted base score
   let nwi = (tempScore * 0.3) + (dewScore * 0.25) + (precipScore * 0.25) + (windScore * 0.1) + (skyScore * 0.1);
   nwi = Math.round(nwi * 10) / 10;
-
+  //
   // Decision 4: Windy is always "ugh" regardless of temperature.
   // Apply a flat final-score wind penalty if the wind is high
   let windPenalty = 0;
@@ -820,13 +820,13 @@ function calculateNwiScore(temp, apparentTemp, dewPoint, precipProb, windSpeed, 
   } else if (windSpeed > 11) {
     windPenalty = 0.6;
   }
-
+  //
   // Cool & Damp Wind Penalty
   if (temp < 72 && relativeHumidity >= 65 && windSpeed > 11) {
     windPenalty += 0.8;
   }
   nwi -= windPenalty;
-
+  //
   // Cool Overcast Gloom Penalty (Solar Deficit)
   let gloomPenalty = 0;
   if (temp < 72 && weatherCode === 3) {
@@ -836,7 +836,7 @@ function calculateNwiScore(temp, apparentTemp, dewPoint, precipProb, windSpeed, 
     }
   }
   nwi -= gloomPenalty;
-
+  //
   // Decision 2: Active Precipitation Gate (The "Drizzle" Problem)
   // Tiered cap based on weather code severity
   if (weatherCode >= 51 && weatherCode <= 55) { // Drizzle
@@ -850,15 +850,15 @@ function calculateNwiScore(temp, apparentTemp, dewPoint, precipProb, windSpeed, 
     // Snow / snow showers
     nwi = Math.min(nwi, 2.0); // Cap at 2.0 (Unpleasant)
   }
-
+  //
   // Virtual Drizzle/Mist Cap
   if (weatherCode === 3 && relativeHumidity >= 85 && precipProb > 15) {
     nwi = Math.min(nwi, 5.0); // Cap at 5.0 (Mediocre)
   }
-
+  //
   // Ensure bounds are kept within [0, 10]
   nwi = Math.max(0, Math.min(10, nwi));
-
+  //
   return Math.round(nwi * 10) / 10;
 }
 function getNwiClassification(score) {
@@ -1017,12 +1017,12 @@ throw new Error(data?.reason || "Received an invalid or truncated dataset from O
 }
 const daily = data.daily;
 const hourlyAll = data.hourly;
-
+  //
 // Calculate Daylight Comfort Score for each of the 3 days to populate the filter button labels
 const daylightAverages = [];
 const dayLabels = ["Today", "Tomorrow", "Next Day"];
 const dayBtnIds = ["nwi-day-today", "nwi-day-tomorrow", "nwi-day-next"];
-
+  //
 for (let dayIdx = 0; dayIdx < 3; dayIdx++) {
   const sunriseStr = daily.sunrise?.[dayIdx];
   const sunsetStr = daily.sunset?.[dayIdx];
@@ -1032,7 +1032,7 @@ for (let dayIdx = 0; dayIdx < 3; dayIdx++) {
     sunriseHour = parseInt(sunriseStr.split('T')[1].split(':')[0], 10);
     sunsetHour = parseInt(sunsetStr.split('T')[1].split(':')[0], 10);
   }
-  
+  //
   const dayHourly = sliceHourlyForDay(hourlyAll, dayIdx);
   let dayScoreSum = 0;
   let count = 0;
@@ -1051,22 +1051,22 @@ for (let dayIdx = 0; dayIdx < 3; dayIdx++) {
   }
   const dayAvg = count > 0 ? (dayScoreSum / count) : 0.0;
   daylightAverages.push(dayAvg);
-
+  //
   // Update the button labels with the daylight score average
   const btn = document.getElementById(dayBtnIds[dayIdx]);
   if (btn) {
     btn.innerText = `${dayLabels[dayIdx]} (☀️ ${dayAvg.toFixed(1)})`;
   }
 }
-
+  //
 const selectedDayDaylightNwi = daylightAverages[selectedDayIndex];
 const selectedDaylightClass = getNwiClassification(selectedDayDaylightNwi);
-
+  //
 const selSunriseStr = daily.sunrise?.[selectedDayIndex];
 const selSunsetStr = daily.sunset?.[selectedDayIndex];
 const formattedSunrise = selSunriseStr ? formatIsoTimeStr(selSunriseStr) : "6:00am";
 const formattedSunset = selSunsetStr ? formatIsoTimeStr(selSunsetStr) : "7:00pm";
-
+  //
 // Get data sliced specifically for the selected day (24 hours)
 const hourly = sliceHourlyForDay(hourlyAll, selectedDayIndex);
 // Update section titles dynamically
