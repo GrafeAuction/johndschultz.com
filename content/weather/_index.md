@@ -604,7 +604,6 @@ transform: translate(-50%, -100%) translateY(0);
 .bg-decent { background: linear-gradient(to top, #059669, #34d399); }
 .bg-mediocre { background: linear-gradient(to top, #4f46e5, #818cf8); }
 .bg-unpleasant { background: linear-gradient(to top, #475569, #94a3b8); }
-
 /* Dynamic color definitions */
 .color-glorious { color: #f97316; }
 .color-pleasant { color: #3b82f6; }
@@ -616,7 +615,6 @@ transform: translate(-50%, -100%) translateY(0);
 .dark .color-decent { color: #34d399; }
 .dark .color-mediocre { color: #818cf8; }
 .dark .color-unpleasant { color: #94a3b8; }
-
 /* Day Selector Filters */
 .nwi-day-filters {
   display: flex;
@@ -924,7 +922,7 @@ gpsBtn.classList.add("active");
 gpsBtn.innerText = "📍 GPS Active";
 const lat = Math.round(position.coords.latitude * 100) / 100;
 const lon = Math.round(position.coords.longitude * 100) / 100;
-const name = `Detected Location (${lat}°N, ${lon}°W)`;
+const name = 'Current Location';
 fetchNwiWeather(lat, lon, name);
 },
 (err) => {
@@ -1092,16 +1090,16 @@ timelineTitleEl.innerText = selectedDayIndex === 0 ? "📈 24-Hour Comfort Timel
     const currentWeatherCode = hourly.weathercode?.[currentHour] ?? 0;
     const currentNwi = calculateNwiScore(currentTemp, currentApparentTemp, currentDewPoint, currentPrecipProb, currentWindSpeed, currentWeatherCode);
     const classification = getNwiClassification(currentNwi);
-    // Update Hero Gauge and Description
-    document.getElementById("nwi-score-num").innerText = currentNwi.toFixed(1);
+    // Update Hero Gauge and Description (Driven by overall daylight comfort score instead of current hour)
+    document.getElementById("nwi-score-num").innerText = selectedDayDaylightNwi.toFixed(1);
     const classTextEl = document.getElementById("nwi-classification-text");
-    classTextEl.innerText = `${classification.text}`;
-    classTextEl.className = `nwi-hero-meta h2 ${classification.class}`;
+    classTextEl.innerText = `${selectedDaylightClass.text}`;
+    classTextEl.className = `nwi-hero-meta h2 ${selectedDaylightClass.class}`;
     // Set Gauge SVG stroke
     const fillEl = document.getElementById("nwi-gauge-fill");
-    fillEl.style.stroke = `url(#${classification.grad})`;
+    fillEl.style.stroke = `url(#${selectedDaylightClass.grad})`;
     // Circular dash-array offset: 2 * PI * 54 = ~339.29
-    const offset = 339.29 - (339.29 * (currentNwi / 10));
+    const offset = 339.29 - (339.29 * (selectedDayDaylightNwi / 10));
     fillEl.style.strokeDashoffset = offset;
     fillEl.setAttribute("stroke-dashoffset", offset);
     // Conditions Text Summary with safe defaults based on selectedDayIndex
