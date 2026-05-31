@@ -733,54 +733,123 @@ sliced[key] = hourly[key];
 }
 return sliced;
 }
-function calculateNwiScore(temp, dewPoint, precipProb, windSpeed, weatherCode) {
-// 1. Temperature Score (30%) - Continuous Bounds
-let tempScore = 0;
-if (temp >= 64 && temp <= 72) tempScore = 10;
-else if ((temp >= 60 && temp < 64) || (temp > 72 && temp <= 76)) tempScore = 9;
-else if ((temp >= 55 && temp < 60) || (temp > 76 && temp <= 80)) tempScore = 7;
-else if ((temp >= 50 && temp < 55) || (temp > 80 && temp <= 85)) tempScore = 5;
-else if ((temp >= 40 && temp < 50) || (temp > 85 && temp <= 90)) tempScore = 3;
-else tempScore = 0;
-// 2. Humidity/Dew Point Score (25%) - Continuous Bounds
-let dewScore = 0;
-if (dewPoint <= 52) dewScore = 10;
-else if (dewPoint > 52 && dewPoint <= 56) dewScore = 9;
-else if (dewPoint > 56 && dewPoint <= 60) dewScore = 7;
-else if (dewPoint > 60 && dewPoint <= 64) dewScore = 4;
-else if (dewPoint > 64 && dewPoint <= 68) dewScore = 1;
-else dewScore = 0;
-// Cold dry air override - aligned with cooler zone
-if (temp < 60) {
-dewScore = 10;
+function calculateRelativeHumidity(tempF, dewPointF) {
+  const tC = (tempF - 32) * 5 / 9;
+  const tdC = (dewPointF - 32) * 5 / 9;
+  const es = 6.112 * Math.exp((17.67 * tC) / (tC + 243.5));
+  const e = 6.112 * Math.exp((17.67 * tdC) / (tdC + 243.5));
+  return Math.min(100, Math.max(0, Math.round((e / es) * 100)));
 }
-// 3. Precipitation Score (25%) - Continuous Bounds
-let precipScore = 0;
-if (precipProb >= 0 && precipProb <= 5) precipScore = 10;
-else if (precipProb > 5 && precipProb <= 15) precipScore = 9;
-else if (precipProb > 15 && precipProb <= 30) precipScore = 7;
-else if (precipProb > 30 && precipProb <= 50) precipScore = 4;
-else if (precipProb > 50 && precipProb <= 70) precipScore = 2;
-else precipScore = 0;
-// 4. Wind Score (10%) - Continuous Bounds
-let windScore = 0;
-if (windSpeed <= 5) windScore = 10;
-else if (windSpeed > 5 && windSpeed <= 11) windScore = 9;
-else if (windSpeed > 11 && windSpeed <= 15) windScore = 6;
-else if (windSpeed > 15 && windSpeed <= 20) windScore = 3;
-else windScore = 0;
-// 5. Sky Conditions Score (10%) - Kept well-calibrated
-let skyScore = 7;
-if (weatherCode === 0 || weatherCode === 1) skyScore = 10;
-else if (weatherCode === 2) skyScore = 9;
-else if (weatherCode === 3) skyScore = 7;
-else if (weatherCode === 45 || weatherCode === 48) skyScore = 5;
-else if (weatherCode >= 51 && weatherCode <= 55) skyScore = 4;
-else if ((weatherCode >= 61 && weatherCode <= 65) || (weatherCode >= 80 && weatherCode <= 82)) skyScore = 2;
-else if ((weatherCode >= 71 && weatherCode <= 77) || (weatherCode >= 85 && weatherCode <= 86)) skyScore = 1;
-else if (weatherCode >= 95 && weatherCode <= 99) skyScore = 0;
-const nwi = (tempScore * 0.3) + (dewScore * 0.25) + (precipScore * 0.25) + (windScore * 0.1) + (skyScore * 0.1);
-return Math.round(nwi * 10) / 10;
+
+function calculateNwiScore(temp, apparentTemp, dewPoint, precipProb, windSpeed, weatherCode) {
+  // Calculate relative humidity for hybrid comfort logic
+  const relativeHumidity = calculateRelativeHumidity(temp, dewPoint);
+
+  // 1. Temperature Score (30%) - Continuous Bounds based on Apparent Temperature (RealFeel)
+  let tempScore = 0;
+  if (apparentTemp >= 64 && apparentTemp <= 72) tempScore = 10;
+  else if ((apparentTemp >= 60 && apparentTemp < 64) || (apparentTemp > 72 && apparentTemp <= 76)) tempScore = 9;
+  else if ((apparentTemp >= 55 && apparentTemp < 60) || (apparentTemp > 76 && apparentTemp <= 80)) tempScore = 7;
+  else if ((apparentTemp >= 50 && apparentTemp < 55) || (apparentTemp > 80 && apparentTemp <= 85)) tempScore = 5;
+  else if ((apparentTemp >= 40 && apparentTemp < 50) || (apparentTemp > 85 && apparentTemp <= 90)) tempScore = 3;
+  else tempScore = 0;
+
+  // 2. Humidity Score (25%) - Hybrid Temperature-Split Model
+  let dewScore = 0;
+  if (temp >= 70) {
+    // Warm/hot weather: use Dewpoint (measures mugginess)
+    if (dewPoint <= 52) dewScore = 10;
+    else if (dewPoint > 52 && dewPoint <= 56) dewScore = 9;
+    else if (dewPoint > 56 && dewPoint <= 60) dewScore = 7;
+    else if (dewPoint > 60 && dewPoint <= 64) dewScore = 4;
+    else if (dewPoint > 64 && dewPoint <= 68) dewScore = 1;
+    else dewScore = 0;
+  } else {
+    // Cool weather: use Relative Humidity (penalizes clamminess/dampness)
+    if (relativeHumidity <= 55) dewScore = 10; // Crisp & Dry Comfort
+    else if (relativeHumidity > 55 && relativeHumidity <= 65) dewScore = 9; // Comfortable
+    else if (relativeHumidity > 65 && relativeHumidity <= 75) dewScore = 7; // Damp
+    else if (relativeHumidity > 75 && relativeHumidity <= 85) dewScore = 4; // Raw, clammy
+    else dewScore = 1; // Bone-chilling, cold/wet
+  }
+
+  // 3. Precipitation Score (25%) - Continuous Bounds
+  let precipScore = 0;
+  if (precipProb >= 0 && precipProb <= 5) precipScore = 10;
+  else if (precipProb > 5 && precipProb <= 15) precipScore = 9;
+  else if (precipProb > 15 && precipProb <= 30) precipScore = 7;
+  else if (precipProb > 30 && precipProb <= 50) precipScore = 4;
+  else if (precipProb > 50 && precipProb <= 70) precipScore = 2;
+  else precipScore = 0;
+
+  // 4. Wind Score (10%) - Continuous Bounds (baseline component)
+  let windScore = 0;
+  if (windSpeed <= 5) windScore = 10;
+  else if (windSpeed > 5 && windSpeed <= 11) windScore = 9;
+  else if (windSpeed > 11 && windSpeed <= 15) windScore = 6;
+  else if (windSpeed > 15 && windSpeed <= 20) windScore = 3;
+  else windScore = 0;
+
+  // 5. Sky Conditions Score (10%) - Kept well-calibrated (base component)
+  let skyScore = 7;
+  if (weatherCode === 0 || weatherCode === 1) skyScore = 10;
+  else if (weatherCode === 2) skyScore = 9;
+  else if (weatherCode === 3) {
+    // Decision 5: Cool overcast penalty: If apparent_temperature < 68°F and overcast, reduce skyScore from 7 to 4
+    if (apparentTemp < 68) {
+      skyScore = 4;
+    } else {
+      skyScore = 7;
+    }
+  }
+  else if (weatherCode === 45 || weatherCode === 48) skyScore = 5;
+  else if (weatherCode >= 51 && weatherCode <= 55) skyScore = 4;
+  else if ((weatherCode >= 61 && weatherCode <= 65) || (weatherCode >= 80 && weatherCode <= 82)) skyScore = 2;
+  else if ((weatherCode >= 71 && weatherCode <= 77) || (weatherCode >= 85 && weatherCode <= 86)) skyScore = 1;
+  else if (weatherCode >= 95 && weatherCode <= 99) skyScore = 0;
+
+  // Calculate weighted base score
+  let nwi = (tempScore * 0.3) + (dewScore * 0.25) + (precipScore * 0.25) + (windScore * 0.1) + (skyScore * 0.1);
+  nwi = Math.round(nwi * 10) / 10;
+
+  // Decision 4: Windy is always "ugh" regardless of temperature.
+  // Apply a flat final-score wind penalty if the wind is high
+  let windPenalty = 0;
+  if (windSpeed > 15) {
+    windPenalty = 1.2;
+  } else if (windSpeed > 11) {
+    windPenalty = 0.6;
+  }
+
+  // Cool & Damp Wind Penalty
+  if (temp < 70 && relativeHumidity >= 65 && windSpeed > 11) {
+    windPenalty += 0.8;
+  }
+  nwi -= windPenalty;
+
+  // Decision 2: Active Precipitation Gate (The "Drizzle" Problem)
+  // Tiered cap based on weather code severity
+  if (weatherCode >= 51 && weatherCode <= 55) { // Drizzle
+    nwi = Math.min(nwi, 5.0); // Cap at 5.0 (Mediocre)
+  } else if (weatherCode === 80) { // Light rain showers
+    nwi = Math.min(nwi, 5.0); // Cap at 5.0 (Mediocre)
+  } else if ((weatherCode >= 61 && weatherCode <= 65) || (weatherCode >= 81 && weatherCode <= 82) || (weatherCode >= 95 && weatherCode <= 99)) {
+    // Steady rain, heavy rain showers, or thunderstorms
+    nwi = Math.min(nwi, 3.0); // Cap at 3.0 (Unpleasant)
+  } else if ((weatherCode >= 71 && weatherCode <= 77) || (weatherCode >= 85 && weatherCode <= 86)) {
+    // Snow / snow showers
+    nwi = Math.min(nwi, 2.0); // Cap at 2.0 (Unpleasant)
+  }
+
+  // Virtual Drizzle/Mist Cap
+  if (weatherCode === 3 && relativeHumidity >= 85 && precipProb > 15) {
+    nwi = Math.min(nwi, 5.0); // Cap at 5.0 (Mediocre)
+  }
+
+  // Ensure bounds are kept within [0, 10]
+  nwi = Math.max(0, Math.min(10, nwi));
+
+  return Math.round(nwi * 10) / 10;
 }
 function getNwiClassification(score) {
 if (score >= 9.0) return { text: "Glorious", class: "color-glorious", grad: "nwi-grad-glorious" };
@@ -899,7 +968,7 @@ document.getElementById("nwi-score-num").innerText = "-.-";
 document.getElementById("nwi-classification-text").innerText = "Calculating...";
 document.getElementById("nwi-summary-stats").innerText = "Connecting to Open-Meteo...";
 document.getElementById("nwi-gauge-fill").style.strokeDashoffset = "339.29"; // 0 progress
-const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode,dewpoint_2m_mean,wind_speed_10m_max&hourly=temperature_2m,relative_humidity_2m,dewpoint_2m,precipitation_probability,weathercode,wind_speed_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=auto&forecast_days=3`;
+const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode,dewpoint_2m_mean,wind_speed_10m_max&hourly=apparent_temperature,temperature_2m,relative_humidity_2m,dewpoint_2m,precipitation_probability,weathercode,wind_speed_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=auto&forecast_days=3`;
 fetch(weatherUrl)
 .then(res => {
 if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
@@ -934,45 +1003,46 @@ actionTitleEl.innerText = selectedDayIndex === 0 ? "⚡ Today's Action Plan" : (
 if (timelineTitleEl) {
 timelineTitleEl.innerText = selectedDayIndex === 0 ? "📈 24-Hour Comfort Timeline" : (selectedDayIndex === 1 ? "📈 Tomorrow's Comfort Timeline" : "📈 Next Day's Comfort Timeline");
 }
-// 1. Calculate Current Score with boundary checks
-const hourlyLen = hourly.temperature_2m?.length || 0;
-if (hourlyLen === 0) {
-throw new Error("Hourly forecast data array is empty.");
-}
-const currentHour = Math.max(0, Math.min(new Date().getHours(), hourlyLen - 1));
-const currentTemp = hourly.temperature_2m?.[currentHour] ?? 70;
-const currentDewPoint = hourly.dewpoint_2m?.[currentHour] ?? 50;
-const currentPrecipProb = hourly.precipitation_probability?.[currentHour] ?? 0;
-const currentWindSpeed = hourly.wind_speed_10m?.[currentHour] ?? 5;
-const currentWeatherCode = hourly.weathercode?.[currentHour] ?? 0;
-const currentNwi = calculateNwiScore(currentTemp, currentDewPoint, currentPrecipProb, currentWindSpeed, currentWeatherCode);
-const classification = getNwiClassification(currentNwi);
-// Update Hero Gauge and Description
-document.getElementById("nwi-score-num").innerText = currentNwi.toFixed(1);
-const classTextEl = document.getElementById("nwi-classification-text");
-classTextEl.innerText = `${classification.text}`;
-classTextEl.className = `nwi-hero-meta h2 ${classification.class}`;
-// Set Gauge SVG stroke
-const fillEl = document.getElementById("nwi-gauge-fill");
-fillEl.style.stroke = `url(#${classification.grad})`;
-// Circular dash-array offset: 2 * PI * 54 = ~339.29
-const offset = 339.29 - (339.29 * (currentNwi / 10));
-fillEl.style.strokeDashoffset = offset;
-fillEl.setAttribute("stroke-dashoffset", offset);
-// Conditions Text Summary with safe defaults based on selectedDayIndex
-const weatherText = getWeatherWmoText(currentWeatherCode);
-const dailyTempMax = daily.temperature_2m_max?.[selectedDayIndex] ?? 75;
-const dailyTempMin = daily.temperature_2m_min?.[selectedDayIndex] ?? 55;
-const dailyWeatherCode = daily.weathercode?.[selectedDayIndex] ?? 0;
-const dailyPrecipProbMax = daily.precipitation_probability_max?.[selectedDayIndex] ?? 0;
-const dailyWeatherText = getWeatherWmoText(dailyWeatherCode);
-// Format time label contextually
-const hourLabel = formatHourAmPm(currentHour);
-const timeLabel = selectedDayIndex === 0 ? "Current" : (selectedDayIndex === 1 ? `Tomorrow at ${hourLabel}` : `Next Day at ${hourLabel}`);
-document.getElementById("nwi-summary-stats").innerHTML = 
-`${timeLabel}: <strong>${Math.round(currentTemp)}°F</strong> | Dew Point: <strong>${Math.round(currentDewPoint)}°F</strong> | Wind: <strong>${Math.round(currentWindSpeed)} mph</strong><br>` +
-`Sky: <strong>${weatherText}</strong> (Precip: <strong>${currentPrecipProb}%</strong>)<br>` +
-`<span style="font-size: 0.85rem; opacity: 0.8;">Forecast: <strong>${Math.round(dailyTempMin)}°F to ${Math.round(dailyTempMax)}°F</strong> | Sky: <strong>${dailyWeatherText}</strong> (Max Precip: <strong>${dailyPrecipProbMax}%</strong>)</span>`;
+    // 1. Calculate Current Score with boundary checks
+    const hourlyLen = hourly.temperature_2m?.length || 0;
+    if (hourlyLen === 0) {
+      throw new Error("Hourly forecast data array is empty.");
+    }
+    const currentHour = Math.max(0, Math.min(new Date().getHours(), hourlyLen - 1));
+    const currentTemp = hourly.temperature_2m?.[currentHour] ?? 70;
+    const currentApparentTemp = hourly.apparent_temperature?.[currentHour] ?? currentTemp;
+    const currentDewPoint = hourly.dewpoint_2m?.[currentHour] ?? 50;
+    const currentPrecipProb = hourly.precipitation_probability?.[currentHour] ?? 0;
+    const currentWindSpeed = hourly.wind_speed_10m?.[currentHour] ?? 5;
+    const currentWeatherCode = hourly.weathercode?.[currentHour] ?? 0;
+    const currentNwi = calculateNwiScore(currentTemp, currentApparentTemp, currentDewPoint, currentPrecipProb, currentWindSpeed, currentWeatherCode);
+    const classification = getNwiClassification(currentNwi);
+    // Update Hero Gauge and Description
+    document.getElementById("nwi-score-num").innerText = currentNwi.toFixed(1);
+    const classTextEl = document.getElementById("nwi-classification-text");
+    classTextEl.innerText = `${classification.text}`;
+    classTextEl.className = `nwi-hero-meta h2 ${classification.class}`;
+    // Set Gauge SVG stroke
+    const fillEl = document.getElementById("nwi-gauge-fill");
+    fillEl.style.stroke = `url(#${classification.grad})`;
+    // Circular dash-array offset: 2 * PI * 54 = ~339.29
+    const offset = 339.29 - (339.29 * (currentNwi / 10));
+    fillEl.style.strokeDashoffset = offset;
+    fillEl.setAttribute("stroke-dashoffset", offset);
+    // Conditions Text Summary with safe defaults based on selectedDayIndex
+    const weatherText = getWeatherWmoText(currentWeatherCode);
+    const dailyTempMax = daily.temperature_2m_max?.[selectedDayIndex] ?? 75;
+    const dailyTempMin = daily.temperature_2m_min?.[selectedDayIndex] ?? 55;
+    const dailyWeatherCode = daily.weathercode?.[selectedDayIndex] ?? 0;
+    const dailyPrecipProbMax = daily.precipitation_probability_max?.[selectedDayIndex] ?? 0;
+    const dailyWeatherText = getWeatherWmoText(dailyWeatherCode);
+    // Format time label contextually
+    const hourLabel = formatHourAmPm(currentHour);
+    const timeLabel = selectedDayIndex === 0 ? "Current" : (selectedDayIndex === 1 ? `Tomorrow at ${hourLabel}` : `Next Day at ${hourLabel}`);
+    document.getElementById("nwi-summary-stats").innerHTML = 
+      `${timeLabel}: <strong>${Math.round(currentTemp)}°F</strong> (Feels: <strong>${Math.round(currentApparentTemp)}°F</strong>) | Dew Point: <strong>${Math.round(currentDewPoint)}°F</strong> | Wind: <strong>${Math.round(currentWindSpeed)} mph</strong><br>` +
+      `Sky: <strong>${weatherText}</strong> (Precip: <strong>${currentPrecipProb}%</strong>)<br>` +
+      `<span style="font-size: 0.85rem; opacity: 0.8;">Forecast: <strong>${Math.round(dailyTempMin)}°F to ${Math.round(dailyTempMax)}°F</strong> | Sky: <strong>${dailyWeatherText}</strong> (Max Precip: <strong>${dailyPrecipProbMax}%</strong>)</span>`;
 // 2. Action Plan: Windows & Outdoor Advice
 const dayWord = selectedDayIndex === 0 ? "today" : (selectedDayIndex === 1 ? "tomorrow" : "the next day");
 const windowsAdvice = calculateWindowsAdvice(hourly, dayWord);
@@ -1002,15 +1072,16 @@ const t = hourly.temperature_2m?.[i] ?? 70;
 const dp = hourly.dewpoint_2m?.[i] ?? 50;
 const p = hourly.precipitation_probability?.[i] ?? 0;
 const w = hourly.wind_speed_10m?.[i] ?? 5;
+const rh = calculateRelativeHumidity(t, dp);
 const cTemp = t >= 60 && t <= 76;
-const cDew = dp <= 56;
+const cDew = t >= 70 ? dp <= 56 : rh <= 65;
 const cPrecip = p <= 15;
 const cWind = w < 18;
 if (cTemp && cDew && cPrecip && cWind) {
 comfortableHours.push(i);
 }
 if (p > 15) rainRisk = true;
-if (dp > 56) highHumid = true;
+if (t >= 70 ? dp > 56 : rh > 65) highHumid = true;
 if (t >= 60) tooCold = false;
 if (t <= 76) tooHot = false;
 if (w < 18) tooWindy = false;
@@ -1054,11 +1125,12 @@ let maxScore = 0;
 const len = Math.min(24, hourly.temperature_2m?.length || 0);
 for (let i = 0; i < len; i++) {
 const t = hourly.temperature_2m?.[i] ?? 70;
+const ap = hourly.apparent_temperature?.[i] ?? t;
 const dp = hourly.dewpoint_2m?.[i] ?? 50;
 const p = hourly.precipitation_probability?.[i] ?? 0;
 const w = hourly.wind_speed_10m?.[i] ?? 5;
 const wc = hourly.weathercode?.[i] ?? 0;
-const score = calculateNwiScore(t, dp, p, w, wc);
+const score = calculateNwiScore(t, ap, dp, p, w, wc);
 hourlyScores.push({ hour: i, score });
 if (score > maxScore) maxScore = score;
 }
@@ -1101,45 +1173,48 @@ let maxScore = 0;
 const len = Math.min(24, hourly.temperature_2m?.length || 0);
 for (let i = 0; i < len; i++) {
 const t = hourly.temperature_2m?.[i] ?? 70;
+const ap = hourly.apparent_temperature?.[i] ?? t;
 const dp = hourly.dewpoint_2m?.[i] ?? 50;
 const p = hourly.precipitation_probability?.[i] ?? 0;
 const w = hourly.wind_speed_10m?.[i] ?? 5;
 const wc = hourly.weathercode?.[i] ?? 0;
-const score = calculateNwiScore(t, dp, p, w, wc);
+const score = calculateNwiScore(t, ap, dp, p, w, wc);
 hourlyScores.push(score);
 if (score > maxScore) maxScore = score;
 }
 const outdoorThreshold = maxScore >= 6.0 ? 6.0 : maxScore - 0.8;
 const currentHour = new Date().getHours();
-for (let i = 0; i < len; i++) {
-const t = hourly.temperature_2m?.[i] ?? 70;
-const dp = hourly.dewpoint_2m?.[i] ?? 50;
-const p = hourly.precipitation_probability?.[i] ?? 0;
-const w = hourly.wind_speed_10m?.[i] ?? 5;
-const wc = hourly.weathercode?.[i] ?? 0;
-const score = hourlyScores[i];
-const isWindowComfortable = (t >= 60 && t <= 76) && (dp <= 56) && (p <= 15) && (w < 18);
-const isOutdoorComfortable = (maxScore >= 4.5) && (score >= outdoorThreshold);
-const classification = getNwiClassification(score);
-const bgClass = "bg-" + classification.text.toLowerCase();
-const formattedHour = formatHourAmPm(i);
-const shortHour = formatHourShort(i);
-const weatherText = getWeatherWmoText(wc);
-const isCurrent = (i === currentHour) && (selectedDayIndex === 0);
-const col = document.createElement("div");
-col.className = "nwi-timeline-column" + (isCurrent ? " current-hour" : "");
-const heightPercent = score === 0 ? 3 : score * 10;
-const tooltipContent = "<strong>" + formattedHour + (isCurrent ? " (Now)" : "") + "</strong><br>" +
-"Comfort: <strong>" + score.toFixed(1) + "/10</strong> (" + classification.text + ")<br>" +
-"Temp: <strong>" + Math.round(t) + "°F</strong> | Dew: <strong>" + Math.round(dp) + "°F</strong><br>" +
-"Wind: <strong>" + Math.round(w) + " mph</strong> | Sky: <strong>" + weatherText + "</strong><br>" +
-"Rain Prob: <strong>" + p + "%</strong>" +
-(isWindowComfortable || isOutdoorComfortable ? (
-"<div style='margin-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 0.4rem; font-size: 0.75rem; display: flex; flex-direction: column; gap: 0.2rem;'>" +
-(isWindowComfortable ? "<span style='color: #34d399;'>✅ Ideal window open hour</span>" : "") +
-(isOutdoorComfortable ? "<span style='color: #60a5fa;'>🌳 Ideal outdoor hour</span>" : "") +
-"</div>"
-) : "");
+  for (let i = 0; i < len; i++) {
+    const t = hourly.temperature_2m?.[i] ?? 70;
+    const ap = hourly.apparent_temperature?.[i] ?? t;
+    const dp = hourly.dewpoint_2m?.[i] ?? 50;
+    const p = hourly.precipitation_probability?.[i] ?? 0;
+    const w = hourly.wind_speed_10m?.[i] ?? 5;
+    const wc = hourly.weathercode?.[i] ?? 0;
+    const score = hourlyScores[i];
+    const rh = calculateRelativeHumidity(t, dp);
+    const isWindowComfortable = (t >= 60 && t <= 76) && (t >= 70 ? dp <= 56 : rh <= 65) && (p <= 15) && (w < 18);
+    const isOutdoorComfortable = (maxScore >= 4.5) && (score >= outdoorThreshold);
+    const classification = getNwiClassification(score);
+    const bgClass = "bg-" + classification.text.toLowerCase();
+    const formattedHour = formatHourAmPm(i);
+    const shortHour = formatHourShort(i);
+    const weatherText = getWeatherWmoText(wc);
+    const isCurrent = (i === currentHour) && (selectedDayIndex === 0);
+    const col = document.createElement("div");
+    col.className = "nwi-timeline-column" + (isCurrent ? " current-hour" : "");
+    const heightPercent = score === 0 ? 3 : score * 10;
+    const tooltipContent = "<strong>" + formattedHour + (isCurrent ? " (Now)" : "") + "</strong><br>" +
+      "Comfort: <strong>" + score.toFixed(1) + "/10</strong> (" + classification.text + ")<br>" +
+      "Temp: <strong>" + Math.round(t) + "°F</strong> (Feels: <strong>" + Math.round(ap) + "°F</strong>) | Dew: <strong>" + Math.round(dp) + "°F</strong><br>" +
+      "Wind: <strong>" + Math.round(w) + " mph</strong> | Sky: <strong>" + weatherText + "</strong><br>" +
+      "Rain Prob: <strong>" + p + "%</strong>" +
+      (isWindowComfortable || isOutdoorComfortable ? (
+        "<div style='margin-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 0.4rem; font-size: 0.75rem; display: flex; flex-direction: column; gap: 0.2rem;'>" +
+        (isWindowComfortable ? "<span style='color: #34d399;'>✅ Ideal window open hour</span>" : "") +
+        (isOutdoorComfortable ? "<span style='color: #60a5fa;'>🌳 Ideal outdoor hour</span>" : "") +
+        "</div>"
+      ) : "");
 col.innerHTML = "<div class='nwi-timeline-score-label'>" + score.toFixed(1) + "</div>" +
 "<div class='nwi-timeline-bar-wrapper'>" +
 "<div class='nwi-timeline-bar " + bgClass + "' style='height: " + heightPercent + "%'></div>" +
