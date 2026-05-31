@@ -600,20 +600,20 @@ transform: translate(-50%, -100%) translateY(0);
 }
 /* Timeline Bar Color Classes */
 .bg-glorious { background: linear-gradient(to top, #f97316, #facc15); }
-.bg-great { background: linear-gradient(to top, #2563eb, #60a5fa); }
-.bg-pleasant { background: linear-gradient(to top, #059669, #34d399); }
+.bg-pleasant { background: linear-gradient(to top, #2563eb, #60a5fa); }
+.bg-decent { background: linear-gradient(to top, #059669, #34d399); }
 .bg-mediocre { background: linear-gradient(to top, #4f46e5, #818cf8); }
 .bg-unpleasant { background: linear-gradient(to top, #475569, #94a3b8); }
 
 /* Dynamic color definitions */
 .color-glorious { color: #f97316; }
-.color-great { color: #3b82f6; }
-.color-pleasant { color: #10b981; }
+.color-pleasant { color: #3b82f6; }
+.color-decent { color: #10b981; }
 .color-mediocre { color: #6366f1; }
 .color-unpleasant { color: #64748b; }
 .dark .color-glorious { color: #fb923c; }
-.dark .color-great { color: #60a5fa; }
-.dark .color-pleasant { color: #34d399; }
+.dark .color-pleasant { color: #60a5fa; }
+.dark .color-decent { color: #34d399; }
 .dark .color-mediocre { color: #818cf8; }
 .dark .color-unpleasant { color: #94a3b8; }
 
@@ -670,11 +670,11 @@ transform: translate(-50%, -100%) translateY(0);
 <stop offset="0%" stop-color="#facc15" />
 <stop offset="100%" stop-color="#f97316" />
 </linearGradient>
-<linearGradient id="nwi-grad-great" x1="0%" y1="0%" x2="100%" y2="100%">
+<linearGradient id="nwi-grad-pleasant" x1="0%" y1="0%" x2="100%" y2="100%">
 <stop offset="0%" stop-color="#60a5fa" />
 <stop offset="100%" stop-color="#2563eb" />
 </linearGradient>
-<linearGradient id="nwi-grad-pleasant" x1="0%" y1="0%" x2="100%" y2="100%">
+<linearGradient id="nwi-grad-decent" x1="0%" y1="0%" x2="100%" y2="100%">
 <stop offset="0%" stop-color="#34d399" />
 <stop offset="100%" stop-color="#059669" />
 </linearGradient>
@@ -862,11 +862,11 @@ function calculateNwiScore(temp, apparentTemp, dewPoint, precipProb, windSpeed, 
   return Math.round(nwi * 10) / 10;
 }
 function getNwiClassification(score) {
-if (score >= 9.0) return { text: "Glorious", class: "color-glorious", grad: "nwi-grad-glorious" };
-if (score >= 7.5) return { text: "Great", class: "color-great", grad: "nwi-grad-great" };
-if (score >= 6.0) return { text: "Pleasant", class: "color-pleasant", grad: "nwi-grad-pleasant" };
-if (score >= 4.5) return { text: "Mediocre", class: "color-mediocre", grad: "nwi-grad-mediocre" };
-return { text: "Unpleasant", class: "color-unpleasant", grad: "nwi-grad-unpleasant" };
+  if (score >= 9.0) return { text: "Glorious", class: "color-glorious", grad: "nwi-grad-glorious" };
+  if (score >= 8.0) return { text: "Pleasant", class: "color-pleasant", grad: "nwi-grad-pleasant" };
+  if (score >= 6.5) return { text: "Decent", class: "color-decent", grad: "nwi-grad-decent" };
+  if (score >= 5.0) return { text: "Mediocre", class: "color-mediocre", grad: "nwi-grad-mediocre" };
+  return { text: "Unpleasant", class: "color-unpleasant", grad: "nwi-grad-unpleasant" };
 }
 function getWeatherWmoText(code) {
 if (code === 0) return "Clear sky";
@@ -1144,9 +1144,9 @@ const score = calculateNwiScore(t, ap, dp, p, w, wc);
 hourlyScores.push({ hour: i, score });
 if (score > maxScore) maxScore = score;
 }
-const threshold = maxScore >= 6.0 ? 6.0 : maxScore - 0.8;
+const threshold = maxScore >= 6.5 ? 6.5 : maxScore - 0.8;
 const comfortableHours = hourlyScores.filter(h => h.score >= threshold).map(h => h.hour);
-if (maxScore < 4.5) {
+if (maxScore < 5.0) {
 return `<div style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #ef4444;">🌳 Outdoor Window</div>` +
 `<span style="color: #ef4444; font-weight: 700;">No comfortable outdoor windows ${dayWord}</span> due to unpleasant weather. Keep outdoor plans short and stay comfortable inside.`;
 }
@@ -1168,8 +1168,8 @@ prev = comfortableHours[i];
 }
 ranges.push([start, prev]);
 const rangeStrings = ranges.map(([s, e]) => `${formatHourAmPm(s)} – ${formatHourAmPm(e + 1)}`);
-const statusColor = maxScore >= 7.5 ? '#3b82f6' : (maxScore >= 6.0 ? '#10b981' : '#6366f1');
-const statusText = maxScore >= 7.5 ? 'Excellent outdoor hours' : (maxScore >= 6.0 ? 'Comfortable outdoor hours' : 'Best available times');
+const statusColor = maxScore >= 8.0 ? '#3b82f6' : (maxScore >= 6.5 ? '#10b981' : '#6366f1');
+const statusText = maxScore >= 8.0 ? 'Excellent outdoor hours' : (maxScore >= 6.5 ? 'Decent outdoor hours' : 'Best available times');
 return `<div style="font-size: 1.5rem; margin-bottom: 0.5rem; color: ${statusColor};">🌳 Outdoor Window</div>` +
 `Best times for outdoors ${dayWord}: <strong style="color: ${statusColor};">${rangeStrings.join(", ")}</strong>.<br>` +
 `<span style="color: #86868b; font-size: 0.9rem;">(${statusText} with NWI scores peaking at <strong>${maxScore.toFixed(1)}/10</strong>)</span>`;
@@ -1192,7 +1192,7 @@ const score = calculateNwiScore(t, ap, dp, p, w, wc);
 hourlyScores.push(score);
 if (score > maxScore) maxScore = score;
 }
-const outdoorThreshold = maxScore >= 6.0 ? 6.0 : maxScore - 0.8;
+const outdoorThreshold = maxScore >= 6.5 ? 6.5 : maxScore - 0.8;
 const currentHour = new Date().getHours();
   for (let i = 0; i < len; i++) {
     const t = hourly.temperature_2m?.[i] ?? 70;
@@ -1204,7 +1204,7 @@ const currentHour = new Date().getHours();
     const score = hourlyScores[i];
     const rh = calculateRelativeHumidity(t, dp);
     const isWindowComfortable = (t >= 60 && t <= 76) && (t >= 72 ? dp <= 56 : rh <= 65) && (p <= 15) && (w < 18);
-    const isOutdoorComfortable = (maxScore >= 4.5) && (score >= outdoorThreshold);
+    const isOutdoorComfortable = (maxScore >= 5.0) && (score >= outdoorThreshold);
     const classification = getNwiClassification(score);
     const bgClass = "bg-" + classification.text.toLowerCase();
     const formattedHour = formatHourAmPm(i);
