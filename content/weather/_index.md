@@ -756,7 +756,7 @@ function calculateNwiScore(temp, apparentTemp, dewPoint, precipProb, windSpeed, 
 
   // 2. Humidity Score (25%) - Hybrid Temperature-Split Model
   let dewScore = 0;
-  if (temp >= 70) {
+  if (temp >= 72) {
     // Warm/hot weather: use Dewpoint (measures mugginess)
     if (dewPoint <= 52) dewScore = 10;
     else if (dewPoint > 52 && dewPoint <= 56) dewScore = 9;
@@ -795,8 +795,8 @@ function calculateNwiScore(temp, apparentTemp, dewPoint, precipProb, windSpeed, 
   if (weatherCode === 0 || weatherCode === 1) skyScore = 10;
   else if (weatherCode === 2) skyScore = 9;
   else if (weatherCode === 3) {
-    // Decision 5: Cool overcast penalty: If apparent_temperature < 68°F and overcast, reduce skyScore from 7 to 4
-    if (apparentTemp < 68) {
+    // Decision 5: Cool overcast penalty: If apparent_temperature < 72°F and overcast, reduce skyScore from 7 to 4
+    if (apparentTemp < 72) {
       skyScore = 4;
     } else {
       skyScore = 7;
@@ -822,10 +822,20 @@ function calculateNwiScore(temp, apparentTemp, dewPoint, precipProb, windSpeed, 
   }
 
   // Cool & Damp Wind Penalty
-  if (temp < 70 && relativeHumidity >= 65 && windSpeed > 11) {
+  if (temp < 72 && relativeHumidity >= 65 && windSpeed > 11) {
     windPenalty += 0.8;
   }
   nwi -= windPenalty;
+
+  // Cool Overcast Gloom Penalty (Solar Deficit)
+  let gloomPenalty = 0;
+  if (temp < 72 && weatherCode === 3) {
+    gloomPenalty = 0.8; // Base cool overcast penalty
+    if (relativeHumidity >= 65) {
+      gloomPenalty += 0.8; // Additional penalty if also damp
+    }
+  }
+  nwi -= gloomPenalty;
 
   // Decision 2: Active Precipitation Gate (The "Drizzle" Problem)
   // Tiered cap based on weather code severity
@@ -1074,14 +1084,14 @@ const p = hourly.precipitation_probability?.[i] ?? 0;
 const w = hourly.wind_speed_10m?.[i] ?? 5;
 const rh = calculateRelativeHumidity(t, dp);
 const cTemp = t >= 60 && t <= 76;
-const cDew = t >= 70 ? dp <= 56 : rh <= 65;
+const cDew = t >= 72 ? dp <= 56 : rh <= 65;
 const cPrecip = p <= 15;
 const cWind = w < 18;
 if (cTemp && cDew && cPrecip && cWind) {
 comfortableHours.push(i);
 }
 if (p > 15) rainRisk = true;
-if (t >= 70 ? dp > 56 : rh > 65) highHumid = true;
+if (t >= 72 ? dp > 56 : rh > 65) highHumid = true;
 if (t >= 60) tooCold = false;
 if (t <= 76) tooHot = false;
 if (w < 18) tooWindy = false;
@@ -1193,7 +1203,7 @@ const currentHour = new Date().getHours();
     const wc = hourly.weathercode?.[i] ?? 0;
     const score = hourlyScores[i];
     const rh = calculateRelativeHumidity(t, dp);
-    const isWindowComfortable = (t >= 60 && t <= 76) && (t >= 70 ? dp <= 56 : rh <= 65) && (p <= 15) && (w < 18);
+    const isWindowComfortable = (t >= 60 && t <= 76) && (t >= 72 ? dp <= 56 : rh <= 65) && (p <= 15) && (w < 18);
     const isOutdoorComfortable = (maxScore >= 4.5) && (score >= outdoorThreshold);
     const classification = getNwiClassification(score);
     const bgClass = "bg-" + classification.text.toLowerCase();
