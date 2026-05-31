@@ -889,6 +889,15 @@ if (normHour === 12) return "12p";
 if (normHour > 12) return `${normHour - 12}p`;
 return `${normHour}a`;
 }
+function formatIsoTimeStr(isoStr) {
+  if (!isoStr) return "";
+  const parts = isoStr.split('T')[1].split(':');
+  const hour = parseInt(parts[0], 10);
+  const min = parts[1];
+  const ampm = hour >= 12 ? 'pm' : 'am';
+  const formattedHour = hour % 12 === 0 ? 12 : hour % 12;
+  return `${formattedHour}:${min}${ampm}`;
+}
 function setNwiLocation(tabId, lat, lon, name) {
 // Update active tab styles
 document.querySelectorAll(".nwi-tab-btn").forEach(btn => btn.classList.remove("active"));
@@ -978,7 +987,13 @@ document.getElementById("nwi-score-num").innerText = "-.-";
 document.getElementById("nwi-classification-text").innerText = "Calculating...";
 document.getElementById("nwi-summary-stats").innerText = "Connecting to Open-Meteo...";
 document.getElementById("nwi-gauge-fill").style.strokeDashoffset = "339.29"; // 0 progress
-const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode,dewpoint_2m_mean,wind_speed_10m_max&hourly=apparent_temperature,temperature_2m,relative_humidity_2m,dewpoint_2m,precipitation_probability,weathercode,wind_speed_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=auto&forecast_days=3`;
+const todayBtn = document.getElementById("nwi-day-today");
+if (todayBtn) todayBtn.innerText = "Today";
+const tomorrowBtn = document.getElementById("nwi-day-tomorrow");
+if (tomorrowBtn) tomorrowBtn.innerText = "Tomorrow";
+const nextBtn = document.getElementById("nwi-day-next");
+if (nextBtn) nextBtn.innerText = "Next Day";
+const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode,dewpoint_2m_mean,wind_speed_10m_max,sunrise,sunset&hourly=apparent_temperature,temperature_2m,relative_humidity_2m,dewpoint_2m,precipitation_probability,weathercode,wind_speed_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=auto&forecast_days=3`;
 fetch(weatherUrl)
 .then(res => {
 if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
@@ -1002,6 +1017,56 @@ throw new Error(data?.reason || "Received an invalid or truncated dataset from O
 }
 const daily = data.daily;
 const hourlyAll = data.hourly;
+
+// Calculate Daylight Comfort Score for each of the 3 days to populate the filter button labels
+const daylightAverages = [];
+const dayLabels = ["Today", "Tomorrow", "Next Day"];
+const dayBtnIds = ["nwi-day-today", "nwi-day-tomorrow", "nwi-day-next"];
+
+for (let dayIdx = 0; dayIdx < 3; dayIdx++) {
+  const sunriseStr = daily.sunrise?.[dayIdx];
+  const sunsetStr = daily.sunset?.[dayIdx];
+  let sunriseHour = 6;
+  let sunsetHour = 19;
+  if (sunriseStr && sunsetStr) {
+    sunriseHour = parseInt(sunriseStr.split('T')[1].split(':')[0], 10);
+    sunsetHour = parseInt(sunsetStr.split('T')[1].split(':')[0], 10);
+  }
+  
+  const dayHourly = sliceHourlyForDay(hourlyAll, dayIdx);
+  let dayScoreSum = 0;
+  let count = 0;
+  for (let h = sunriseHour; h <= sunsetHour; h++) {
+    if (h >= 0 && h < 24) {
+      const t = dayHourly.temperature_2m?.[h] ?? 70;
+      const ap = dayHourly.apparent_temperature?.[h] ?? t;
+      const dp = dayHourly.dewpoint_2m?.[h] ?? 50;
+      const p = dayHourly.precipitation_probability?.[h] ?? 0;
+      const w = dayHourly.wind_speed_10m?.[h] ?? 5;
+      const wc = dayHourly.weathercode?.[h] ?? 0;
+      const score = calculateNwiScore(t, ap, dp, p, w, wc);
+      dayScoreSum += score;
+      count++;
+    }
+  }
+  const dayAvg = count > 0 ? (dayScoreSum / count) : 0.0;
+  daylightAverages.push(dayAvg);
+
+  // Update the button labels with the daylight score average
+  const btn = document.getElementById(dayBtnIds[dayIdx]);
+  if (btn) {
+    btn.innerText = `${dayLabels[dayIdx]} (☀️ ${dayAvg.toFixed(1)})`;
+  }
+}
+
+const selectedDayDaylightNwi = daylightAverages[selectedDayIndex];
+const selectedDaylightClass = getNwiClassification(selectedDayDaylightNwi);
+
+const selSunriseStr = daily.sunrise?.[selectedDayIndex];
+const selSunsetStr = daily.sunset?.[selectedDayIndex];
+const formattedSunrise = selSunriseStr ? formatIsoTimeStr(selSunriseStr) : "6:00am";
+const formattedSunset = selSunsetStr ? formatIsoTimeStr(selSunsetStr) : "7:00pm";
+
 // Get data sliced specifically for the selected day (24 hours)
 const hourly = sliceHourlyForDay(hourlyAll, selectedDayIndex);
 // Update section titles dynamically
@@ -1052,6 +1117,7 @@ timelineTitleEl.innerText = selectedDayIndex === 0 ? "📈 24-Hour Comfort Timel
     document.getElementById("nwi-summary-stats").innerHTML = 
       `${timeLabel}: <strong>${Math.round(currentTemp)}°F</strong> (Feels: <strong>${Math.round(currentApparentTemp)}°F</strong>) | Dew Point: <strong>${Math.round(currentDewPoint)}°F</strong> | Wind: <strong>${Math.round(currentWindSpeed)} mph</strong><br>` +
       `Sky: <strong>${weatherText}</strong> (Precip: <strong>${currentPrecipProb}%</strong>)<br>` +
+      `☀️ **Daylight Comfort**: <strong class="${selectedDaylightClass.class}">${selectedDayDaylightNwi.toFixed(1)}/10</strong> (${selectedDaylightClass.text}) <span style="font-size: 0.85rem; opacity: 0.6; font-weight: normal;">(sun up from ${formattedSunrise} to ${formattedSunset})</span><br>` +
       `<span style="font-size: 0.85rem; opacity: 0.8;">Forecast: <strong>${Math.round(dailyTempMin)}°F to ${Math.round(dailyTempMax)}°F</strong> | Sky: <strong>${dailyWeatherText}</strong> (Max Precip: <strong>${dailyPrecipProbMax}%</strong>)</span>`;
 // 2. Action Plan: Windows & Outdoor Advice
 const dayWord = selectedDayIndex === 0 ? "today" : (selectedDayIndex === 1 ? "tomorrow" : "the next day");
