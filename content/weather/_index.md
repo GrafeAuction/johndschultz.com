@@ -743,6 +743,17 @@ function calculateNwiScore(temp, apparentTemp, dewPoint, precipProb, windSpeed, 
   // Calculate relative humidity for hybrid comfort logic
   const relativeHumidity = calculateRelativeHumidity(temp, dewPoint);
   //
+  // Continuous interpolation factor helper (clamps between 0 and 1)
+  const clampFactor = (val, min, max) => Math.max(0, Math.min(1, (val - min) / (max - min)));
+  //
+  // Continuous ramping factors
+  const f_temp = clampFactor(72 - temp, 0, 10); // 0 at >=72F, smoothly ramping to 1 at <=62F
+  const f_apparent_temp = clampFactor(72 - apparentTemp, 0, 10); // 0 at >=72F apparent, smoothly ramping to 1 at <=62F apparent
+  const f_humidity = clampFactor(relativeHumidity - 55, 0, 20); // 0 at <=55% RH, smoothly ramping to 1 at >=75% RH
+  const f_wind_base = clampFactor(windSpeed - 5, 0, 13); // 0 at <=5mph wind, smoothly ramping to 1 at >=18mph wind
+  const f_wind_cool = clampFactor(windSpeed - 8, 0, 8); // 0 at <=8mph wind, smoothly ramping to 1 at >=16mph wind
+  //
+  // //
   // 1. Temperature Score (30%) - Continuous Bounds based on Apparent Temperature (RealFeel)
   let tempScore = 0;
   if (apparentTemp >= 64 && apparentTemp <= 72) tempScore = 10;
@@ -793,12 +804,8 @@ function calculateNwiScore(temp, apparentTemp, dewPoint, precipProb, windSpeed, 
   if (weatherCode === 0 || weatherCode === 1) skyScore = 10;
   else if (weatherCode === 2) skyScore = 9;
   else if (weatherCode === 3) {
-    // Decision 5: Cool overcast penalty: If apparent_temperature < 72°F and overcast, reduce skyScore from 7 to 4
-    if (apparentTemp < 72) {
-      skyScore = 4;
-    } else {
-      skyScore = 7;
-    }
+    // Decision 5: Cool overcast penalty: Smoothly reduce skyScore from 7 (apparentTemp >= 72) to 4 (apparentTemp <= 62)
+    skyScore = 7 - (3 * f_apparent_temp);
   }
   else if (weatherCode === 45 || weatherCode === 48) skyScore = 5;
   else if (weatherCode >= 51 && weatherCode <= 55) skyScore = 4;
@@ -811,27 +818,18 @@ function calculateNwiScore(temp, apparentTemp, dewPoint, precipProb, windSpeed, 
   nwi = Math.round(nwi * 10) / 10;
   //
   // Decision 4: Windy is always "ugh" regardless of temperature.
-  // Apply a flat final-score wind penalty if the wind is high
-  let windPenalty = 0;
-  if (windSpeed > 15) {
-    windPenalty = 1.2;
-  } else if (windSpeed > 11) {
-    windPenalty = 0.6;
-  }
+  // Apply a smooth final-score wind penalty (0 at <=5mph scaling to 1.2 at >=18mph)
+  let windPenalty = 1.2 * f_wind_base;
   //
-  // Cool & Damp Wind Penalty
-  if (temp < 72 && relativeHumidity >= 65 && windSpeed > 11) {
-    windPenalty += 0.8;
-  }
+  // Cool & Damp Wind Penalty (Smoothly applied as a product of temperature, humidity, and wind factors)
+  windPenalty += 0.8 * f_temp * f_humidity * f_wind_cool;
   nwi -= windPenalty;
   //
   // Cool Overcast Gloom Penalty (Solar Deficit)
   let gloomPenalty = 0;
-  if (temp < 72 && weatherCode === 3) {
-    gloomPenalty = 0.8; // Base cool overcast penalty
-    if (relativeHumidity >= 65) {
-      gloomPenalty += 0.8; // Additional penalty if also damp
-    }
+  if (weatherCode === 3) {
+    // Smoothly applied base overcast gloom (0.8 * f_temp) and dampness gloom (0.8 * f_temp * f_humidity)
+    gloomPenalty = (0.8 * f_temp) + (0.8 * f_temp * f_humidity);
   }
   nwi -= gloomPenalty;
   //
