@@ -35,3 +35,7 @@ During the dialogue, several sharp formulations crystallized the tension:
 1. How do we measure the "friction index" of a skill to ensure it forces the right amount of cognitive load without slowing down essential velocity?
 2. When does a custom skill itself become so comfortable that we stop questioning its structure, shifting our "low default" up one level of abstraction?
 3. How do we train other people in an organization to develop the active meta-cognitive self-awareness needed to notice their own blind spots, rather than just relying on the tools to do the thinking?
+
+---
+
+*Connects to [Systemic Rivals Against Default Drift](/thoughts/systemic-rivals-against-default-drift/).*

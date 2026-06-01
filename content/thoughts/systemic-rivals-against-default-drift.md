@@ -34,3 +34,7 @@ During our dialogue, several sharp formulations crystallized the tension:
 1. How do we introduce systemic rivals into daily workflows for team members who don't have an internal drive to jump high?
 2. When does a custom skill become so comfortable that we stop treating it as a rival and start treating it as a default?
 3. How do we balance the need for Socratic friction with the operational velocity required to run a business?
+
+---
+
+*Connects to [Cognitive Defense Against Default Drift](/thoughts/cognitive-defense-against-default-drift/).*
