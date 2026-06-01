@@ -1148,16 +1148,16 @@ const dp = hourly.dewpoint_2m?.[i] ?? 50;
 const p = hourly.precipitation_probability?.[i] ?? 0;
 const w = hourly.wind_speed_10m?.[i] ?? 5;
 const rh = calculateRelativeHumidity(t, dp);
-const cTemp = t >= 60 && t <= 76;
-const cDew = t >= 72 ? dp <= 56 : rh <= 65;
-const cPrecip = p <= 15;
+const cTemp = t >= 55 && t <= 76;
+const cDew = t >= 72 ? dp <= 56 : dp <= 58;
+const cPrecip = p <= 20;
 const cWind = w < 18;
 if (cTemp && cDew && cPrecip && cWind) {
 comfortableHours.push(i);
 }
-if (p > 15) rainRisk = true;
-if (t >= 72 ? dp > 56 : rh > 65) highHumid = true;
-if (t >= 60) tooCold = false;
+if (p > 20) rainRisk = true;
+if (t >= 72 ? dp > 56 : dp > 58) highHumid = true;
+if (t >= 55) tooCold = false;
 if (t <= 76) tooHot = false;
 if (w < 18) tooWindy = false;
 }
@@ -1268,7 +1268,7 @@ const currentHour = new Date().getHours();
     const wc = hourly.weathercode?.[i] ?? 0;
     const score = hourlyScores[i];
     const rh = calculateRelativeHumidity(t, dp);
-    const isWindowComfortable = (t >= 60 && t <= 76) && (t >= 72 ? dp <= 56 : rh <= 65) && (p <= 15) && (w < 18);
+    const isWindowComfortable = (t >= 55 && t <= 76) && (t >= 72 ? dp <= 56 : dp <= 58) && (p <= 20) && (w < 18);
     const isOutdoorComfortable = (maxScore >= 5.0) && (score >= outdoorThreshold);
     const classification = getNwiClassification(score);
     const bgClass = "bg-" + classification.text.toLowerCase();
