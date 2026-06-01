@@ -746,15 +746,12 @@ function calculateNwiScore(temp, apparentTemp, dewPoint, precipProb, windSpeed, 
   // Calculate relative humidity for hybrid comfort logic
   const relativeHumidity = calculateRelativeHumidity(temp, dewPoint);
   //
-  // Continuous interpolation factor helper (clamps between 0 and 1)
-  const clampFactor = (val, min, max) => Math.max(0, Math.min(1, (val - min) / (max - min)));
-  //
-  // Continuous ramping factors
-  const f_temp = clampFactor(72 - temp, 0, 10); // 0 at >=72F, smoothly ramping to 1 at <=62F
-  const f_apparent_temp = clampFactor(72 - apparentTemp, 0, 10); // 0 at >=72F apparent, smoothly ramping to 1 at <=62F apparent
-  const f_humidity = clampFactor(relativeHumidity - 55, 0, 20); // 0 at <=55% RH, smoothly ramping to 1 at >=75% RH
-  const f_wind_base = clampFactor(windSpeed - 5, 0, 13); // 0 at <=5mph wind, smoothly ramping to 1 at >=18mph wind
-  const f_wind_cool = clampFactor(windSpeed - 8, 0, 8); // 0 at <=8mph wind, smoothly ramping to 1 at >=16mph wind
+  // Continuous ramping factors (using smooth S-curves)
+  const f_temp = 1 - smoothstep(62, 72, temp); // 0 at >=72F, smoothly ramping to 1 at <=62F
+  const f_apparent_temp = 1 - smoothstep(62, 72, apparentTemp); // 0 at >=72F apparent, smoothly ramping to 1 at <=62F apparent
+  const f_humidity = smoothstep(55, 75, relativeHumidity); // 0 at <=55% RH, smoothly ramping to 1 at >=75% RH
+  const f_wind_base = smoothstep(5, 18, windSpeed); // 0 at <=5mph wind, smoothly ramping to 1 at >=18mph wind
+  const f_wind_cool = smoothstep(8, 16, windSpeed); // 0 at <=8mph wind, smoothly ramping to 1 at >=16mph wind
   //
   // //
   // 1. Temperature Score (30%) - Continuous Bounds based on Apparent Temperature (RealFeel)
