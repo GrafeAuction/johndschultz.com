@@ -738,7 +738,10 @@ function calculateRelativeHumidity(tempF, dewPointF) {
   const e = 6.112 * Math.exp((17.67 * tdC) / (tdC + 243.5));
   return Math.min(100, Math.max(0, Math.round((e / es) * 100)));
 }
-  //
+function smoothstep(min, max, value) {
+  const x = Math.max(0, Math.min(1, (value - min) / (max - min)));
+  return x * x * (3 - 2 * x);
+}
 function calculateNwiScore(temp, apparentTemp, dewPoint, precipProb, windSpeed, weatherCode) {
   // Calculate relative humidity for hybrid comfort logic
   const relativeHumidity = calculateRelativeHumidity(temp, dewPoint);
@@ -755,49 +758,38 @@ function calculateNwiScore(temp, apparentTemp, dewPoint, precipProb, windSpeed, 
   //
   // //
   // 1. Temperature Score (30%) - Continuous Bounds based on Apparent Temperature (RealFeel)
-  let tempScore = 0;
-  if (apparentTemp >= 64 && apparentTemp <= 72) tempScore = 10;
-  else if ((apparentTemp >= 60 && apparentTemp < 64) || (apparentTemp > 72 && apparentTemp <= 76)) tempScore = 9;
-  else if ((apparentTemp >= 55 && apparentTemp < 60) || (apparentTemp > 76 && apparentTemp <= 80)) tempScore = 7;
-  else if ((apparentTemp >= 50 && apparentTemp < 55) || (apparentTemp > 80 && apparentTemp <= 85)) tempScore = 5;
-  else if ((apparentTemp >= 40 && apparentTemp < 50) || (apparentTemp > 85 && apparentTemp <= 90)) tempScore = 3;
-  else tempScore = 0;
+  let tempScore = 10;
+  if (apparentTemp < 64) {
+    tempScore = smoothstep(40, 64, apparentTemp) * 10;
+  } else if (apparentTemp > 72) {
+    tempScore = (1 - smoothstep(72, 90, apparentTemp)) * 10;
+  }
   //
   // 2. Humidity Score (25%) - Hybrid Temperature-Split Model
-  let dewScore = 0;
+  let dewScore = 10;
   if (temp >= 72) {
     // Warm/hot weather: use Dewpoint (measures mugginess)
-    if (dewPoint <= 52) dewScore = 10;
-    else if (dewPoint > 52 && dewPoint <= 56) dewScore = 9;
-    else if (dewPoint > 56 && dewPoint <= 60) dewScore = 7;
-    else if (dewPoint > 60 && dewPoint <= 64) dewScore = 4;
-    else if (dewPoint > 64 && dewPoint <= 68) dewScore = 1;
-    else dewScore = 0;
+    if (dewPoint > 52) {
+      dewScore = (1 - smoothstep(52, 68, dewPoint)) * 10;
+    }
   } else {
     // Cool weather: use Relative Humidity (penalizes clamminess/dampness)
-    if (relativeHumidity <= 55) dewScore = 10; // Crisp & Dry Comfort
-    else if (relativeHumidity > 55 && relativeHumidity <= 65) dewScore = 9; // Comfortable
-    else if (relativeHumidity > 65 && relativeHumidity <= 75) dewScore = 7; // Damp
-    else if (relativeHumidity > 75 && relativeHumidity <= 85) dewScore = 4; // Raw, clammy
-    else dewScore = 1; // Bone-chilling, cold/wet
+    if (relativeHumidity > 55) {
+      dewScore = (1 - smoothstep(55, 85, relativeHumidity)) * 10;
+    }
   }
   //
   // 3. Precipitation Score (25%) - Continuous Bounds
-  let precipScore = 0;
-  if (precipProb >= 0 && precipProb <= 5) precipScore = 10;
-  else if (precipProb > 5 && precipProb <= 15) precipScore = 9;
-  else if (precipProb > 15 && precipProb <= 30) precipScore = 7;
-  else if (precipProb > 30 && precipProb <= 50) precipScore = 4;
-  else if (precipProb > 50 && precipProb <= 70) precipScore = 2;
-  else precipScore = 0;
+  let precipScore = 10;
+  if (precipProb > 5) {
+    precipScore = (1 - smoothstep(5, 70, precipProb)) * 10;
+  }
   //
   // 4. Wind Score (10%) - Continuous Bounds (baseline component)
-  let windScore = 0;
-  if (windSpeed <= 5) windScore = 10;
-  else if (windSpeed > 5 && windSpeed <= 11) windScore = 9;
-  else if (windSpeed > 11 && windSpeed <= 15) windScore = 6;
-  else if (windSpeed > 15 && windSpeed <= 20) windScore = 3;
-  else windScore = 0;
+  let windScore = 10;
+  if (windSpeed > 5) {
+    windScore = (1 - smoothstep(5, 20, windSpeed)) * 10;
+  }
   //
   // 5. Sky Conditions Score (10%) - Kept well-calibrated (base component)
   let skyScore = 7;
