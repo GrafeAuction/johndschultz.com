@@ -978,8 +978,12 @@ const tomorrowBtn = document.getElementById("nwi-day-tomorrow");
 if (tomorrowBtn) tomorrowBtn.innerText = "Tomorrow";
 const nextBtn = document.getElementById("nwi-day-next");
 if (nextBtn) nextBtn.innerText = "Next Day";
-const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode,dewpoint_2m_mean,wind_speed_10m_max,sunrise,sunset&hourly=apparent_temperature,temperature_2m,relative_humidity_2m,dewpoint_2m,precipitation_probability,weathercode,wind_speed_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=auto&forecast_days=3`;
-fetch(weatherUrl)
+
+const params = `latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode,dewpoint_2m_mean,wind_speed_10m_max,sunrise,sunset&hourly=apparent_temperature,temperature_2m,relative_humidity_2m,dewpoint_2m,precipitation_probability,weathercode,wind_speed_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=auto&forecast_days=3`;
+const primaryUrl = `https://api.open-meteo.com/v1/forecast?${params}`;
+const fallbackUrl = `https://historical-forecast-api.open-meteo.com/v1/forecast?${params}`;
+
+fetch(primaryUrl)
 .then(res => {
 if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
 return res.json();
@@ -989,9 +993,22 @@ currentWeatherData = data;
 renderNwiDashboard(data);
 })
 .catch(err => {
-console.error("Open-Meteo connection error:", err);
+console.warn("Primary Open-Meteo API failed, trying fallback...", err);
+document.getElementById("nwi-summary-stats").innerText = "Primary API failed. Connecting to backup server...";
+fetch(fallbackUrl)
+.then(res => {
+if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+return res.json();
+})
+.then(data => {
+currentWeatherData = data;
+renderNwiDashboard(data);
+})
+.catch(fallbackErr => {
+console.error("Open-Meteo fallback error:", fallbackErr);
 document.getElementById("nwi-classification-text").innerText = "Connection Failed";
-document.getElementById("nwi-summary-stats").innerHTML = `Unable to fetch live weather data: <span style="color: #ef4444; font-weight: bold;">${err.message}</span><br>Please verify your internet connection or check the browser console for details.`;
+document.getElementById("nwi-summary-stats").innerHTML = `Unable to fetch live weather data: <span style="color: #ef4444; font-weight: bold;">${fallbackErr.message}</span><br>Please verify your internet connection or check the browser console for details.`;
+});
 });
 }
 function renderNwiDashboard(data) {
