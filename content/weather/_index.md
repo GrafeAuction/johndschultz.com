@@ -688,6 +688,7 @@ transform: translate(-50%, -100%) translateY(0);
 </svg>
 <script>
 // NWI Calculation and UI Engine
+const OPENWEATHER_API_KEY = ""; // Optional: Paste your free OpenWeather API key here for tertiary backup (up to 2000 free calls/day)
 const nwiLocations = {
 home: { lat: 43.71, lon: -92.28, name: "Grand Meadow, MN (Home)" },
 office: { lat: 43.86, lon: -92.19, name: "Stewartville, MN (Office)" }
@@ -964,14 +965,89 @@ console.error("Geocoding fetch error:", err);
 });
 }, 300);
 }
+function mapOwCodeToWmo(id) {
+if (id >= 200 && id < 300) return 95;
+if (id >= 300 && id < 400) return 51;
+if (id >= 500 && id < 600) return 61;
+if (id >= 600 && id < 700) return 71;
+if (id >= 700 && id < 800) return 45;
+if (id === 800) return 0;
+if (id === 801) return 1;
+if (id === 802) return 2;
+if (id >= 803) return 3;
+return 0;
+}
+function convertUnixToLocalIso(unixSec, offsetSec) {
+const localMs = (unixSec + offsetSec) * 1000;
+const d = new Date(localMs);
+const yyyy = d.getUTCFullYear();
+const mm = String(d.getUTCMonth() + 1).padStart(2, "0");
+const dd = String(d.getUTCDate()).padStart(2, "0");
+const hh = String(d.getUTCHours()).padStart(2, "0");
+const min = String(d.getUTCMinutes()).padStart(2, "0");
+return `${yyyy}-${mm}-${dd}T${hh}:${min}`;
+}
+function translateOpenWeatherToOpenMeteo(ow) {
+const timezoneOffset = ow.timezone_offset || 0;
+const daily = {
+time: [],
+sunrise: [],
+sunset: [],
+temperature_2m_max: [],
+temperature_2m_min: [],
+weathercode: [],
+precipitation_probability_max: []
+};
+for (let i = 0; i < Math.min(3, ow.daily?.length || 0); i++) {
+const d = ow.daily[i];
+const localIsoDate = convertUnixToLocalIso(d.dt, timezoneOffset).split('T')[0];
+daily.time.push(localIsoDate);
+daily.sunrise.push(convertUnixToLocalIso(d.sunrise, timezoneOffset));
+daily.sunset.push(convertUnixToLocalIso(d.sunset, timezoneOffset));
+daily.temperature_2m_max.push(d.temp?.max ?? 75);
+daily.temperature_2m_min.push(d.temp?.min ?? 55);
+daily.weathercode.push(mapOwCodeToWmo(d.weather?.[0]?.id ?? 800));
+daily.precipitation_probability_max.push(Math.round((d.pop ?? 0) * 100));
+}
+const hourly = {
+time: [],
+temperature_2m: [],
+apparent_temperature: [],
+relative_humidity_2m: [],
+dewpoint_2m: [],
+precipitation_probability: [],
+weathercode: [],
+wind_speed_10m: []
+};
+const owHourly = ow.hourly || [];
+const hoursToMap = 72;
+for (let i = 0; i < hoursToMap; i++) {
+let h = owHourly[i];
+if (!h && owHourly.length > 0) {
+const repeatIdx = (i % 24) + 24;
+h = owHourly[repeatIdx] || owHourly[owHourly.length - 1];
+}
+if (h) {
+const computedTime = owHourly[0].dt + (i * 3600);
+hourly.time.push(convertUnixToLocalIso(computedTime, timezoneOffset));
+hourly.temperature_2m.push(h.temp ?? 70);
+hourly.apparent_temperature.push(h.feels_like ?? h.temp ?? 70);
+hourly.relative_humidity_2m.push(h.humidity ?? 50);
+hourly.dewpoint_2m.push(h.dew_point ?? 50);
+hourly.precipitation_probability.push(Math.round((h.pop ?? 0) * 100));
+hourly.weathercode.push(mapOwCodeToWmo(h.weather?.[0]?.id ?? 800));
+hourly.wind_speed_10m.push(h.wind_speed ?? 5);
+}
+}
+return { daily, hourly };
+}
 function fetchNwiWeather(lat, lon, name) {
-// Reset elements to loading states
 document.getElementById("nwi-city-name").innerText = name;
 document.getElementById("nwi-coords").innerText = `${lat}°N, ${lon}°W`;
 document.getElementById("nwi-score-num").innerText = "-.-";
 document.getElementById("nwi-classification-text").innerText = "Calculating...";
 document.getElementById("nwi-summary-stats").innerText = "Connecting to Open-Meteo...";
-document.getElementById("nwi-gauge-fill").style.strokeDashoffset = "339.29"; // 0 progress
+document.getElementById("nwi-gauge-fill").style.strokeDashoffset = "339.29";
 const todayBtn = document.getElementById("nwi-day-today");
 if (todayBtn) todayBtn.innerText = "Today";
 const tomorrowBtn = document.getElementById("nwi-day-tomorrow");
@@ -1003,11 +1079,33 @@ currentWeatherData = data;
 renderNwiDashboard(data);
 })
 .catch(fallbackErr => {
-console.error("Open-Meteo fallback error:", fallbackErr);
+console.warn("Open-Meteo historical fallback failed.", fallbackErr);
+if (typeof OPENWEATHER_API_KEY !== "undefined" && OPENWEATHER_API_KEY) {
+document.getElementById("nwi-summary-stats").innerText = "Open-Meteo servers down. Trying OpenWeather tertiary fallback...";
+const owUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${OPENWEATHER_API_KEY}`;
+fetch(owUrl)
+.then(res => {
+if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+return res.json();
+})
+.then(owData => {
+const translated = translateOpenWeatherToOpenMeteo(owData);
+currentWeatherData = translated;
+renderNwiDashboard(translated);
+})
+.catch(owErr => {
+console.error("OpenWeather tertiary fallback error:", owErr);
+showConnectionFailedError(owErr);
+});
+} else {
+showConnectionFailedError(fallbackErr);
+}
+});
+});
+}
+function showConnectionFailedError(err) {
 document.getElementById("nwi-classification-text").innerText = "Connection Failed";
-document.getElementById("nwi-summary-stats").innerHTML = `Unable to fetch live weather data: <span style="color: #ef4444; font-weight: bold;">${fallbackErr.message}</span><br>Please verify your internet connection or check the browser console for details.`;
-});
-});
+document.getElementById("nwi-summary-stats").innerHTML = `Unable to fetch live weather data: <span style="color: #ef4444; font-weight: bold;">${err.message}</span><br>Please verify your internet connection or check the browser console for details.`;
 }
 function renderNwiDashboard(data) {
 try {
