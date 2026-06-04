@@ -978,11 +978,9 @@ const tomorrowBtn = document.getElementById("nwi-day-tomorrow");
 if (tomorrowBtn) tomorrowBtn.innerText = "Tomorrow";
 const nextBtn = document.getElementById("nwi-day-next");
 if (nextBtn) nextBtn.innerText = "Next Day";
-
 const params = `latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode,dewpoint_2m_mean,wind_speed_10m_max,sunrise,sunset&hourly=apparent_temperature,temperature_2m,relative_humidity_2m,dewpoint_2m,precipitation_probability,weathercode,wind_speed_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=auto&forecast_days=3`;
 const primaryUrl = `https://api.open-meteo.com/v1/forecast?${params}`;
 const fallbackUrl = `https://historical-forecast-api.open-meteo.com/v1/forecast?${params}`;
-
 fetch(primaryUrl)
 .then(res => {
 if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
