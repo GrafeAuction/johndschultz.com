@@ -24,9 +24,9 @@ sitemap:
 </div>
 <!-- Location Selector Tabs -->
 <div class="nwi-tabs">
-<button class="nwi-tab-btn active" onclick="setNwiLocation('home', 43.71, -92.28, 'Grand Meadow, MN (Home)')">🏡 Home</button>
-<button class="nwi-tab-btn" onclick="setNwiLocation('office', 43.86, -92.19, 'Stewartville, MN (Office)')">🏢 Office</button>
-<button class="nwi-tab-btn" onclick="detectNwiLocation()">📍 Current GPS</button>
+<button id="nwi-tab-home" class="nwi-tab-btn" onclick="setNwiLocation('home', 43.71, -92.28, 'Grand Meadow, MN (Home)')">🏡 Home</button>
+<button id="nwi-tab-office" class="nwi-tab-btn" onclick="setNwiLocation('office', 43.86, -92.19, 'Stewartville, MN (Office)')">🏢 Office</button>
+<button id="nwi-tab-gps" class="nwi-tab-btn active" onclick="detectNwiLocation(true)">📍 Current GPS</button>
 <div class="nwi-search-wrapper">
 <input type="text" id="nwi-search-input" placeholder="Search world cities..." oninput="searchNwiCities()">
 <div id="nwi-search-results" class="nwi-search-results-dropdown"></div>
@@ -698,7 +698,7 @@ let currentWeatherData = null;
 let selectedDayIndex = 0;
 // Execute calculations on page load
 document.addEventListener("DOMContentLoaded", () => {
-fetchNwiWeather(currentNwiLocation.lat, currentNwiLocation.lon, currentNwiLocation.name);
+  detectNwiLocation(false);
 // Close search suggestion dropdown on outer click
 document.addEventListener("click", (e) => {
 if (!e.target.closest(".nwi-search-wrapper")) {
@@ -885,40 +885,58 @@ function formatIsoTimeStr(isoStr) {
   return `${formattedHour}:${min}${ampm}`;
 }
 function setNwiLocation(tabId, lat, lon, name) {
-// Update active tab styles
-document.querySelectorAll(".nwi-tab-btn").forEach(btn => btn.classList.remove("active"));
-if (tabId === "home") {
-document.querySelectorAll(".nwi-tab-btn")[0].classList.add("active");
-} else if (tabId === "office") {
-document.querySelectorAll(".nwi-tab-btn")[1].classList.add("active");
+  // Update active tab styles
+  document.querySelectorAll(".nwi-tab-btn").forEach(btn => btn.classList.remove("active"));
+  if (tabId === "home") {
+    document.getElementById("nwi-tab-home")?.classList.add("active");
+  } else if (tabId === "office") {
+    document.getElementById("nwi-tab-office")?.classList.add("active");
+  }
+  const gpsBtn = document.getElementById("nwi-tab-gps");
+  if (gpsBtn) {
+    gpsBtn.innerText = "📍 Current GPS";
+  }
+  currentNwiLocation = { lat, lon, name };
+  fetchNwiWeather(lat, lon, name);
 }
-currentNwiLocation = { lat, lon, name };
-fetchNwiWeather(lat, lon, name);
-}
-function detectNwiLocation() {
-const gpsBtn = document.querySelectorAll(".nwi-tab-btn")[2];
-gpsBtn.innerText = "📍 Locating...";
-if (!navigator.geolocation) {
-gpsBtn.innerText = "📍 GPS Failed";
-alert("Geolocation is not supported by your browser.");
-return;
-}
-navigator.geolocation.getCurrentPosition(
-(position) => {
-document.querySelectorAll(".nwi-tab-btn").forEach(btn => btn.classList.remove("active"));
-gpsBtn.classList.add("active");
-gpsBtn.innerText = "📍 GPS Active";
-const lat = Math.round(position.coords.latitude * 100) / 100;
-const lon = Math.round(position.coords.longitude * 100) / 100;
-const name = 'Current Location';
-fetchNwiWeather(lat, lon, name);
-},
-(err) => {
-gpsBtn.innerText = "📍 GPS Blocked";
-console.warn(`Geolocation error (${err.code}): ${err.message}`);
-alert("Unable to fetch location. Please search manually or verify browser permissions.");
-}
-);
+function detectNwiLocation(isInteractive = false) {
+  const gpsBtn = document.getElementById("nwi-tab-gps");
+  if (!gpsBtn) return;
+  gpsBtn.innerText = "📍 Locating...";
+  if (!navigator.geolocation) {
+    gpsBtn.innerText = "📍 GPS Unsupported";
+    gpsBtn.classList.remove("active");
+    if (isInteractive) {
+      alert("Geolocation is not supported by your browser.");
+    }
+    if (!isInteractive) {
+      setNwiLocation('home', 43.71, -92.28, 'Grand Meadow, MN (Home)');
+    }
+    return;
+  }
+  document.querySelectorAll(".nwi-tab-btn").forEach(btn => btn.classList.remove("active"));
+  gpsBtn.classList.add("active");
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      gpsBtn.innerText = "📍 GPS Active";
+      const lat = Math.round(position.coords.latitude * 100) / 100;
+      const lon = Math.round(position.coords.longitude * 100) / 100;
+      const name = 'Current Location';
+      fetchNwiWeather(lat, lon, name);
+    },
+    (err) => {
+      console.warn(`Geolocation error (${err.code}): ${err.message}`);
+      gpsBtn.innerText = "📍 GPS Unavailable";
+      gpsBtn.classList.remove("active");
+      if (isInteractive) {
+        alert("Unable to fetch location. Please search manually or verify browser permissions.");
+      }
+      if (!isInteractive) {
+        setNwiLocation('home', 43.71, -92.28, 'Grand Meadow, MN (Home)');
+      }
+    },
+    { timeout: 6000, maximumAge: 600000 }
+  );
 }
 // Geocoding world search
 let searchDebounceTimer;
@@ -952,6 +970,10 @@ document.getElementById("nwi-search-input").value = city.name;
 dropdown.style.display = "none";
 // Set active to custom input state
 document.querySelectorAll(".nwi-tab-btn").forEach(btn => btn.classList.remove("active"));
+const gpsBtn = document.getElementById("nwi-tab-gps");
+if (gpsBtn) {
+gpsBtn.innerText = "📍 Current GPS";
+}
 const lat = Math.round(city.latitude * 100) / 100;
 const lon = Math.round(city.longitude * 100) / 100;
 fetchNwiWeather(lat, lon, fullName);
