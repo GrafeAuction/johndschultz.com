@@ -8,7 +8,9 @@ hideMeta: true
 
 <div class="speaking-intro">
 
-I speak about AI adoption, leadership, decision-making, and technology strategy for traditional industries. I'm a Lead Instructor for the NAA's Auction Marketing Management (AMM) program and taught the AI curriculum at the 2026 Certified Auctioneers Institute. My sessions are built for practitioners, not theorists. Live demos, real workflows, and takeaways you can use the next day.
+I deliver high-impact keynotes, workshops, and continuing education masterclasses that bridge the gap between traditional industries and modern technology. As a Lead Instructor for the National Auctioneers Association's AMM program and the AI curriculum developer for the Certified Auctioneers Institute (CAI), my sessions are built for active practitioners, not theorists.
+
+**The Promise:** Your attendees will not just learn about the future. They will leave with a 30-day implementation plan, concrete workflows, and the practical capability to reclaim ten administrative hours every single week. Live demos, real-world constraints, and tools they can deploy the next morning.
 
 </div>
 
@@ -18,9 +20,21 @@ I speak about AI adoption, leadership, decision-making, and technology strategy 
 
 <div class="topic-card">
 
+### From Old School to New School: Marketing & AI
+
+Our flagship five-hour continuing education course designed to bridge the physical-digital divide. Auctioneers learn to build targeted buyer personas, optimize for the shift from traditional search engines to generative answers (SEO to GEO), and deploy multi-tool AI workflows to automate cataloging.
+*   **The Promise:** Draft a complete auction catalog in under fifteen minutes and reclaim ten administrative hours every single week.
+*   **Slogan:** *"AI is your leverage, not your replacement."*
+
+</div>
+
+<div class="topic-card">
+
 ### AI Adoption for Traditional Industries
 
-How to practically incorporate AI tools into daily operations without replacing the expertise that makes your business work. Covers the "Big 4" AI tools, the Symphony Effect (chaining tools together), and the CLEAR prompting framework. I've delivered this for auctioneers, real estate agents, and community leaders. Formats range from 1-hour strategic briefings to half-day workshops with hands-on exercises.
+How to practically incorporate AI tools into daily operations without replacing the expertise that makes your business work. We break down the CLEAR prompting framework and the Symphony Effect (combining ChatGPT, Gemini, Claude, and Perplexity into seamless multi-tool workflows) using live, interactive demonstrations.
+*   **The Promise:** Move from theoretical understanding to active everyday utilization within thirty days.
+*   **Slogan:** *"AI is a tool, but your expertise is the filter."*
 
 </div>
 
@@ -28,7 +42,9 @@ How to practically incorporate AI tools into daily operations without replacing 
 
 ### The Agentic Shift
 
-What happens to your business when AI agents start making decisions on behalf of your customers? Marketing assumes someone sees the ad. Brand assumes someone recognizes the name. Every one of those assumptions breaks when the human leaves the loop. This talk traces the structural shift from systems where humans decide with technology's help to systems where technology decides within human constraints.
+What happens to your business when AI agents begin making decisions on behalf of your customers? Marketing assumes someone sees the ad; brand assumes someone recognizes the name. Every one of those assumptions breaks when the human leaves the loop. This talk traces the structural shift to systems where technology decides within human constraints.
+*   **The Promise:** Learn to position your brand and structure your data to be cited and chosen by AI decision agents.
+*   **Slogan:** *"Agents do not look at ads."*
 
 </div>
 
@@ -37,14 +53,8 @@ What happens to your business when AI agents start making decisions on behalf of
 ### Leadership & Decision-Making
 
 Lessons from running a national trade association and building a technology-driven company in a traditional industry. Focuses on practical frameworks for small, high-trust organizations: when to systematize and when to stay human, how principles outperform predictions, and why the gap between knowing and doing is where most leadership fails.
-
-</div>
-
-<div class="topic-card">
-
-### Ethics & AI
-
-Navigating the ethical questions that come with AI adoption in relationship-driven industries. Where's the line between efficiency and authenticity? What do your clients need to know? What does trust look like when algorithms are making recommendations on your behalf?
+*   **The Promise:** Build self-sustaining systems that scale beyond the heroics of any single individual.
+*   **Slogan:** *"Principles outperform predictions."*
 
 </div>
 
@@ -52,7 +62,9 @@ Navigating the ethical questions that come with AI adoption in relationship-driv
 
 ### Digital Marketing & Analytics
 
-Getting real answers from your data without drowning in dashboards. Which marketing channels actually drive conversions, where prospects drop off before signing up, and a 5-minute weekly routine to make data review a habit. Built on Google Analytics and Search Console, applicable to any business with a website.
+Cut through the noise of complex dashboards to identify the data that actually drives conversions. Learn to optimize your Google Business Profile (your free digital billboard) and establish a simple, weekly routine to find where prospects drop off before completing high-value actions.
+*   **The Promise:** Build a five-minute weekly data habit that reveals where your leads are dropping off.
+*   **Slogan:** *"Website visits mean nothing without action."*
 
 </div>
 
@@ -60,7 +72,9 @@ Getting real answers from your data without drowning in dashboards. Which market
 
 ### Teaching From the Middle of It
 
-Why the person one step ahead in the fog teaches better than the expert who mapped the terrain from a helicopter. This talk is about proximity as a teaching credential, the gap between accumulating knowledge and applying it, and why the most honest form of education happens when you're still figuring it out yourself. Built for educators, trainers, and anyone responsible for bringing a team up to speed.
+Why the person one step ahead in the fog teaches better than the expert who mapped the terrain from a helicopter. This talk is about proximity as a teaching credential, the gap between accumulating knowledge and applying it, and why the most honest form of education happens when you are still figuring it out yourself. Built for educators, trainers, and leaders.
+*   **The Promise:** Upskill your team or organization effectively without needing to be an absolute expert beforehand.
+*   **Slogan:** *"Proximity is a teaching credential."*
 
 </div>
 
@@ -68,85 +82,36 @@ Why the person one step ahead in the fog teaches better than the expert who mapp
 
 ## Recent Engagements
 
-<div class="speaking-engagements">
-
-<div class="engagement">
-<span class="engagement-date">Nov 2026</span>
-<span class="engagement-detail"><strong>Indiana Auctioneers Association Annual Convention</strong> · Practical AI for the Auction Professional · 1.5 hr</span>
-</div>
-
-<div class="engagement">
-<span class="engagement-date">May 2026</span>
-<span class="engagement-detail"><strong>Industrial Auctioneers Association European Members' Meeting</strong> · Rome · AI for Industrial Auctioneers · 1 hr</span>
-</div>
-
-<div class="engagement">
-<span class="engagement-date">Apr 2026</span>
-<span class="engagement-detail"><strong>Nebraska Auctioneers Association Conference</strong> · Marketing in a Changed World + The AI Advantage · 3 hr</span>
-</div>
-
-<div class="engagement">
-<span class="engagement-date">Apr 2026</span>
-<span class="engagement-detail"><strong>NAA Certified Auctioneers Institute (CAI)</strong> · Partnerships, Joint Ventures, and Referrals · 1.5 hr</span>
-</div>
-
-<div class="engagement">
-<span class="engagement-date">Mar 2026</span>
-<span class="engagement-detail"><strong>UW-Madison Extension, Sauk County Institute of Leadership</strong> · AI for Leadership · 1 hr</span>
-</div>
-
-<div class="engagement">
-<span class="engagement-date">Mar 2026</span>
-<span class="engagement-detail"><strong>NAA Certified Auctioneers Institute (CAI)</strong> · Marketing & AI · 3.5 hr</span>
-</div>
-
-<div class="engagement">
-<span class="engagement-date">Mar 2026</span>
-<span class="engagement-detail"><strong>Schrader Real Estate & Auction Annual Meeting</strong> · Using AI Within the Auction Industry · 75 min</span>
-</div>
-
-<div class="engagement">
-<span class="engagement-date">Mar 2026</span>
-<span class="engagement-detail"><strong>World Wide College of Auctioneering</strong> · Auction Marketing: A Strategic Approach · Half day</span>
-</div>
-
-<div class="engagement">
-<span class="engagement-date">Feb 2026</span>
-<span class="engagement-detail"><strong>Weichert Realtors / H. Barry Smith Co.</strong> · AI for Real Estate Agents · 1 hr</span>
-</div>
-
-<div class="engagement">
-<span class="engagement-date">Feb 2026</span>
-<span class="engagement-detail"><strong>NAA Digital Marketing Summit</strong> · Data That Drives Decisions: Mastering Google Analytics & Search Console · 1 hr</span>
-</div>
-
-<div class="engagement">
-<span class="engagement-date">Feb 2026</span>
-<span class="engagement-detail"><strong>North Dakota Auctioneers Association Conference</strong> · AI in the Auction Industry + Digital Marketing for Auctions · Half day</span>
-</div>
-
-<div class="engagement">
-<span class="engagement-date">Jan 2026</span>
-<span class="engagement-detail"><strong>Michigan Auctioneers Association Conference</strong> · AI Unveiled: From Old School to New School · 3 hr</span>
-</div>
-
-<div class="engagement">
-<span class="engagement-date">Jan 2026</span>
-<span class="engagement-detail"><strong>Wisconsin Auctioneers Association Conference</strong> · AI Unveiled + Ethics & AI · 2 hr + 1 hr</span>
-</div>
-
-<div class="engagement">
-<span class="engagement-date">Jan 2026</span>
-<span class="engagement-detail"><strong>Minnesota State Auctioneers Association Conference</strong> · The 1-Hour AI Advantage · 1 hr</span>
-</div>
-
-</div>
+| Date | Event / Host | Session / Topic | Duration |
+| :--- | :--- | :--- | :--- |
+| Nov 2026 | **Indiana Auctioneers Association Annual Convention** | Practical AI for the Auction Professional | 1.5 hr |
+| Jun 2026 | **Arkansas Auctioneers Association Summer Conference** (Tull, AR) | From Old School to New School: Marketing & AI for Auctions | 5 hr (Full day) |
+| May 2026 | **Industrial Auctioneers Association European Members' Meeting** (Rome, Italy) | AI for Industrial Auctioneers | 1 hr |
+| Apr 2026 | **Nebraska Auctioneers Association Conference** | Marketing in a Changed World + The AI Advantage | 3 hr |
+| Apr 2026 | **NAA Certified Auctioneers Institute (CAI)** | Partnerships, Joint Ventures, and Referrals | 1.5 hr |
+| Mar 2026 | **UW-Madison Extension, Sauk County Institute of Leadership** | AI for Leadership | 1 hr |
+| Mar 2026 | **NAA Certified Auctioneers Institute (CAI)** | Marketing & AI | 3.5 hr |
+| Mar 2026 | **Schrader Real Estate & Auction Annual Meeting** | Using AI Within the Auction Industry | 75 min |
+| Mar 2026 | **World Wide College of Auctioneering** | Auction Marketing: A Strategic Approach | Half day |
+| Feb 2026 | **Weichert Realtors / H. Barry Smith Co.** | AI for Real Estate Agents | 1 hr |
+| Feb 2026 | **NAA Digital Marketing Summit** | Data That Drives Decisions: Mastering Google Analytics & Search Console | 1 hr |
+| Feb 2026 | **North Dakota Auctioneers Association Conference** | AI in the Auction Industry + Digital Marketing for Auctions | Half day |
+| Jan 2026 | **Michigan Auctioneers Association Conference** | AI Unveiled: From Old School to New School | 3 hr |
+| Jan 2026 | **Wisconsin Auctioneers Association Conference** | AI Unveiled + Ethics & AI | 2 hr + 1 hr |
+| Jan 2026 | **Minnesota State Auctioneers Association Conference** | The 1-Hour AI Advantage | 1 hr |
 
 ## Book Me
 
 <div class="speaking-cta">
 
-I'm available for conferences, corporate events, association meetings, auction schools, and private training sessions. Formats range from 1-hour keynotes to half-day workshops with hands-on exercises. If you're looking for a speaker who can make technology feel accessible to a room full of practitioners, I'd like to hear from you.
+I am available for keynotes, workshops, and continuing education sessions for state and national trade associations, corporate events, auction schools, and private training.
+
+### What I Deliver
+*   **Customized, Interactive Demos:** No dry slides or static lists. I run live, real-time tests on actual assets (real estate, equipment, or personal property) suggested by the audience.
+*   **Actionable Toolkits:** Attendees do not just take notes. They leave with a physical and digital toolbox, including the CLEAR Prompting Framework reference, multi-tool AI worksheets, and 30-day implementation roadmaps.
+*   **Continuing Education Credits:** Content is structured to qualify for state-level auctioneer and real estate continuing education (CE) requirements, as demonstrated by the five-hour approved curriculum.
+
+If you are looking for a speaker who bridges traditional industry expertise with modern technology strategy, I would like to hear from you.
 
 [john.schultz@grafeauction.com](mailto:john.schultz@grafeauction.com)
 
