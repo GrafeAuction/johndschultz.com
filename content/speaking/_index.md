@@ -8,7 +8,7 @@ hideMeta: true
 
 <div class="speaking-intro">
 
-I deliver high-impact keynotes, workshops, and continuing education masterclasses that bridge the gap between traditional industries and modern technology. As a Lead Instructor for the National Auctioneers Association's AMM program and the AI curriculum developer for the Certified Auctioneers Institute (CAI), my sessions are built for active practitioners, not theorists.
+I deliver high-impact keynotes, workshops, and continuing education masterclasses that bridge the gap between traditional industries and modern technology. As a Lead Instructor for the National Auction Association's Auction Marketing Management (AMM) program and the AI curriculum developer for the Certified Auctioneers Institute (CAI), my sessions are built for active practitioners, not theorists.
 
 **The Promise:** Your attendees will not just learn about the future. They will leave with a 30-day implementation plan, concrete workflows, and the practical capability to reclaim ten administrative hours every single week. Live demos, real-world constraints, and tools they can deploy the next morning.
 
