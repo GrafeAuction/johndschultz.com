@@ -8,13 +8,13 @@ hideMeta: true
 
 <div class="about-lede">
 
-I've been in the auction industry since 1992.
+I write about the intersection of traditional commerce and digital leverage, testing new systems where the code meets the gavel.
 
 </div>
 
-Today I serve as Partner and Chief Marketing & Technology Officer at [Grafe Auction Company](https://grafeauction.com), a nationally recognized leader conducting nearly 300 commercial and industrial online auctions annually across retail, hospitality, healthcare, and manufacturing. Before Grafe, I spent 16 years as VP of Operations and Auctioneer at Schultz Auctioneers Landmark Realty.
+My perspective is built on more than thirty years of active operations. As Partner and Chief Marketing & Technology Officer at [Grafe Auction Company](https://grafeauction.com), I help run a national platform conducting nearly 290 commercial and industrial online auctions annually across all 48 states. This is high-volume, real-world commerce where digital theories are quickly validated or discarded by actual market transactions. Before my time at Grafe, I spent sixteen years as Vice President of Operations and Auctioneer at Schultz Auctioneers Landmark Realty.
 
-I served as the 76th President of the [National Auction Association](https://auctioneers.org) (2024–2025) and currently serve as Board Chair. Before that, I served as the 60th President of the Minnesota State Auctioneers Association and was the founding President of the Minnesota State Auctioneer's Foundation. I hold the CAI (Certified Auctioneers Institute) designation and serve as Lead Instructor for the AMM (Auction Marketing Management) program.
+Beyond daily business operations, I believe in upskilling the next generation of practitioners. I served as the 76th President of the [National Auction Association](https://auctioneers.org) (2024, 2025) and currently serve as Board Chair. I also serve as Lead Instructor for the Auction Marketing Management (AMM) program and develop the artificial intelligence curriculum for the Certified Auctioneers Institute (CAI) at Indiana University. Previously, I served as the 60th President of the Minnesota State Auctioneers Association and was the founding President of the Minnesota State Auctioneer's Foundation.
 
 I live in southern Minnesota with my wife Billie Jo and our daughter Anna Claire.
 
@@ -24,37 +24,43 @@ I live in southern Minnesota with my wife Billie Jo and our daughter Anna Claire
 
 <div class="about-topic">
 
-**Leadership and decision-making** in small, high-trust organizations
+Leadership in small, high-trust organizations relies on self-sustaining systems rather than individual heroics. I explore how clear operational principles outperform predictions and how resilient structures are built on shared transparency.
 
 </div>
 
 <div class="about-topic">
 
-**Authenticity and vulnerability** as competitive advantages, not soft skills
+The space between understanding a concept and executing it is where most leadership failures occur. I write about closing this execution gap, moving from theoretical knowledge to daily, disciplined habits.
 
 </div>
 
 <div class="about-topic">
 
-**Pattern recognition** across history, business, and everyday life
+Technology is leverage, not a replacement for human judgment. I explore how artificial intelligence can be practically integrated into traditional businesses to automate administration while preserving the expertise that matters.
 
 </div>
 
 <div class="about-topic">
 
-**Technology and AI** applied practically to traditional industries
+Vulnerability and authenticity are often dismissed as soft skills, but in high-stakes environments, they are concrete competitive advantages. I study how honesty builds trust faster than any polished corporate messaging.
 
 </div>
 
 <div class="about-topic">
 
-**The gap between knowing and doing**, and what it takes to close it
+Useful ideas rarely stay in one lane. I trace patterns across history, literature, and everyday operations, looking for the underlying frameworks that explain how people behave and how markets function.
+
+</div>
+
+<div class="about-topic">
+
+The most honest form of education happens when you are still figuring it out yourself. I believe that proximity is a credential, and the person one step ahead in the fog often teaches better than the expert in a helicopter.
 
 </div>
 
 </div>
 
-Everything here started as handwritten thought cards, index-card-sized observations I jot down after conversations, books, or long drives. Some stay as [thought cards](/thoughts/). Others grow into [essays](/essays/) when the ideas connect in ways I didn't expect. When enough thought cards circle the same theme, I compile them into [concepts](/concepts/), living overviews that trace how an idea evolved across sources and time.
+Every piece of writing on this site begins as a handwritten thought card, a brief, index-card-sized observation jotted down after conversations, books, or days spent on the road. Some of these remain as raw [thought cards](/thoughts/). Others grow and merge into [essays](/essays/) when unexpected connections emerge. When several cards begin to circle the same theme, I compile them into [concepts](/concepts/), which serve as living, evolving overviews tracing how an idea develops across different sources and over time.
 
 ## Connect
 
