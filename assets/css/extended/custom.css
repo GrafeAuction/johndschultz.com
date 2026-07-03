@@ -51,6 +51,17 @@
   --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
 
+  /* Type scale (~1.3 ratio ladder) */
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-ui: 0.875rem;
+  --text-body: 1.15rem;
+  --text-lg: 1.4rem;
+  --text-h3: 1.35rem;
+  --text-h2: 1.75rem;
+  --text-title: 2.6rem;
+  --text-hero: 2.8rem;
+
   /* Spacing scale */
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
@@ -108,12 +119,13 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
+  font-optical-sizing: auto;
   font-weight: 600;
 }
 
 .post-content {
   font-family: var(--font-body);
-  font-size: 1.15rem;
+  font-size: var(--text-body);
   line-height: 1.75;
 }
 
@@ -123,6 +135,20 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 600;
   margin-top: var(--space-2xl);
+}
+
+.post-content h2 {
+  font-size: var(--text-h2);
+  margin-top: var(--space-3xl);
+}
+
+.post-content h3 {
+  font-size: var(--text-h3);
+  font-weight: 500;
+}
+
+.post-content h4 {
+  font-weight: 500;
 }
 
 .post-content strong {
@@ -150,7 +176,7 @@ code, pre, .post-content code, .post-content pre {
 
 #menu a {
   font-family: var(--font-ui);
-  font-size: 14px;
+  font-size: var(--text-ui);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -172,7 +198,7 @@ code, pre, .post-content code, .post-content pre {
 
 .profile .profile_inner h1 {
   font-family: var(--font-heading);
-  font-size: 2.8rem;
+  font-size: var(--text-hero);
   font-weight: 600;
 }
 
@@ -204,7 +230,7 @@ code, pre, .post-content code, .post-content pre {
   border-radius: 0;
   background: transparent;
   color: var(--primary);
-  font-size: 14px;
+  font-size: var(--text-ui);
   font-family: var(--font-ui);
   transition: border-color 0.2s ease;
 }
@@ -225,7 +251,7 @@ code, pre, .post-content code, .post-content pre {
   border-radius: var(--radius);
   background: transparent;
   color: var(--primary);
-  font-size: 13px;
+  font-size: var(--text-sm);
   font-family: var(--font-ui);
   font-weight: 500;
   cursor: pointer;
@@ -246,7 +272,7 @@ code, pre, .post-content code, .post-content pre {
 
 .recent-posts h3 {
   font-family: var(--font-ui);
-  font-size: 13px;
+  font-size: var(--text-sm);
   color: var(--secondary);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -389,8 +415,9 @@ code, pre, .post-content code, .post-content pre {
 .essays-list .entry-footer,
 .thoughts-list .entry-footer,
 .concepts-list .entry-footer {
-  font-family: var(--font-ui);
-  font-size: 13px;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.03em;
   margin-top: var(--space-xs);
 }
 
@@ -404,7 +431,7 @@ code, pre, .post-content code, .post-content pre {
 
 .about-lede p {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: var(--text-lg);
   font-weight: 400;
   font-style: italic;
   color: var(--accent-primary);
@@ -443,7 +470,7 @@ code, pre, .post-content code, .post-content pre {
   align-items: center;
   gap: var(--space-sm);
   font-family: var(--font-ui);
-  font-size: 14px;
+  font-size: var(--text-ui);
   color: var(--primary);
   text-decoration: none;
   transition: color 0.2s ease;
@@ -473,7 +500,7 @@ code, pre, .post-content code, .post-content pre {
 
 .speaking-intro p {
   font-family: var(--font-body);
-  font-size: 1.15rem;
+  font-size: var(--text-body);
   line-height: 1.7;
 }
 
@@ -529,7 +556,7 @@ code, pre, .post-content code, .post-content pre {
 
 .engagement-date {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: var(--text-sm);
   color: var(--secondary);
   white-space: nowrap;
   min-width: 70px;
@@ -576,7 +603,7 @@ code, pre, .post-content code, .post-content pre {
 
 .post-title {
   font-family: var(--font-heading);
-  font-size: 2.6rem;
+  font-size: var(--text-title);
   font-weight: 600;
 }
 
@@ -584,11 +611,13 @@ code, pre, .post-content code, .post-content pre {
   font-family: var(--font-body);
   font-style: italic;
   opacity: 0.8;
-  font-size: 1.15rem;
+  font-size: var(--text-body);
 }
 
 .post-meta {
-  font-family: var(--font-ui);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.03em;
 }
 
 /* Links in body */
@@ -691,7 +720,7 @@ code, pre, .post-content code, .post-content pre {
   border: 1.5px solid var(--border);
   border-radius: 999px;
   font-family: var(--font-ui);
-  font-size: 14px;
+  font-size: var(--text-ui);
   text-decoration: none;
   color: var(--primary);
   background: transparent;
@@ -716,7 +745,7 @@ code, pre, .post-content code, .post-content pre {
 }
 
 .terms-tags li[data-count="low"] a {
-  font-size: 13px;
+  font-size: var(--text-sm);
   color: var(--secondary);
 }
 
@@ -776,7 +805,7 @@ footer.footer {
   border-top: 1px solid var(--border);
   text-align: center;
   color: var(--secondary);
-  font-size: 14px;
+  font-size: var(--text-ui);
   font-family: var(--font-ui);
 }
 
@@ -803,7 +832,7 @@ footer.footer {
   align-items: center;
   gap: var(--space-sm);
   color: var(--secondary);
-  font-size: 13px;
+  font-size: var(--text-sm);
   font-family: var(--font-mono);
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -829,7 +858,7 @@ footer.footer {
 .pullquote p {
   font-family: var(--font-heading);
   font-style: italic;
-  font-size: 1.4rem;
+  font-size: var(--text-lg);
   line-height: 1.6;
   color: var(--accent-flourish);
   margin: 0;
