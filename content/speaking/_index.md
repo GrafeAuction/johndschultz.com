@@ -114,6 +114,6 @@ I am available for keynotes, workshops, and continuing education sessions for st
 
 If you are looking for a speaker who bridges traditional industry expertise with modern technology strategy, I would like to hear from you.
 
-<a class="cta-button" href="mailto:john.schultz@grafeauction.com">john.schultz@grafeauction.com</a>
+<a class="cta-button" href="mailto:john.schultz@grafeauction.com">john.schultz&#64;grafeauction.com</a>
 
 </div>
