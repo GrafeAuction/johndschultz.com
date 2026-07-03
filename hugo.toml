@@ -40,13 +40,6 @@ enableRobotsTXT = true
   UseHugoToc = true
   displayFullLangName = true
 
-  [params.homeInfoParams]
-    Title = "John Schultz"
-    Content = """
-Auctioneer. Technologist. Writer.\n\n\
-Partner & CMTO at [Grafe Auction Company](https://grafeauction.com). Past President, [National Auctioneers Association](https://auctioneers.org).\n\n\
-I write about leadership, decision-making, and what the auction industry teaches you about everything else."""
-
   [[params.socialIcons]]
     name = "email"
     url = "mailto:john.schultz@grafeauction.com"
@@ -58,6 +51,9 @@ I write about leadership, decision-making, and what the auction industry teaches
   [[params.socialIcons]]
     name = "rss"
     url = "https://johndschultz.com/index.xml"
+
+  [params.assets]
+    theme_color = "#F2F0E5"
 
   [params.profileMode]
     enabled = true

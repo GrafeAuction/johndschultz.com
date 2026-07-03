@@ -1,6 +1,10 @@
 /* ==========================================================================
    johndschultz.com Design System
-   Built on PaperMod. Custom typography, accent color, content differentiation.
+   Built on PaperMod. Flexoki palette with semantic two-tier accent tokens:
+   text tier (AAA vs its background), border tier (>=3:1 graphic), plus a
+   small-text label tier. Blue = primary UI/links; essays/thoughts/concepts
+   carry blue/green/purple; orange survives only as the essay flourish
+   (drop caps, pullquotes). Raw Flexoki hex lives ONLY in section 1.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -41,9 +45,6 @@
   --accent-subtle: #F2E5BC;
   --on-accent: #FFFCF0;
 
-  /* Migration aliases (Phase 5 removes) */
-  --accent: var(--accent-primary);
-  --accent-light: var(--accent-primary-border);
 
   /* Typography stacks */
   --font-heading: 'Newsreader', Georgia, 'Times New Roman', serif;
@@ -104,9 +105,6 @@
   --accent-subtle: rgba(67, 133, 190, 0.15);
   --on-accent: #100F0F;
 
-  /* Migration aliases (Phase 5 removes) */
-  --accent: var(--accent-primary);
-  --accent-light: var(--accent-primary-border);
 }
 
 /* --------------------------------------------------------------------------
