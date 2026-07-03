@@ -30,7 +30,7 @@ That's a signal I would have missed for months.
 
 We default to managing relationships by feel. Who called recently, who's top of mind, who asked for something. Feel is fast but it's biased toward whatever happened last and whoever's loudest in your head. The person who emailed you yesterday feels more important than the person who bridges a dozen communities but hasn't emailed in a week.
 
-Structure doesn't replace feel. It corrects for the blind spots. The graph doesn't tell you who to care about. It tells you where your time is actually building something, and where it isn't.
+Structure doesn't replace feel. It [corrects for the blind spots](/thoughts/same-mind-same-blind-spots/). The graph doesn't tell you who to care about. It tells you where your time is actually building something, and where it isn't.
 
 The auction industry runs on relationships. Everyone knows that. But knowing that your relationship investment is concentrated in one cluster while another cluster has zero multipliers, that's operational. That changes what you do on Monday morning.
 

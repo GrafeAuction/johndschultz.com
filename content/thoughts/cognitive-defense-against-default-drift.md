@@ -14,7 +14,7 @@ I need a triple-layered cognitive defense system:
 
 1. **The Tactical Defense (The Code Layer):** Encoding Socratic pushback, friction, and accountability directly into the custom agentic skills I build. I don't just open a ChatGPT tab; I build systems designed to actively resist my own laziness.
 2. **The Contextual Defense (The Data Layer):** Operating under the law of reciprocity. Deep sparring requires deep context. If I don't build a dense, custom vault of actual thinking, the system has no leverage to push back, and the dialogue collapses back to generic out-of-the-box templates.
-3. **The Meta-Cognitive Defense (The Mindset Layer):** Active self-awareness of my own blindness and non-original thinking. Recognizing that I am naturally prone to low-effort defaults, and deliberately hunting for those defaults inside my daily work.
+3. **The Meta-Cognitive Defense (The Mindset Layer):** Active self-awareness of [my own blindness](/thoughts/same-mind-same-blind-spots/) and non-original thinking. Recognizing that I am naturally prone to low-effort defaults, and deliberately hunting for those defaults inside my daily work.
 
 Without these layers, I am just defaulting to convenience and calling it innovation.
 
