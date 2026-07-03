@@ -8,22 +8,38 @@
    -------------------------------------------------------------------------- */
 
 :root {
-  /* Flexoki base palette (light mode) */
-  --theme: #FFFCF0;
+  /* Flexoki base palette (light mode)
+     Page sits on base-50; cards/forms lift on paper. */
+  --theme: #F2F0E5;
   --entry: #FFFCF0;
   --primary: #100F0F;
   --secondary: #575653;
   --tertiary: #DAD8CE;
   --content: #100F0F;
   --code-block-bg: #1C1B1A;
-  --code-bg: #F2F0E5;
-  --border: #E6E4D9;
+  --code-bg: #E6E4D9;
+  --border: #DAD8CE;
   color-scheme: light;
 
-  /* Flexoki Orange accent */
-  --accent: #BC5215;
-  --accent-light: #DA702C;
+  /* Semantic accents — two tiers per hue:
+     text tier (AAA vs its background) and border tier (>=3:1 graphic).
+     Raw Flexoki values live only here and in the .dark block. */
+  --accent-primary: #1A4F8C;        /* blue-700: links, nav, UI text */
+  --accent-primary-hover: #163B66;  /* blue-800: link hover darkens */
+  --accent-primary-border: #205EA6; /* blue-600: rules, bars, borders */
+  --accent-essays: #1A4F8C;         /* blue-700 */
+  --accent-essays-border: #205EA6;  /* blue-600 */
+  --accent-thoughts: #536907;       /* green-700: large text only */
+  --accent-thoughts-border: #66800B;/* green-600: borders only, never text */
+  --accent-concepts: #5E409D;       /* purple-600 */
+  --accent-concepts-border: #5E409D;
+  --accent-flourish: #9D4310;       /* orange-700: drop caps + pullquotes only */
   --accent-subtle: #F2E5BC;
+  --on-accent: #FFFCF0;
+
+  /* Migration aliases (Phase 5 removes) */
+  --accent: var(--accent-primary);
+  --accent-light: var(--accent-primary-border);
 
   /* Typography stacks */
   --font-heading: 'Newsreader', Georgia, 'Times New Roman', serif;
@@ -55,10 +71,24 @@
   --border: #343331;
   color-scheme: dark;
 
-  /* Flexoki Orange accent (dark mode) */
-  --accent: #DA702C;
-  --accent-light: #E89455;
-  --accent-subtle: rgba(218, 112, 44, 0.15);
+  /* Semantic accents (dark mode) — text tier clears AAA on both
+     --theme #100F0F and --entry #1C1B1A; border tier is 400-series. */
+  --accent-primary: #92BFDB;        /* blue-200 */
+  --accent-primary-hover: #ABCFE2;  /* blue-150: hover lightens in dark */
+  --accent-primary-border: #4385BE; /* blue-400 */
+  --accent-essays: #92BFDB;
+  --accent-essays-border: #4385BE;
+  --accent-thoughts: #A0AF54;       /* green-300 */
+  --accent-thoughts-border: #879A39;/* green-400 */
+  --accent-concepts: #C4B9E0;       /* purple-200 */
+  --accent-concepts-border: #8B7EC8;/* purple-400 */
+  --accent-flourish: #EC8B49;       /* orange-300 */
+  --accent-subtle: rgba(67, 133, 190, 0.15);
+  --on-accent: #100F0F;
+
+  /* Migration aliases (Phase 5 removes) */
+  --accent: var(--accent-primary);
+  --accent-light: var(--accent-primary-border);
 }
 
 /* --------------------------------------------------------------------------
@@ -725,7 +755,7 @@ code, pre, .post-content code, .post-content pre {
 
 .post-single.speaking .post-content > p:last-of-type a[href^="mailto"]:hover {
   background: var(--accent);
-  color: #FFFCF0;
+  color: var(--on-accent);
 }
 
 /* --------------------------------------------------------------------------
@@ -835,14 +865,6 @@ a {
 /* --------------------------------------------------------------------------
    15. Dark Mode Adjustments
    -------------------------------------------------------------------------- */
-
-.dark .subscribe-home .subscribe-form button {
-  color: #CECDC3;
-}
-
-.dark .post-single.essays .post-content > p:first-of-type::first-letter {
-  color: var(--accent);
-}
 
 .dark .terms-tags a:hover {
   background: var(--accent-subtle);
