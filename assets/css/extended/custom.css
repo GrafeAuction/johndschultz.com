@@ -289,7 +289,7 @@ code, pre, .post-content code, .post-content pre {
 
 .recent-posts a {
   font-family: var(--font-body);
-  font-size: 17px;
+  font-size: 1.0625rem;
   color: var(--primary);
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -305,7 +305,7 @@ code, pre, .post-content code, .post-content pre {
 .recent-posts .recent-desc {
   display: block;
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--secondary);
   margin-top: 3px;
   line-height: 1.4;
@@ -585,7 +585,7 @@ code, pre, .post-content code, .post-content pre {
 
 .speaking-cta a {
   font-family: var(--font-ui);
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--accent-primary);
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -735,11 +735,11 @@ code, pre, .post-content code, .post-content pre {
   color: var(--accent-primary);
   border-color: var(--accent-primary-border);
   font-weight: 600;
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 .terms-tags li[data-count="medium"] a {
-  font-size: 14px;
+  font-size: var(--text-ui);
 }
 
 .terms-tags li[data-count="low"] a {
