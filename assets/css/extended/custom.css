@@ -294,83 +294,57 @@ code, pre, .post-content code, .post-content pre {
    5. List Pages
    -------------------------------------------------------------------------- */
 
-/* --- Essays: editorial cards with top accent --- */
-.essays-list .post-entry {
-  border-top: 2px solid var(--accent);
-  padding: var(--space-lg);
-  margin-bottom: var(--space-md);
+/* Each content type sets its hue; one shared card block does the rest.
+   Essays = blue top border, thoughts = green left, concepts = purple bottom. */
+.essays-list {
+  --card-accent: var(--accent-essays-border);
+  --card-accent-text: var(--accent-essays);
 }
 
-.essays-list .post-entry:last-child {
-  margin-bottom: 0;
+.thoughts-list {
+  --card-accent: var(--accent-thoughts-border);
+  --card-accent-text: var(--accent-thoughts);
 }
 
-.essays-list .entry-header h2 {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 600;
-  transition: color 0.2s ease;
+.concepts-list {
+  --card-accent: var(--accent-concepts-border);
+  --card-accent-text: var(--accent-concepts);
 }
 
-.essays-list .post-entry:hover .entry-header h2 {
-  color: var(--accent);
-}
-
-.essays-list .entry-content p {
-  font-family: var(--font-body);
-  font-style: italic;
-  color: var(--secondary);
-  margin-top: var(--space-xs);
-}
-
-.essays-list .entry-footer {
-  font-family: var(--font-ui);
-  font-size: 13px;
-  margin-top: var(--space-xs);
-}
-
-/* --- Thoughts: compact cards with accent border --- */
-.thoughts-list .post-entry {
-  border-left: 3px solid var(--accent);
-  padding: var(--space-md) var(--space-lg);
-  margin-bottom: var(--space-md);
-}
-
-.thoughts-list .entry-header h2 {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 600;
-  transition: color 0.2s ease;
-}
-
-.thoughts-list .post-entry:hover .entry-header h2 {
-  color: var(--accent);
-}
-
-.thoughts-list .entry-content p {
-  font-family: var(--font-body);
-  font-style: italic;
-  color: var(--secondary);
-  margin-top: var(--space-xs);
-}
-
-.thoughts-list .entry-footer {
-  font-family: var(--font-ui);
-  font-size: 13px;
-  margin-top: var(--space-xs);
-}
-
-/* --- Concepts: synthesis cards with bottom accent --- */
+.essays-list .post-entry,
+.thoughts-list .post-entry,
 .concepts-list .post-entry {
-  border-bottom: 2px solid var(--accent);
   padding: var(--space-lg);
   margin-bottom: var(--space-md);
+  transition: border-color 0.2s ease, background 0.2s ease;
 }
 
+.essays-list .post-entry {
+  border-top: 2px solid var(--card-accent);
+}
+
+.thoughts-list .post-entry {
+  border-left: 3px solid var(--card-accent);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.concepts-list .post-entry {
+  border-bottom: 2px solid var(--card-accent);
+}
+
+.essays-list .post-entry:last-child,
 .concepts-list .post-entry:last-child {
   margin-bottom: 0;
 }
 
+.essays-list .post-entry:hover,
+.thoughts-list .post-entry:hover,
+.concepts-list .post-entry:hover {
+  background: color-mix(in srgb, var(--card-accent) 6%, var(--entry));
+}
+
+.essays-list .entry-header h2,
+.thoughts-list .entry-header h2,
 .concepts-list .entry-header h2 {
   font-family: var(--font-heading);
   font-size: 1.5rem;
@@ -378,10 +352,14 @@ code, pre, .post-content code, .post-content pre {
   transition: color 0.2s ease;
 }
 
+.essays-list .post-entry:hover .entry-header h2,
+.thoughts-list .post-entry:hover .entry-header h2,
 .concepts-list .post-entry:hover .entry-header h2 {
-  color: var(--accent);
+  color: var(--card-accent-text);
 }
 
+.essays-list .entry-content p,
+.thoughts-list .entry-content p,
 .concepts-list .entry-content p {
   font-family: var(--font-body);
   font-style: italic;
@@ -389,6 +367,8 @@ code, pre, .post-content code, .post-content pre {
   margin-top: var(--space-xs);
 }
 
+.essays-list .entry-footer,
+.thoughts-list .entry-footer,
 .concepts-list .entry-footer {
   font-family: var(--font-ui);
   font-size: 13px;
@@ -896,14 +876,8 @@ a {
     font-size: 2.8em;
   }
 
-  .essays-list .entry-header h2 {
-    font-size: 1.3rem;
-  }
-
-  .thoughts-list .entry-header h2 {
-    font-size: 1.3rem;
-  }
-
+  .essays-list .entry-header h2,
+  .thoughts-list .entry-header h2,
   .concepts-list .entry-header h2 {
     font-size: 1.3rem;
   }
