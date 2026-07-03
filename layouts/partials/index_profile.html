@@ -45,7 +45,7 @@
                     {{- if .Description }}
                     <span class="recent-desc">{{ .Description | truncate 100 }}</span>
                     {{- end }}
-                    <span class="recent-meta">{{ if eq .Section "essays" }}Essay{{ else if eq .Section "thoughts" }}Thought{{ else }}Concept{{ end }} · {{ .Date.Format "Jan 2" }}</span>
+                    <span class="recent-meta recent-meta-{{ .Section }}">{{ if eq .Section "essays" }}Essay{{ else if eq .Section "thoughts" }}Thought{{ else }}Concept{{ end }} · {{ .Date.Format "Jan 2" }}</span>
                 </li>
             {{- end }}
             </ul>

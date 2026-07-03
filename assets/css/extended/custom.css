@@ -31,8 +31,12 @@
   --accent-essays-border: #205EA6;  /* blue-600 */
   --accent-thoughts: #536907;       /* green-700: large text only */
   --accent-thoughts-border: #66800B;/* green-600: borders only, never text */
-  --accent-concepts: #5E409D;       /* purple-600 */
+  --accent-concepts: #5E409D;       /* purple-600: large text */
   --accent-concepts-border: #5E409D;
+  /* Small-text-safe (AAA at any size) label tier */
+  --accent-essays-label: #1A4F8C;   /* blue-700 */
+  --accent-thoughts-label: #3D4C07; /* green-800 */
+  --accent-concepts-label: #4F3685; /* purple-700 */
   --accent-flourish: #9D4310;       /* orange-700: drop caps + pullquotes only */
   --accent-subtle: #F2E5BC;
   --on-accent: #FFFCF0;
@@ -83,6 +87,9 @@
   --accent-concepts: #C4B9E0;       /* purple-200 */
   --accent-concepts-border: #8B7EC8;/* purple-400 */
   --accent-flourish: #EC8B49;       /* orange-300 */
+  --accent-essays-label: #92BFDB;   /* text tier already AAA at any size in dark */
+  --accent-thoughts-label: #A0AF54;
+  --accent-concepts-label: #C4B9E0;
   --accent-subtle: rgba(67, 133, 190, 0.15);
   --on-accent: #100F0F;
 
@@ -151,11 +158,11 @@ code, pre, .post-content code, .post-content pre {
 }
 
 #menu a:hover {
-  color: var(--accent);
+  color: var(--accent-primary);
 }
 
 #menu .active {
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent-primary-border);
   padding-bottom: 2px;
 }
 
@@ -177,7 +184,7 @@ code, pre, .post-content code, .post-content pre {
 
 /* Subscribe form */
 .subscribe-home {
-  margin-top: var(--space-xl);
+  margin-top: var(--space-2xl);
   text-align: center;
 }
 
@@ -204,7 +211,7 @@ code, pre, .post-content code, .post-content pre {
 
 .subscribe-home .subscribe-form input[type="email"]:focus {
   outline: none;
-  border-bottom-color: var(--accent);
+  border-bottom-color: var(--accent-primary-border);
 }
 
 .subscribe-home .subscribe-form input[type="email"]::placeholder {
@@ -227,14 +234,13 @@ code, pre, .post-content code, .post-content pre {
 }
 
 .subscribe-home .subscribe-form button:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--accent-primary-border);
+  color: var(--accent-primary);
 }
 
-/* Latest essay callout */
 /* --- Recent posts on homepage --- */
 .recent-posts {
-  margin-top: var(--space-xl);
+  margin-top: var(--space-2xl);
   text-align: center;
 }
 
@@ -260,16 +266,16 @@ code, pre, .post-content code, .post-content pre {
 .recent-posts a {
   font-family: var(--font-body);
   font-size: 17px;
-  color: var(--accent);
+  color: var(--primary);
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: var(--accent);
+  text-decoration-color: var(--accent-primary-border);
   transition: color 0.2s ease;
   display: block;
 }
 
 .recent-posts a:hover {
-  color: var(--accent-light);
+  color: var(--accent-primary);
 }
 
 .recent-posts .recent-desc {
@@ -283,11 +289,24 @@ code, pre, .post-content code, .post-content pre {
 
 .recent-posts .recent-meta {
   display: block;
-  font-family: var(--font-ui);
-  font-size: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   color: var(--secondary);
   margin-top: 3px;
-  opacity: 0.7;
+}
+
+.recent-posts .recent-meta-essays {
+  color: var(--accent-essays-label);
+}
+
+.recent-posts .recent-meta-thoughts {
+  color: var(--accent-thoughts-label);
+}
+
+.recent-posts .recent-meta-concepts {
+  color: var(--accent-concepts-label);
 }
 
 /* --------------------------------------------------------------------------
@@ -388,7 +407,7 @@ code, pre, .post-content code, .post-content pre {
   font-size: 1.4rem;
   font-weight: 400;
   font-style: italic;
-  color: var(--accent);
+  color: var(--accent-primary);
   margin-bottom: var(--space-xl);
   line-height: 1.5;
 }
@@ -402,7 +421,7 @@ code, pre, .post-content code, .post-content pre {
 
 .about-topic {
   padding: var(--space-md) var(--space-lg);
-  border-left: 2px solid var(--accent);
+  border-left: 2px solid var(--accent-primary-border);
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.6;
@@ -431,7 +450,7 @@ code, pre, .post-content code, .post-content pre {
 }
 
 .connect-item:hover {
-  color: var(--accent);
+  color: var(--accent-primary);
 }
 
 .connect-item svg {
@@ -473,7 +492,7 @@ code, pre, .post-content code, .post-content pre {
 }
 
 .topic-card:hover {
-  border-color: var(--accent);
+  border-color: var(--accent-primary-border);
 }
 
 .topic-card h3 {
@@ -509,7 +528,7 @@ code, pre, .post-content code, .post-content pre {
 }
 
 .engagement-date {
-  font-family: var(--font-ui);
+  font-family: var(--font-mono);
   font-size: 13px;
   color: var(--secondary);
   white-space: nowrap;
@@ -528,7 +547,7 @@ code, pre, .post-content code, .post-content pre {
 }
 
 .speaking-cta {
-  border-top: 2px solid var(--accent);
+  border-top: 2px solid var(--accent-primary-border);
   padding-top: var(--space-xl);
   margin-top: var(--space-2xl);
 }
@@ -542,13 +561,13 @@ code, pre, .post-content code, .post-content pre {
 .speaking-cta a {
   font-family: var(--font-ui);
   font-size: 15px;
-  color: var(--accent);
+  color: var(--accent-primary);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
 .speaking-cta a:hover {
-  color: var(--accent-light);
+  color: var(--accent-primary-hover);
 }
 
 /* --------------------------------------------------------------------------
@@ -574,15 +593,15 @@ code, pre, .post-content code, .post-content pre {
 
 /* Links in body */
 .post-content a {
-  color: var(--accent);
+  color: var(--accent-primary);
   text-decoration: underline;
-  text-decoration-color: var(--accent);
+  text-decoration-color: var(--accent-primary);
   text-underline-offset: 3px;
   transition: color 0.2s ease;
 }
 
 .post-content a:hover {
-  color: var(--accent-light);
+  color: var(--accent-primary-hover);
 }
 
 /* Drop caps on essays only */
@@ -594,7 +613,7 @@ code, pre, .post-content code, .post-content pre {
   line-height: 0.8;
   margin-right: 0.08em;
   margin-top: 0.05em;
-  color: var(--accent);
+  color: var(--accent-flourish);
 }
 
 /* TOC */
@@ -607,7 +626,7 @@ code, pre, .post-content code, .post-content pre {
    -------------------------------------------------------------------------- */
 
 .post-content blockquote {
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--accent-primary-border);
   padding-left: 1.2rem;
   margin: var(--space-lg) 0;
   font-style: italic;
@@ -619,8 +638,21 @@ code, pre, .post-content code, .post-content pre {
   margin: var(--space-2xl) auto;
   width: 40px;
   height: 3px;
-  background: var(--accent);
+  background: var(--accent-primary-border);
   border-radius: 2px;
+}
+
+/* Section rules quietly carry each content type's hue into reading view */
+.post-single.essays .post-content hr {
+  background: var(--accent-essays-border);
+}
+
+.post-single.thoughts .post-content hr {
+  background: var(--accent-thoughts-border);
+}
+
+.post-single.concepts .post-content hr {
+  background: var(--accent-concepts-border);
 }
 
 /* --------------------------------------------------------------------------
@@ -667,14 +699,14 @@ code, pre, .post-content code, .post-content pre {
 }
 
 .terms-tags a:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--accent-primary-border);
+  color: var(--accent-primary);
 }
 
 /* High-count tags get accent treatment */
 .terms-tags li[data-count="high"] a {
-  color: var(--accent);
-  border-color: var(--accent);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary-border);
   font-weight: 600;
   font-size: 15px;
 }
@@ -693,48 +725,36 @@ code, pre, .post-content code, .post-content pre {
    -------------------------------------------------------------------------- */
 
 /* Accent bar before h2s on about/speaking */
-.post-single.about .post-content h2::before,
-.post-single.speaking .post-content h2::before {
+.about-page .post-content h2::before,
+.speaking-page .post-content h2::before {
   content: '';
   display: block;
   width: 24px;
   height: 3px;
-  background: var(--accent);
+  background: var(--accent-primary-border);
   border-radius: 2px;
   margin-bottom: var(--space-sm);
 }
 
-/* Slightly larger intro paragraph */
-.post-single.about .post-content > p:first-of-type,
-.post-single.speaking .post-content > p:first-of-type {
-  font-size: 1.1rem;
-}
-
 /* Speaking tables */
-.post-single.speaking .post-content table tr:hover {
+.speaking-page .post-content table tr:hover {
   background: var(--accent-subtle);
 }
 
-/* Speaking topic sections get left border */
-.post-single.speaking .post-content h3 {
-  border-left: 3px solid var(--accent);
-  padding-left: var(--space-md);
-}
-
-/* Book-me CTA styling */
-.post-single.speaking .post-content > p:last-of-type a[href^="mailto"] {
+/* Book-me CTA button */
+.speaking-cta a.cta-button {
   display: inline-block;
   padding: 0.4rem 1rem;
-  border: 1.5px solid var(--accent);
+  border: 1.5px solid var(--accent-primary);
   border-radius: var(--radius);
   text-decoration: none;
-  color: var(--accent);
+  color: var(--accent-primary);
   font-family: var(--font-ui);
   transition: background 0.2s ease, color 0.2s ease;
 }
 
-.post-single.speaking .post-content > p:last-of-type a[href^="mailto"]:hover {
-  background: var(--accent);
+.speaking-cta a.cta-button:hover {
+  background: var(--accent-primary);
   color: var(--on-accent);
 }
 
@@ -761,14 +781,14 @@ footer.footer {
 }
 
 .post-subscribe a {
-  color: var(--accent);
+  color: var(--accent-primary);
   text-decoration: underline;
   text-underline-offset: 2px;
-  text-decoration-color: var(--accent);
+  text-decoration-color: var(--accent-primary);
 }
 
 .post-subscribe a:hover {
-  color: var(--accent-light);
+  color: var(--accent-primary-hover);
 }
 
 .reply-via-email {
@@ -783,8 +803,8 @@ footer.footer {
   align-items: center;
   gap: var(--space-sm);
   color: var(--secondary);
-  font-size: 14px;
-  font-family: var(--font-ui);
+  font-size: 13px;
+  font-family: var(--font-mono);
   letter-spacing: 0.05em;
   text-transform: uppercase;
   text-decoration: none;
@@ -792,7 +812,7 @@ footer.footer {
 }
 
 .reply-via-email a:hover {
-  color: var(--accent);
+  color: var(--accent-primary);
 }
 
 /* --------------------------------------------------------------------------
@@ -811,7 +831,7 @@ footer.footer {
   font-style: italic;
   font-size: 1.4rem;
   line-height: 1.6;
-  color: var(--accent);
+  color: var(--accent-flourish);
   margin: 0;
 }
 
@@ -834,12 +854,12 @@ a {
 }
 
 .post-tags a:hover {
-  color: var(--accent);
+  color: var(--accent-primary);
 }
 
 /* Breadcrumbs */
 .breadcrumbs a:hover {
-  color: var(--accent);
+  color: var(--accent-primary);
 }
 
 /* --------------------------------------------------------------------------
