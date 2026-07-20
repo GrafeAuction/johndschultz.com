@@ -98,10 +98,11 @@ enableRobotsTXT = true
     enabled = true
     title = "John Schultz"
     subtitle = "Auctioneer. Technologist. Writer."
-    imageUrl = "images/john-schultz.jpg"
+    # Square face crop (not full portrait) so circle crop does not stretch
+    imageUrl = "images/john-schultz-avatar.jpg"
     imageTitle = "John Schultz"
-    imageWidth = 120
-    imageHeight = 120
+    imageWidth = 160
+    imageHeight = 160
 
   [params.cover]
     linkFullImages = true
