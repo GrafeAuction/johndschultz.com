@@ -1,6 +1,7 @@
 ---
 title: "About"
 layout: "list"
+description: "John Schultz is Partner and CMTO at Grafe Auction, past NAA President and Board Chair, and a writer on auctions, technology, and leadership."
 ShowToc: false
 ShowReadingTime: false
 hideMeta: true
@@ -8,7 +9,7 @@ hideMeta: true
 
 <div class="about-lede">
 
-I write about the intersection of traditional commerce and digital leverage, testing new systems where the code meets the gavel.
+I write about the intersection of traditional commerce and digital systems, testing new tools where the code meets the gavel.
 
 </div>
 
@@ -63,6 +64,18 @@ The most honest form of education happens when you are still figuring it out you
 </div>
 
 Every piece of writing on this site begins as a handwritten thought card, a brief, index-card-sized observation jotted down after conversations, books, or days spent on the road. Some of these remain as raw [thought cards](/thoughts/). Others grow and merge into [essays](/essays/) when unexpected connections emerge. When several cards begin to circle the same theme, I compile them into [concepts](/concepts/), which serve as living, evolving overviews tracing how an idea develops across different sources and over time.
+
+## Start here
+
+If you are new to the site, these pieces carry the main threads:
+
+- [If an AI Can't Find Your Auctions, Neither Can the Buyers](/essays/ai-cant-find-your-auctions/) — when machines do the discovering, readable inventory is the market
+- [How I Actually Use AI](/essays/how-i-actually-use-ai/) — vault, skills, and a morning loop that has to hold under real auction volume
+- [The Person-System Trap](/essays/the-person-system-trap/) — when the operator is the system, and what technology does to that
+- [The Watchman Principle](/essays/the-watchman-principle/) — accountable for the warning, not for whether anyone listens
+- [The IAC Title Is Two Jobs](/thoughts/the-iac-title-is-two-jobs/) — what judging the championship clarified about selling and speaking for the trade
+
+For talks and CE sessions, see [Speaking](/speaking/).
 
 ## Connect
 

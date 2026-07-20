@@ -1,0 +1,165 @@
+{{- /* Site-wide schema: Person + WebSite on home; BreadcrumbList + BlogPosting on posts */ -}}
+{{- if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://johndschultz.com/#person",
+      "name": "John Schultz",
+      "url": "https://johndschultz.com/about/",
+      "image": "https://johndschultz.com/images/john-schultz.jpg",
+      "jobTitle": "Partner and Chief Marketing & Technology Officer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Grafe Auction Company",
+        "url": "https://grafeauction.com"
+      },
+      "description": {{ site.Params.description | plainify | jsonify }},
+      "sameAs": [
+        {{- range $i, $e := site.Params.schema.sameAs }}{{ if $i }}, {{ end }}{{ $e | jsonify }}{{ end }}
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://johndschultz.com/#website",
+      "name": {{ site.Title | jsonify }},
+      "url": {{ site.Home.Permalink | jsonify }},
+      "description": {{ site.Params.description | plainify | jsonify }},
+      "publisher": { "@id": "https://johndschultz.com/#person" },
+      "inLanguage": "en-US"
+    }
+  ]
+}
+</script>
+{{- else if (or .IsPage .IsSection) }}
+{{- $url := replace .Parent.Permalink ( printf "%s" site.Home.Permalink) "" }}
+{{- $lang_url := strings.TrimPrefix ( printf "%s/" .Lang) $url }}
+{{- $bc_list := (split $lang_url "/")}}
+{{- $scratch := newScratch }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+  {{- range $index, $element := $bc_list }}
+    {{- $scratch.Add "path" (printf "%s/" $element ) | safeJS }}
+    {{- $bc_pg := site.GetPage ($scratch.Get "path") -}}
+    {{- if (and ($bc_pg) (gt (len . ) 0))}}
+    {{- if (and $index)}}, {{end }}
+    {
+      "@type": "ListItem",
+      "position": {{ add 1 $index  }},
+      "name": {{ $bc_pg.Name | jsonify }},
+      "item": {{ $bc_pg.Permalink | jsonify }}
+    }
+    {{- end }}
+  {{- end }}
+  {{- if (ge (len $bc_list) 2) }}, {{end }}
+    {
+      "@type": "ListItem",
+      "position": {{len $bc_list}},
+      "name": {{ .Name | jsonify }},
+      "item": {{ .Permalink | jsonify }}
+    }
+  ]
+}
+</script>
+{{- /* Person schema on About */ -}}
+{{- if and .IsSection (eq .Section "about") }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://johndschultz.com/#person",
+  "name": "John Schultz",
+  "url": "https://johndschultz.com/about/",
+  "image": "https://johndschultz.com/images/john-schultz.jpg",
+  "jobTitle": "Partner and Chief Marketing & Technology Officer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Grafe Auction Company",
+    "url": "https://grafeauction.com"
+  },
+  "description": "Partner and CMTO at Grafe Auction. Past Board Chair (2025-2026) and 76th President (2024-2025) of the National Auction Association. CAI, AMM. Writer on auctions, technology, and leadership.",
+  "sameAs": [
+    {{- range $i, $e := site.Params.schema.sameAs }}{{ if $i }}, {{ end }}{{ $e | jsonify }}{{ end }}
+  ],
+  "alumniOf": [
+    { "@type": "Organization", "name": "World Wide College of Auctioneering" }
+  ]
+}
+</script>
+{{- end }}
+{{- if .IsPage }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ .Title | plainify | jsonify }},
+  "name": {{ .Title | plainify | jsonify }},
+  "description": {{ with .Description | plainify }}{{ . | jsonify }}{{ else }}{{ .Summary | plainify | jsonify }}{{ end }},
+  "keywords": [
+    {{- if .Params.keywords }}
+    {{ range $i, $e := .Params.keywords }}{{ if $i }}, {{ end }}{{ $e | jsonify }}{{ end }}
+    {{- else }}
+    {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e | jsonify }}{{ end }}
+    {{- end }}
+  ],
+  "articleBody": {{ .Content | plainify | jsonify }},
+  "wordCount": {{ .WordCount }},
+  "inLanguage": "en-US",
+  {{- $images := partial "templates/_funcs/get-page-images" . -}}
+  {{- with index $images 0 }}
+  "image": {{ .Permalink | jsonify }},
+  {{- else }}
+  "image": "https://johndschultz.com/images/og-default.jpg",
+  {{- end }}
+  "datePublished": {{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+  "dateModified": {{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+  "author": {
+    "@type": "Person",
+    "@id": "https://johndschultz.com/#person",
+    "name": "John Schultz",
+    "url": "https://johndschultz.com/about/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ .Permalink | jsonify }}
+  },
+  "publisher": {
+    "@type": "Person",
+    "@id": "https://johndschultz.com/#person",
+    "name": "John Schultz",
+    "url": "https://johndschultz.com/about/",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://johndschultz.com/images/john-schultz.jpg"
+    }
+  }
+}
+</script>
+{{- /* FAQPage schema when page defines faq items in frontmatter */ -}}
+{{- with .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{- range $i, $item := . }}{{ if $i }}, {{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $item.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $item.answer | jsonify }}
+      }
+    }
+    {{- end }}
+  ]
+}
+</script>
+{{- end }}
+{{- end }}{{/* .IsPage end */}}
+{{- end -}}

@@ -7,6 +7,15 @@ ShowToc: true
 TocOpen: false
 draft: false
 series: []
+faq:
+  - question: "What does it mean for an auction company to be readable to AI?"
+    answer: "A machine can parse what you sell without guessing: clean categories, specific lot descriptions, structured data where it fits, and inventory not trapped in three-word titles and unlabeled photos."
+  - question: "Will AI traffic replace Google search for auctions?"
+    answer: "Not as a clean swap. Search still matters. A growing share of discovery is agent-mediated, and agents only route buyers to inventory they can understand."
+  - question: "What should an auction operator do first?"
+    answer: "Pick one sale and make every lot machine-legible with full description, clear category, and real attributes. Own your bidder and inventory data, then scale the habit."
+  - question: "Is AI findability only a problem for small auction firms?"
+    answer: "No. Large houses often have cleaner data. Small operators can move fast. The squeezed middle often has good reputation and weak structure, which is a hard mix when agents do the sorting."
 ---
 
 On June 3, 2026, Matthew Prince, the CEO of Cloudflare, posted a number from his own network's live data. For the first time in the history of the internet, more than half of all web traffic was not human. Bots, crawlers, and AI agents made up about 57 percent of the requests. People made up the rest. Prince said he'd figured the crossover would come at the end of 2027. Agentic traffic got there a year and a half early.
@@ -55,7 +64,7 @@ You can check me on it. If three years from now AI-mediated discovery is a round
 
 I'll tell you why I'm willing to say it that flat. I'm sitting in three chairs on this one, and they all show the same picture.
 
-I run an auction company close enough to the wave to feel the pull of it. I chair the board of the national association, which means I watch the whole field and not just my own corner. And I've been writing this argument down for months, long enough that I now hear it come back from peers who read an early version and started using the language themselves. When the operator's seat, the industry's seat, and the writer's notebook all point the same direction, I quit calling it a hunch.
+I run an auction company close enough to the wave to feel the pull of it. I served as board chair of the national association, which means I watched the whole field and not just my own corner. And I've been writing this argument down for months, long enough that I now hear it come back from peers who read an early version and started using the language themselves. When the operator's seat, the industry's seat, and the writer's notebook all point the same direction, I quit calling it a hunch.
 
 Plenty of this lands harder on the middle than on the big houses, and I know who's reading. I'm not naming names or calling a top on anybody's business. I'm telling you what the data says is coming while there's still room to do something about it. That's about the only useful thing a person in these chairs can do with a view like this.
 
@@ -72,3 +81,17 @@ There's an old line around farms and sale barns. If you want everything fed, put
 For a hundred years that meant talk straight and price it clear, so the buyer in the back row understood you as well as the one up front. It still means that. But the hungry thing in the room now isn't only the buyer. It's the machine doing the buyer's looking. And it's standing right down at ground level, reading, waiting to see whose feed it can actually reach.
 
 Put it down where the goats can get it.
+
+## FAQ
+
+**What does it mean for an auction company to be "readable" to AI?**  
+It means a machine can parse what you sell without guessing. Clean categories, specific lot descriptions, structured data where it fits, and inventory that is not trapped in three-word titles and unlabeled photos. Pretty sites that say nothing to a crawler are not readable.
+
+**Will AI traffic replace Google search for auctions?**  
+Not as a clean swap. Search still matters. The shift is that a growing share of discovery is agent-mediated, and agents only route buyers to inventory they can understand. If you only optimize for human browsers, you lose the machine path.
+
+**What should an operator do first?**  
+Pick one sale and make every lot machine-legible: full description, clear category, real attributes (make, model, condition, location). Own your bidder and inventory data. Then scale the habit. Do not wait for a perfect platform rebuild.
+
+**Is this only a problem for small firms?**  
+No, but it hits the middle hard. Large houses often have cleaner data and more engineering. Very small operators can move fast. The squeezed middle often has good reputation and weak structure, which is the worst mix when agents do the sorting.

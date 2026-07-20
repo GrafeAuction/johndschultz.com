@@ -67,3 +67,5 @@ For me, with a laptop and a private card, the design asks for restraint. I don't
 1. How do competitors train for the interview without turning it into a show? Answers must hold up for seven judges who do not compare notes, not for one friendly listener alone.
 2. When we hire, promote, or put someone on a stage for the company or the association, do we know which job we are filling: best craft, best public face, or both? The IAC forces both. Most groups blur it.
 3. Should the trade try to close the gap between block skill and interview skill with better training, or is the gap useful news that a good contest is meant to show?
+
+Related: [The Person-System Trap](/essays/the-person-system-trap/), [Speaking](/speaking/).

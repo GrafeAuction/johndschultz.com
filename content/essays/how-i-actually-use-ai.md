@@ -7,6 +7,13 @@ series: []
 ShowToc: true
 TocOpen: false
 draft: false
+faq:
+  - question: "How does John Schultz actually use AI day to day?"
+    answer: "Rigid structure first, then AI. An Obsidian vault of structured markdown, custom skills for repeated workflows, and a morning loop that surfaces calendar, tasks, inbox, follow-ups, and theme connections."
+  - question: "Do you need hundreds of files before AI helps with knowledge work?"
+    answer: "No. Start with a naming convention, a small tag set, consistent templates, and one skill for the work you do every morning. Structure comes first; the model comes second."
+  - question: "What is the main risk when people use AI without structure?"
+    answer: "Garbage in, garbage out. If notes are not named, tagged, and linked the same way, the model has nothing reliable to retrieve or connect."
 ---
 
 Grafe Auction runs about 290 auctions a year across 48 states. Each campaign takes 10 to 14 days from start to finish. I'm the partner responsible for marketing, technology, and operations. That pace doesn't leave much room for a system that's clever but doesn't hold up under pressure. It also doesn't leave room for losing a thought from January that turns out to be the missing piece in February.
@@ -235,3 +242,16 @@ The first skill should be whatever you do every morning. Mine was a simpler vers
 The structure comes first. The AI comes second. If your files aren't consistently named, tagged, and linked, the AI has nothing useful to work with. Garbage in, garbage out applies to knowledge systems the same way it applies to everything else.
 
 Start small, stay rigid, and let the connections accumulate.
+
+## FAQ
+
+**How do I actually use AI day to day?**  
+Structure first, then the model. I keep a vault of structured markdown, run custom skills for work I repeat, and start the day with a loop that covers calendar, tasks, inbox, aging follow-ups, and connections I might have missed. The AI earns its seat by working inside that system, not by replacing it.
+
+**Do I need hundreds of files before this helps?**  
+No. Start with a naming convention, a few tags, the same template every time, and one skill for the job you do every morning. Ten good files beat five hundred loose ones.
+
+**What breaks most AI knowledge setups?**  
+Inconsistent structure. If captures are not named, tagged, and linked the same way, retrieval fails and the model invents bridges that are not there. The fix is boring discipline, not a better prompt.
+
+Related: [If an AI Can't Find Your Auctions](/essays/ai-cant-find-your-auctions/), [The Person-System Trap](/essays/the-person-system-trap/).

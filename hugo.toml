@@ -21,13 +21,44 @@ enableRobotsTXT = true
   series = "series"
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS", "JSON", "LLMS"]
+
+[outputFormats]
+  [outputFormats.LLMS]
+    mediaType = "text/plain"
+    baseName = "llms"
+    isPlainText = true
+    notAlternative = true
+
+[mediaTypes]
+  [mediaTypes."text/plain"]
+    suffixes = ["txt"]
+
+# Noindex + drop thin taxonomy term pages from sitemap
+[[cascade]]
+  [cascade.target]
+    kind = "term"
+  [cascade.params]
+    robotsNoIndex = true
+  [cascade.sitemap]
+    disable = true
+
+[[cascade]]
+  [cascade.target]
+    kind = "taxonomy"
+  [cascade.params]
+    robotsNoIndex = true
+  [cascade.sitemap]
+    disable = true
 
 [params]
   author = "John Schultz"
-  description = "Essays and ideas from an auctioneer, technologist, and lifelong learner."
+  description = "Essays and ideas from John Schultz: Partner and CMTO at Grafe Auction, past NAA President and Board Chair, on auctions, technology, and leadership."
   env = "production"
   defaultTheme = "auto"
+  # Default Open Graph / Twitter image (site-wide fallback)
+  images = ["images/og-default.jpg"]
+  keywords = ["John Schultz", "auction", "auctioneer", "Grafe Auction", "AI", "leadership", "marketing", "technology"]
   ShowReadingTime = true
   ShowShareButtons = false
   ShowPostNavLinks = true
@@ -39,6 +70,14 @@ enableRobotsTXT = true
   ShowFullTextinRSS = true
   UseHugoToc = true
   displayFullLangName = true
+
+  # Person schema (PaperMod home + publisher on posts)
+  [params.schema]
+    publisherType = "Person"
+    sameAs = [
+      "https://www.linkedin.com/in/jdschultz/",
+      "https://grafeauction.com"
+    ]
 
   [[params.socialIcons]]
     name = "email"
@@ -59,11 +98,10 @@ enableRobotsTXT = true
     enabled = true
     title = "John Schultz"
     subtitle = "Auctioneer. Technologist. Writer."
-    imageUrl = ""
-    imageTitle = ""
+    imageUrl = "images/john-schultz.jpg"
+    imageTitle = "John Schultz"
     imageWidth = 120
     imageHeight = 120
-
 
   [params.cover]
     linkFullImages = true

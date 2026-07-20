@@ -1,6 +1,7 @@
 ---
 title: "Speaking"
 layout: "list"
+description: "Keynotes, workshops, and continuing education with John Schultz on AI, marketing, and auction operations. AMM lead instructor and CAI AI curriculum developer."
 ShowToc: false
 ShowReadingTime: false
 hideMeta: true

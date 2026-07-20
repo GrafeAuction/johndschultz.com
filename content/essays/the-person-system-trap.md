@@ -7,6 +7,13 @@ ShowToc: true
 TocOpen: false
 draft: false
 series: []
+faq:
+  - question: "What is the person-system trap?"
+    answer: "When a business cannot run without one person because judgment and routine both live in the same head. Technology makes portable work portable, which exposes firms that never separated the two."
+  - question: "What are the two failure modes with technology and expertise?"
+    answer: "The grip holds everything in one person. The surrender hands everything to tools and stops thinking. The healthy middle keeps human judgment where it matters and systematizes the rest."
+  - question: "How do you start fixing a person-system business?"
+    answer: "Triage decisions into three buckets: only you, someone else with guardrails, or automate. Document the middle and bottom. Keep the judgment that is actually yours."
 ---
 
 I told someone last week that his business couldn't survive him.
@@ -94,3 +101,16 @@ The person whose business couldn't survive him? He's working on it. The friend s
 And me? I've been one of the few who can maintain the system I helped build for my own company. I know the triage. I know the three buckets. I just haven't sorted everything into them yet.
 
 I think that's the real trap. It's not that people don't see it. It's that seeing it clearly and doing something about it are separated by the scariest gap in business: the one between knowing what's right and actually letting go.
+
+## FAQ
+
+**What is the person-system trap?**  
+A business that cannot run without one person, because judgment and routine both live in the same head. When technology makes the portable parts portable, that firm is exposed.
+
+**What are the two failure modes?**  
+The grip holds everything. The surrender hands everything to tools and stops thinking. The healthy middle keeps human judgment where it matters and systematizes the rest.
+
+**How do you start?**  
+Triage into three buckets: only you, someone else with guardrails, or automate. Document the middle and bottom. Keep the judgment that is actually yours.
+
+Related: [How I Actually Use AI](/essays/how-i-actually-use-ai/), [If an AI Can't Find Your Auctions](/essays/ai-cant-find-your-auctions/).
