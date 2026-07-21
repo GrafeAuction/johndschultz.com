@@ -50,3 +50,5 @@ The bottom line: We might never achieve perfect market saturation. But by buildi
 ---
 
 *What market are you fishing in? Are you competing as a better fisherman, or building your own lake?*
+
+Related: [Crowds Install Reality](/thoughts/crowds-install-reality/)
