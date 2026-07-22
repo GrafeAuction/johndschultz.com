@@ -74,6 +74,7 @@ If you are new to the site, these pieces carry the main threads:
 - [The Person-System Trap](/essays/the-person-system-trap/) — when the operator is the system, and what technology does to that
 - [The Watchman Principle](/essays/the-watchman-principle/) — accountable for the warning, not for whether anyone listens
 - [The IAC Title Is Two Jobs](/thoughts/the-iac-title-is-two-jobs/) — what judging the championship clarified about selling and speaking for the trade
+- [Terms clear is not experience clear](/thoughts/terms-clear-is-not-experience-clear/) — invoice right, day wrong; two jobs after a messy pickup
 
 For talks and CE sessions, see [Speaking](/speaking/).
 
