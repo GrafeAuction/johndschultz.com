@@ -53,8 +53,8 @@ What happens to your business when AI agents begin making decisions on behalf of
 
 ### Leadership & Decision-Making
 
-Lessons from running a national trade association and building a technology-driven company in a traditional industry. Focuses on practical frameworks for small, high-trust organizations: when to systematize and when to stay human, how principles outperform predictions, and why the gap between knowing and doing is where most leadership fails.
-*   **The Promise:** Build self-sustaining systems that scale beyond the heroics of any single individual.
+Lessons from leading a national trade association through hard seasons (including as NAA President and Board Chair) and building a technology-driven company in a traditional industry. Focuses on practical frameworks for small, high-trust organizations: when to systematize and when to stay human, how principles outperform predictions, how to create room for debate without losing the main thing, and why the gap between knowing and doing is where most leadership fails.
+*   **The Promise:** Build self-sustaining systems that scale beyond the heroics of any single individual, and lead with steadiness when the path is not obvious.
 *   **Slogan:** *"Principles outperform predictions."*
 
 </div>

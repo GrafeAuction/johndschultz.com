@@ -15,9 +15,9 @@ I write about the intersection of traditional commerce and digital systems, test
 
 My perspective is built on more than three decades of active operations, beginning in 1992 at my grandfather's estate auction (a formative moment that sparked my lifelong commitment to the industry). Today, as Partner and Chief Marketing & Technology Officer at [Grafe Auction Company](https://grafeauction.com), I help run a national platform conducting nearly 290 commercial and industrial online auctions annually across all 48 states. This is high-volume, real-world commerce where digital theories are quickly validated or discarded by actual market transactions. Before my time at Grafe, I spent sixteen years as Vice President of Operations and Auctioneer at Schultz Auctioneers Landmark Realty.
 
-Beyond daily business operations, I believe in upskilling the next generation of practitioners. I served as the 76th President of the [National Auction Association](https://auctioneers.org) (2024–2025) and as Board Chair (2025–2026). I also serve as Lead Instructor for the Auction Marketing Management (AMM) program and develop the artificial intelligence curriculum for the Certified Auctioneers Institute (CAI) at Indiana University. Previously, I served as the 60th President of the Minnesota State Auctioneers Association and was the founding President of the Minnesota State Auctioneer's Foundation.
+Beyond daily operations, I care about the next generation of practitioners. I served as the 76th President of the [National Auction Association](https://auctioneers.org) (2024–2025) and as Board Chair (2025–2026), including a stretch of executive transition and long-term institutional decisions for the association. I am a Lead Instructor for the Auction Marketing Management (AMM) program and develop the artificial intelligence curriculum for the Certified Auctioneers Institute (CAI) at Indiana University. Previously, I served as the 60th President of the Minnesota State Auctioneers Association and as founding President of the Minnesota State Auctioneer's Foundation.
 
-My contributions to the industry have been recognized with the Pat Massart Leadership Award, the National Auction Association President's Award of Distinction, and the Golden Gavel Award from the Minnesota State Auctioneers Association.
+My work has been recognized with the Pat Massart Leadership Award, the National Auction Association President's Award of Distinction, and the Golden Gavel Award from the Minnesota State Auctioneers Association.
 
 I live in Grand Meadow, Minnesota, with my wife Billie Jo and our daughter Anna Claire.
 
@@ -27,7 +27,7 @@ I live in Grand Meadow, Minnesota, with my wife Billie Jo and our daughter Anna 
 
 <div class="about-topic">
 
-Leadership in small, high-trust organizations relies on self-sustaining systems rather than individual heroics. I explore how clear operational principles outperform predictions and how resilient structures are built on shared transparency.
+Leadership in small, high-trust organizations is tested when the path is muddled and the decisions will not earn applause. I write about showing up in those seasons, building self-sustaining systems instead of heroics, and caring more about getting it right than being right.
 
 </div>
 
