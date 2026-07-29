@@ -158,6 +158,7 @@ Marketing in a Changed World + The AI Advantage · 3 hr
 <div class="engagement-date">Apr 2026</div>
 <div class="engagement-detail">
 <strong>NAA Certified Auctioneers Institute (CAI)</strong><br>
+<span class="engagement-meta">Indiana University · Bloomington, IN</span><br>
 Partnerships, Joint Ventures, and Referrals · 1.5 hr
 </div>
 </div>
@@ -174,6 +175,7 @@ AI for Leadership · 1 hr
 <div class="engagement-date">Mar 2026</div>
 <div class="engagement-detail">
 <strong>NAA Certified Auctioneers Institute (CAI)</strong><br>
+<span class="engagement-meta">Indiana University · Bloomington, IN</span><br>
 Marketing & AI · 3.5 hr
 </div>
 </div>
