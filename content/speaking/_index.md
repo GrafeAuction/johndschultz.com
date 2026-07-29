@@ -81,7 +81,7 @@ Why the person one step ahead in the fog teaches better than the expert who mapp
 
 </div>
 
-## Recent Engagements
+## Recent & Upcoming
 
 <div class="speaking-engagements">
 
