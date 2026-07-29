@@ -83,26 +83,157 @@ Why the person one step ahead in the fog teaches better than the expert who mapp
 
 ## Recent Engagements
 
-| Date | Event / Host | Session / Topic | Duration |
-| :--- | :--- | :--- | :--- |
-| Nov 2026 | **Indiana Auctioneers Association Annual Convention** | Practical AI for the Auction Professional | 1.5 hr |
-| Oct 2026 | **United Country Real Estate National Convention** (Hyatt Regency Grand Cypress, Orlando, FL) | AI & Real Estate Marketing (3 sessions: Guardrails; Turning Your Database into Deals; What's Working Now Versus the Hype) | 3 × 1 hr |
-| Jul 2026 | **World Wide College of Auctioneering** | Auction Marketing: A Strategic Approach | Half day |
-| Jun 2026 | **Tranzon** | AI Proposal Generation and Agentic Workflows for Auction Professionals | 1.5 hr |
-| Jun 2026 | **Arkansas Auctioneers Association Summer Conference** (Tull, AR) | From Old School to New School: Marketing & AI for Auctions | 5 hr (Full day) |
-| May 2026 | **Industrial Auctioneers Association European Members' Meeting** (Rome, Italy) | AI for Industrial Auctioneers | 1 hr |
-| Apr 2026 | **Nebraska Auctioneers Association Conference** | Marketing in a Changed World + The AI Advantage | 3 hr |
-| Apr 2026 | **NAA Certified Auctioneers Institute (CAI)** | Partnerships, Joint Ventures, and Referrals | 1.5 hr |
-| Mar 2026 | **UW-Madison Extension, Sauk County Institute of Leadership** | AI for Leadership | 1 hr |
-| Mar 2026 | **NAA Certified Auctioneers Institute (CAI)** | Marketing & AI | 3.5 hr |
-| Mar 2026 | **Schrader Real Estate & Auction Annual Meeting** | Using AI Within the Auction Industry | 75 min |
-| Mar 2026 | **World Wide College of Auctioneering** | Auction Marketing: A Strategic Approach | Half day |
-| Feb 2026 | **Weichert Realtors / H. Barry Smith Co.** | AI for Real Estate Agents | 1 hr |
-| Feb 2026 | **NAA Digital Marketing Summit** | Data That Drives Decisions: Mastering Google Analytics & Search Console | 1 hr |
-| Feb 2026 | **North Dakota Auctioneers Association Conference** | AI in the Auction Industry + Digital Marketing for Auctions | Half day |
-| Jan 2026 | **Michigan Auctioneers Association Conference** | AI Unveiled: From Old School to New School | 3 hr |
-| Jan 2026 | **Wisconsin Auctioneers Association Conference** | AI Unveiled + Ethics & AI | 2 hr + 1 hr |
-| Jan 2026 | **Minnesota State Auctioneers Association Conference** | The 1-Hour AI Advantage | 1 hr |
+<div class="speaking-engagements">
+
+<div class="engagement">
+<div class="engagement-date">Nov 2026</div>
+<div class="engagement-detail">
+<strong>Indiana Auctioneers Association Annual Convention</strong><br>
+Practical AI for the Auction Professional · 1.5 hr
+</div>
+</div>
+
+<div class="engagement">
+<div class="engagement-date">Oct 2026</div>
+<div class="engagement-detail">
+<strong>United Country Real Estate National Convention</strong><br>
+<span class="engagement-meta">Hyatt Regency Grand Cypress · Orlando, FL</span><br>
+AI & Real Estate Marketing · 3 × 1 hr<br>
+<span class="engagement-meta">Guardrails · Turning Your Database into Deals · What's Working Now Versus the Hype</span>
+</div>
+</div>
+
+<div class="engagement">
+<div class="engagement-date">Jul 2026</div>
+<div class="engagement-detail">
+<strong>World Wide College of Auctioneering</strong><br>
+Auction Marketing: A Strategic Approach · Half day
+</div>
+</div>
+
+<div class="engagement">
+<div class="engagement-date">Jun 2026</div>
+<div class="engagement-detail">
+<strong>Tranzon</strong><br>
+AI Proposal Generation and Agentic Workflows for Auction Professionals · 1.5 hr
+</div>
+</div>
+
+<div class="engagement">
+<div class="engagement-date">Jun 2026</div>
+<div class="engagement-detail">
+<strong>Arkansas Auctioneers Association Summer Conference</strong><br>
+<span class="engagement-meta">Tull, AR</span><br>
+From Old School to New School: Marketing & AI for Auctions · 5 hr (Full day)
+</div>
+</div>
+
+<div class="engagement">
+<div class="engagement-date">May 2026</div>
+<div class="engagement-detail">
+<strong>Industrial Auctioneers Association European Members' Meeting</strong><br>
+<span class="engagement-meta">Rome, Italy</span><br>
+AI for Industrial Auctioneers · 1 hr
+</div>
+</div>
+
+<div class="engagement">
+<div class="engagement-date">Apr 2026</div>
+<div class="engagement-detail">
+<strong>Nebraska Auctioneers Association Conference</strong><br>
+Marketing in a Changed World + The AI Advantage · 3 hr
+</div>
+</div>
+
+<div class="engagement">
+<div class="engagement-date">Apr 2026</div>
+<div class="engagement-detail">
+<strong>NAA Certified Auctioneers Institute (CAI)</strong><br>
+Partnerships, Joint Ventures, and Referrals · 1.5 hr
+</div>
+</div>
+
+<div class="engagement">
+<div class="engagement-date">Mar 2026</div>
+<div class="engagement-detail">
+<strong>UW-Madison Extension, Sauk County Institute of Leadership</strong><br>
+AI for Leadership · 1 hr
+</div>
+</div>
+
+<div class="engagement">
+<div class="engagement-date">Mar 2026</div>
+<div class="engagement-detail">
+<strong>NAA Certified Auctioneers Institute (CAI)</strong><br>
+Marketing & AI · 3.5 hr
+</div>
+</div>
+
+<div class="engagement">
+<div class="engagement-date">Mar 2026</div>
+<div class="engagement-detail">
+<strong>Schrader Real Estate & Auction Annual Meeting</strong><br>
+Using AI Within the Auction Industry · 75 min
+</div>
+</div>
+
+<div class="engagement">
+<div class="engagement-date">Mar 2026</div>
+<div class="engagement-detail">
+<strong>World Wide College of Auctioneering</strong><br>
+Auction Marketing: A Strategic Approach · Half day
+</div>
+</div>
+
+<div class="engagement">
+<div class="engagement-date">Feb 2026</div>
+<div class="engagement-detail">
+<strong>Weichert Realtors / H. Barry Smith Co.</strong><br>
+AI for Real Estate Agents · 1 hr
+</div>
+</div>
+
+<div class="engagement">
+<div class="engagement-date">Feb 2026</div>
+<div class="engagement-detail">
+<strong>NAA Digital Marketing Summit</strong><br>
+Data That Drives Decisions: Mastering Google Analytics & Search Console · 1 hr
+</div>
+</div>
+
+<div class="engagement">
+<div class="engagement-date">Feb 2026</div>
+<div class="engagement-detail">
+<strong>North Dakota Auctioneers Association Conference</strong><br>
+AI in the Auction Industry + Digital Marketing for Auctions · Half day
+</div>
+</div>
+
+<div class="engagement">
+<div class="engagement-date">Jan 2026</div>
+<div class="engagement-detail">
+<strong>Michigan Auctioneers Association Conference</strong><br>
+AI Unveiled: From Old School to New School · 3 hr
+</div>
+</div>
+
+<div class="engagement">
+<div class="engagement-date">Jan 2026</div>
+<div class="engagement-detail">
+<strong>Wisconsin Auctioneers Association Conference</strong><br>
+AI Unveiled + Ethics & AI · 2 hr + 1 hr
+</div>
+</div>
+
+<div class="engagement">
+<div class="engagement-date">Jan 2026</div>
+<div class="engagement-detail">
+<strong>Minnesota State Auctioneers Association Conference</strong><br>
+The 1-Hour AI Advantage · 1 hr
+</div>
+</div>
+
+</div>
 
 ## Book Me
 

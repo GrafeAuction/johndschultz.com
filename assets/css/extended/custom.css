@@ -557,7 +557,7 @@ code, pre, .post-content code, .post-content pre {
   font-size: var(--text-sm);
   color: var(--secondary);
   white-space: nowrap;
-  min-width: 70px;
+  min-width: 5.5rem;
   flex-shrink: 0;
 }
 
@@ -569,6 +569,11 @@ code, pre, .post-content code, .post-content pre {
 
 .engagement-detail strong {
   color: var(--primary);
+}
+
+.engagement-meta {
+  font-size: 0.9rem;
+  color: var(--secondary);
 }
 
 .speaking-cta {
