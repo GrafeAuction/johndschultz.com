@@ -89,7 +89,7 @@ Why the person one step ahead in the fog teaches better than the expert who mapp
 <div class="engagement-date">Dec 2026</div>
 <div class="engagement-detail">
 <strong>NAA Designation Academy</strong><br>
-<span class="engagement-meta">Caesars Palace · Las Vegas, NV · Dec 7-9, 2026</span><br>
+<span class="engagement-meta">Caesars Palace · Las Vegas, NV</span><br>
 Auction Marketing Management (AMM) · Lead Instructor
 </div>
 </div>
