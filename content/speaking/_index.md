@@ -86,6 +86,7 @@ Why the person one step ahead in the fog teaches better than the expert who mapp
 | Date | Event / Host | Session / Topic | Duration |
 | :--- | :--- | :--- | :--- |
 | Nov 2026 | **Indiana Auctioneers Association Annual Convention** | Practical AI for the Auction Professional | 1.5 hr |
+| 2026 | **United Country Real Estate National Convention** (Orlando, FL) | AI & Real Estate Marketing (3 sessions: Guardrails; Turning Your Database into Deals; What's Working Now Versus the Hype) | 3 × 1 hr |
 | Jul 2026 | **World Wide College of Auctioneering** | Auction Marketing: A Strategic Approach | Half day |
 | Jun 2026 | **Tranzon** | AI Proposal Generation and Agentic Workflows for Auction Professionals | 1.5 hr |
 | Jun 2026 | **Arkansas Auctioneers Association Summer Conference** (Tull, AR) | From Old School to New School: Marketing & AI for Auctions | 5 hr (Full day) |
