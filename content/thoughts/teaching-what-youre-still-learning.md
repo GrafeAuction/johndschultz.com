@@ -38,6 +38,8 @@ The memory bug made me a better teacher of AI skepticism than any slide about ha
 
 The gap between what you teach and what you've mastered isn't something to hide. It's the most credible thing you bring to the room.
 
+How I got into that room in the first place is a different story. Proximity is the method. The origin is older, and it is not the ignition. I wrote that out in [The Full Circle Isn't the Ignition](/essays/the-full-circle-isnt-the-ignition/).
+
 ## What's Open
 
 The CE course research covers the tools and trends well enough. But does it include enough of the "here's where I got it wrong" stories? The convention and leadership sessions landed hardest on the failures. If the course leans too much on the polished version, it'll lose the thing that actually teaches.

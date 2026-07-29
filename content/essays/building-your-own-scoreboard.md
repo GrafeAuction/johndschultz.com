@@ -114,3 +114,5 @@ I wrote a few months ago that good principles are robust across futures you didn
 The water is still falling. The stone is still changing shape. I don't need to check the scoreboard after every push. The flywheel is turning, even in the silence. Especially in the silence.
 
 I'm not there yet. But I think I know what "there" looks like now. And that's the first revolution of a new cycle.
+
+Related: [The Full Circle Isn't the Ignition](/essays/the-full-circle-isnt-the-ignition/) (why teaching is not only a flywheel step, but an older origin that still isn't the daily fuel), [Understanding vs. Doing](/essays/understanding-vs-doing/), [The Valley and the Namer](/essays/the-valley-and-the-namer/).

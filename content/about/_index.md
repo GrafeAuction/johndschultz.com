@@ -75,6 +75,7 @@ If you are new to the site, these pieces carry the main threads:
 - [The Watchman Principle](/essays/the-watchman-principle/) — accountable for the warning, not for whether anyone listens
 - [The IAC Title Is Two Jobs](/thoughts/the-iac-title-is-two-jobs/) — what judging the championship clarified about selling and speaking for the trade
 - [Terms clear is not experience clear](/thoughts/terms-clear-is-not-experience-clear/) — invoice right, day wrong; two jobs after a messy pickup
+- [The Full Circle Isn't the Ignition](/essays/the-full-circle-isnt-the-ignition/) — how I became able to teach is not why I still do; the fuel is the room
 
 For talks and CE sessions, see [Speaking](/speaking/).
 

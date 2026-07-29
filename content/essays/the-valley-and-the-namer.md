@@ -158,3 +158,5 @@ You're never as good as your best games. You're never as bad as your worst. Real
 ---
 
 *What valley are you sitting on that you haven't let anyone name for you? And who in your life is waiting for you to name theirs?*
+
+Related: [Opening the Filters](/essays/opening-the-filters/), [Building Your Own Scoreboard](/essays/building-your-own-scoreboard/), [The Full Circle Isn't the Ignition](/essays/the-full-circle-isnt-the-ignition/) (the day teaching was named as mine, and what that seed is for).

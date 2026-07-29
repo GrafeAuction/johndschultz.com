@@ -30,7 +30,7 @@ The second is quieter. Titles are temporary. Residue is not.
 
 **Make room beats make noise.** The boardroom version of this is simple. Create space for debate. Invite the harder question. Care more about getting it right than being right, including on your own idea. The education version is older and deeper. Classrooms, state conventions, one student who walks in broke and unsure if they belong in this trade. If leadership only builds platforms for people who already sound sure, it is not leadership. It is theater with better lighting.
 
-**Education is the long gift.** Titles end on a date. Teaching does not. AMM, CAI, state stages, the same material refined a fourth time because the room still needs it. When people wrote about impact, they did not start with the chair. They started with a class, a conference, a door that opened years before any election. I think that is correct. Association service without a teaching instinct is mostly administration. Administration matters. It is not the whole job. (Same instinct as [teaching while you're still learning](/thoughts/teaching-what-youre-still-learning/).)
+**Education is the long gift.** Titles end on a date. Teaching does not. AMM, CAI, state stages, the same material refined a fourth time because the room still needs it. When people wrote about impact, they did not start with the chair. They started with a class, a conference, a door that opened years before any election. I think that is correct. Association service without a teaching instinct is mostly administration. Administration matters. It is not the whole job. (Same instinct as [teaching while you're still learning](/thoughts/teaching-what-youre-still-learning/). Where that instinct comes from, and what it is not, is [the full circle that isn't the ignition](/essays/the-full-circle-isnt-the-ignition/).)
 
 **Character over title.** The people who know you longest do not grade you on the seat. They grade you on whether you stayed the same person when the seat got heavy: approachable, plainspoken, willing to challenge the room without making the room about you. The title can amplify that. It cannot invent it.
 
@@ -59,5 +59,5 @@ The chair ends. The residue does not. Lead for the residue.
 ## Open Questions
 
 1. How much of "what stuck" is specific to a crisis-era term, and how much would hold in a quiet year?
-2. Is the teaching instinct a leadership strategy, or is it just who I am, and leadership happens to sit on top of it?
+2. Is the teaching instinct a leadership strategy, or is it just who I am, and leadership happens to sit on top of it? ([The Full Circle Isn't the Ignition](/essays/the-full-circle-isnt-the-ignition/) is my current answer: formation and residue, not the daily why.)
 3. What residue am I leaving at work that I would not yet see if I only read my own calendar?

@@ -128,3 +128,5 @@ That's the uncomfortable work. That's where the magic is.
 ---
 
 *What principles are you collecting instead of applying? What work are you avoiding by seeking more understanding?*
+
+Related: [Building Your Own Scoreboard](/essays/building-your-own-scoreboard/), [Teaching What You're Still Learning](/thoughts/teaching-what-youre-still-learning/), [The Full Circle Isn't the Ignition](/essays/the-full-circle-isnt-the-ignition/) (teaching as the application, and what still is not the reason you walk in).
