@@ -73,13 +73,11 @@ If you are new to the site, these pieces carry the main threads:
 - [How I Actually Use AI](/essays/how-i-actually-use-ai/) - vault, skills, and a morning loop that has to hold under real auction volume
 - [The Person-System Trap](/essays/the-person-system-trap/) - when the operator is the system, and what technology does to that
 - [The Watchman Principle](/essays/the-watchman-principle/) - accountable for the warning, not for whether anyone listens
-- [The IAC Title Is Two Jobs](/thoughts/the-iac-title-is-two-jobs/) - what judging the championship clarified about selling and speaking for the trade
-- [Terms clear is not experience clear](/thoughts/terms-clear-is-not-experience-clear/) - invoice right, day wrong; two jobs after a messy pickup
 - [The Full Circle Isn't the Ignition](/essays/the-full-circle-isnt-the-ignition/) - how I became able to teach is not why I still do; the fuel is the room
-- [What Stuck When the Chair Ended](/thoughts/what-stuck-when-the-chair-ended/) - titles are temporary; residue is the curriculum
 - [Shared Thinking, One Voice](/thoughts/shared-thinking-one-voice/) - co-think, fuse research, represent client, members, brand
 
 For talks and CE sessions, see [Speaking](/speaking/).
+
 
 ## Connect
 
