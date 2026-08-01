@@ -61,3 +61,5 @@ The chair ends. The residue does not. Lead for the residue.
 1. How much of "what stuck" is specific to a crisis-era term, and how much would hold in a quiet year?
 2. Is the teaching instinct a leadership strategy, or is it just who I am, and leadership happens to sit on top of it? ([The Full Circle Isn't the Ignition](/essays/the-full-circle-isnt-the-ignition/) is my current answer: formation and residue, not the daily why.)
 3. What residue am I leaving at work that I would not yet see if I only read my own calendar?
+
+Related: [Shared Thinking, One Voice](/thoughts/shared-thinking-one-voice/) (the craft behind representing something larger than you)
