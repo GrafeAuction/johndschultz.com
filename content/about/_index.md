@@ -1,7 +1,7 @@
 ---
 title: "About"
 layout: "list"
-description: "John Schultz is Partner and CMTO at Grafe Auction, past NAA President and Board Chair, and a writer on auctions, technology, and leadership."
+description: "John Schultz is Partner and CMTO at Grafe Auction, past NAA President and Board Chair, and a writer on auctions, technology, leadership, and the craft of representation."
 ShowToc: false
 ShowReadingTime: false
 hideMeta: true
@@ -13,7 +13,7 @@ I write about the intersection of traditional commerce and digital systems, test
 
 </div>
 
-My perspective is built on more than three decades of active operations, beginning in 1992 at my grandfather's estate auction (a formative moment that sparked my lifelong commitment to the industry). Today, as Partner and Chief Marketing & Technology Officer at [Grafe Auction Company](https://grafeauction.com), I help run a national platform conducting nearly 290 commercial and industrial online auctions annually across all 48 states. This is high-volume, real-world commerce where digital theories are quickly validated or discarded by actual market transactions. Before my time at Grafe, I spent sixteen years as Vice President of Operations and Auctioneer at Schultz Auctioneers Landmark Realty.
+My perspective is built on more than three decades of active operations, beginning in 1992 at my grandfather's estate auction (a formative moment that sparked my lifelong commitment to the industry). Today, as Partner and Chief Marketing & Technology Officer at [Grafe Auction Company](https://grafeauction.com), I help run a national platform conducting nearly 290 commercial and industrial online auctions annually across all 48 states. This is high-volume, real-world commerce where digital theories are quickly validated or discarded by actual market transactions. Before my time at Grafe, I spent sixteen years as Vice President of Operations and Auctioneer at Schultz Auctioneers Landmark Realty. During those Schultz years I also worked as a law clerk for a solo attorney in small-town Minnesota, a parallel track that shaped how I still write, think with others, and represent a voice larger than my own ([Shared Thinking, One Voice](/thoughts/shared-thinking-one-voice/)).
 
 Beyond daily operations, I care about the next generation of practitioners. I served as the 76th President of the [National Auction Association](https://auctioneers.org) (2024–2025) and as Board Chair (2025–2026), including a stretch of executive transition and long-term institutional decisions for the association. I am a Lead Instructor for the Auction Marketing Management (AMM) program and develop the artificial intelligence curriculum for the Certified Auctioneers Institute (CAI) at Indiana University. Previously, I served as the 60th President of the Minnesota State Auctioneers Association and as founding President of the Minnesota State Auctioneer's Foundation.
 
@@ -69,13 +69,15 @@ Every piece of writing on this site begins as a handwritten thought card, a brie
 
 If you are new to the site, these pieces carry the main threads:
 
-- [If an AI Can't Find Your Auctions, Neither Can the Buyers](/essays/ai-cant-find-your-auctions/) — when machines do the discovering, readable inventory is the market
-- [How I Actually Use AI](/essays/how-i-actually-use-ai/) — vault, skills, and a morning loop that has to hold under real auction volume
-- [The Person-System Trap](/essays/the-person-system-trap/) — when the operator is the system, and what technology does to that
-- [The Watchman Principle](/essays/the-watchman-principle/) — accountable for the warning, not for whether anyone listens
-- [The IAC Title Is Two Jobs](/thoughts/the-iac-title-is-two-jobs/) — what judging the championship clarified about selling and speaking for the trade
-- [Terms clear is not experience clear](/thoughts/terms-clear-is-not-experience-clear/) — invoice right, day wrong; two jobs after a messy pickup
-- [The Full Circle Isn't the Ignition](/essays/the-full-circle-isnt-the-ignition/) — how I became able to teach is not why I still do; the fuel is the room
+- [If an AI Can't Find Your Auctions, Neither Can the Buyers](/essays/ai-cant-find-your-auctions/) - when machines do the discovering, readable inventory is the market
+- [How I Actually Use AI](/essays/how-i-actually-use-ai/) - vault, skills, and a morning loop that has to hold under real auction volume
+- [The Person-System Trap](/essays/the-person-system-trap/) - when the operator is the system, and what technology does to that
+- [The Watchman Principle](/essays/the-watchman-principle/) - accountable for the warning, not for whether anyone listens
+- [The IAC Title Is Two Jobs](/thoughts/the-iac-title-is-two-jobs/) - what judging the championship clarified about selling and speaking for the trade
+- [Terms clear is not experience clear](/thoughts/terms-clear-is-not-experience-clear/) - invoice right, day wrong; two jobs after a messy pickup
+- [The Full Circle Isn't the Ignition](/essays/the-full-circle-isnt-the-ignition/) - how I became able to teach is not why I still do; the fuel is the room
+- [What Stuck When the Chair Ended](/thoughts/what-stuck-when-the-chair-ended/) - titles are temporary; residue is the curriculum
+- [Shared Thinking, One Voice](/thoughts/shared-thinking-one-voice/) - co-think, fuse research, represent client, members, brand
 
 For talks and CE sessions, see [Speaking](/speaking/).
 
