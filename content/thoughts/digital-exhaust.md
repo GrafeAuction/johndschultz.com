@@ -59,3 +59,5 @@ The person who knows they're producing exhaust and chooses to keep driving is in
 - How do you teach this awareness without sounding paranoid? The line between "be intentional about your digital footprint" and "they're watching you" is thin, and one lands as wisdom while the other lands as conspiracy.
 - Is there a business angle here? Companies that help people understand or manage their digital exhaust, the way credit monitoring made financial footprints visible?
 - At what point does the aggregation cross from "data" to "identity"? Where's the threshold where scattered exhaust becomes a portrait?
+
+Related: [The Note Is Not the Point](/thoughts/the-note-is-not-the-point/)

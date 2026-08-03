@@ -38,4 +38,4 @@ During the dialogue, several sharp formulations crystallized the tension:
 
 ---
 
-*Connects to [Systemic Rivals Against Default Drift](/thoughts/systemic-rivals-against-default-drift/).*
+*Connects to [Systemic Rivals Against Default Drift](/thoughts/systemic-rivals-against-default-drift/) and [The Note Is Not the Point](/thoughts/the-note-is-not-the-point/).*
