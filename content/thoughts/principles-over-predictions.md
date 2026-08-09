@@ -33,3 +33,5 @@ The companies that survive transitions aren't the ones that saw them coming. The
 1. How do you tell the difference between a principle and a preference you've elevated to a principle? "Own your stack" feels like a principle, but is it actually just my preference dressed up as wisdom?
 2. Can you build an organization around principles this way, or does it only work when one person holds the vision? What happens when principles need to transfer across a team that didn't arrive at them organically?
 3. Where are my current principles wrong? If good principles carry you into futures you can't see, bad ones carry you into walls you can't see either.
+
+Related: [Touch It Once](/thoughts/touch-it-once/)

@@ -19,3 +19,5 @@ It's a simple framework, but it cuts through the noise fast. Most bad decisions 
 The power isn't in the time horizons themselves. It's in the forced pause. You're making your future self a stakeholder in today's decision. That future self has context your present self doesn't: the emotional dust has settled, the short-term pressure is gone, and the consequences have played out.
 
 The framework also exposes decisions that feel uncomfortable now but won't generate regret later. Sometimes the right call is the one that stings today but sits well at six months. If future-you is at peace with it, present-you can handle the discomfort.
+
+Related: [Touch It Once](/thoughts/touch-it-once/)
