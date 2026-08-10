@@ -43,3 +43,5 @@ So when does the system become more valuable than the person who built it? That'
 I think this is where the auction industry is headed. The companies that figure out whether they're acquiring capability or hiring headcount will make better decisions about growth, about partnerships, about which relationships to cultivate and which systems to own. The ones that keep thinking in headcount terms will keep renting what they should be building.
 
 The assets that compound in a business are the ones you own. That's true for bidder databases. It's true for brand. It's true for client relationships. And it turns out it's true for the team that builds everything else.
+
+Related: [The Quit Test](/thoughts/the-quit-test/)
