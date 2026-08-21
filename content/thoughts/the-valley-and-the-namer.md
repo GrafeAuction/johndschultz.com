@@ -47,3 +47,5 @@ The sheltered person who's never been held accountable at all develops a third d
 3. How do you honor your partner's different relationship to vulnerability when their valleys taught them a different lesson than yours did?
 
 *Read the full essay: [The Valley and the Namer](/essays/the-valley-and-the-namer/)*
+
+Related: [Small Wrongness](/thoughts/small-wrongness/)

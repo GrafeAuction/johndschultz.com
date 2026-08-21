@@ -30,4 +30,4 @@ What lasts isn't the moment itself. Moments always pass. What lasts is what you 
 
 The valley and namer framework established that suffering produces growth when someone names what it built. This extends that: the highs contain just as much signal as the lows, but we rarely extract it because celebration feels like enough.
 
-*Connects to [The Valley and the Namer](/essays/the-valley-and-the-namer/) and [No Regrets Decision Making](/thoughts/no-regrets-decision-making/).*
+*Connects to [The Valley and the Namer](/essays/the-valley-and-the-namer/), [No Regrets Decision Making](/thoughts/no-regrets-decision-making/), and [Small Wrongness](/thoughts/small-wrongness/).*

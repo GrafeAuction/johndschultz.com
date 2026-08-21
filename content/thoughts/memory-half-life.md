@@ -45,4 +45,4 @@ The brain doesn't just decay passively. Sleep-based memory consolidation activel
 
 Technology is the default. Human relationships must be actively defended. The same logic applies here: persistence is the default for digital memory. Relevance must be actively defended. Without decay, memory systems drift toward noise the same way organizations drift toward automation. Not because anyone chose it, but because no one built in the friction that keeps things honest.
 
-Related: [The Note Is Not the Point](/thoughts/the-note-is-not-the-point/)
+Related: [The Note Is Not the Point](/thoughts/the-note-is-not-the-point/), [Small Wrongness](/thoughts/small-wrongness/)

@@ -68,4 +68,4 @@ I think capture without review is still useful as attention practice. It is not 
 2. How often is the "why it mattered" true in the moment, and how often do I invent it later so the card feels complete?
 3. If the noticing is the point, when does my full digital system stop being the compound layer and start being costume for a practice that already finished at the pen?
 
-Related: [Memory Half-Life](/thoughts/memory-half-life/), [Digital Exhaust](/thoughts/digital-exhaust/), [Cognitive Defense Against Default Drift](/thoughts/cognitive-defense-against-default-drift/), [Touch It Once](/thoughts/touch-it-once/)
+Related: [Memory Half-Life](/thoughts/memory-half-life/), [Digital Exhaust](/thoughts/digital-exhaust/), [Cognitive Defense Against Default Drift](/thoughts/cognitive-defense-against-default-drift/), [Touch It Once](/thoughts/touch-it-once/), [Small Wrongness](/thoughts/small-wrongness/)
