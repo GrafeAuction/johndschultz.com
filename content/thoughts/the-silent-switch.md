@@ -14,7 +14,7 @@ I was thinking this morning about friction in technology, and how a good custome
 
 The local coffee shop is a franchise I go to all the time. A few months ago they released a new mobile app to replace the old one. The new one has latency problems. Flaky at best, worse around 8 in the morning, less bad mid-morning. A colleague and I were talking about it in the office. We wondered if the app is silently failing and they don't even realize they're hitting a bandwidth wall at the rush.
 
-I've spent nearly $5,000 there. I like ordering from the house so the coffee is ready when I pull up. I tell them I'm here, they hand it through the window, they say thanks for the business, have a great day John. They know me by name. I know them by name. The transaction is almost secondary.
+I've spent a few thousand dollars there. I like ordering from the house so the coffee is ready when I pull up. I tell them I'm here, they hand it through the window, they say thanks for the business, have a great day John. They know me by name. I know them by name. The transaction is almost secondary.
 
 And I told him: if another shop in town offered that same convenience, I would likely shift my business over and never say a word. Because of the app.
 
@@ -46,7 +46,7 @@ The only proxy I can think of is how many people start the registration process 
 
 1. What's our registration start-to-complete rate, and does it move by time of day the way the coffee app does?
 2. What other silent-fail surfaces do we have besides registration? Search, bidding, invoice, pickup scheduling.
-3. If a buyer equivalent to my $5,000 coffee habit left us this year, would anyone notice besides a missing row in a report?
+3. If a buyer who'd spent a few thousand with us left this year, would anyone notice besides a missing row in a report?
 4. Where is the useful friction (identity, terms, payment) and where have we added the other kind without meaning to?
 
 Related: [The Shock Absorber Trap](/essays/the-shock-absorber-trap/), [Terms clear is not experience clear](/thoughts/terms-clear-is-not-experience-clear/), [Users Do the Scaling](/thoughts/users-do-the-scaling/), [The Mom Test](/thoughts/the-mom-test/)
