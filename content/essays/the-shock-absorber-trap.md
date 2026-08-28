@@ -72,3 +72,5 @@ In that light, the shock absorber trap is not a design mistake. It's an executiv
 But the cost of that shield is compounding. As long as we keep absorbing the shock, we keep renting our growth. We spend our days firefighting, and the systems stay broken. 
 
 The real work of leadership is not being a hero in the support queue. It is having the courage to step out from behind the shield, aggregate the failure data, and force the organization to sit down and redesign the system. If we want to build a platform that scales, we have to stop smoothing over the bumps and start fixing the road.
+
+Related: [The Silent Switch](/thoughts/the-silent-switch/)

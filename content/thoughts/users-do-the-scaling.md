@@ -40,3 +40,5 @@ The question for any business is: which parts of your process genuinely require 
 - Is there a middle path? Some hybrid where we provide the auction infrastructure and trust layer, but sellers handle their own cataloging and marketing for smaller lots? Kind of what Whatnot does, but with a licensed, regulated auction company behind it.
 - The real moat might not be the full-service model. It might be the trust, compliance, and settlement infrastructure that social platforms haven't built. Could we license that layer to self-serve sellers?
 - How does this connect to the auctioneer identity question? If we enable self-serve sellers on our platform, are they auctioneers? Are we?
+
+Related: [The Silent Switch](/thoughts/the-silent-switch/)

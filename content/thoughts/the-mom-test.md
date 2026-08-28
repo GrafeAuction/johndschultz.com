@@ -53,3 +53,5 @@ This is the same instinct, just applied to a different surface. Pricing complexi
 - Where does Grafe fail this test? Our buyer's premium is simple (one number, done). But our seller-side fee structure has commission tiers, marketing cost recovery, reimbursable expenses, and admin fees that vary by deal type. Would my mom follow that?
 - Is there a version of this that applies to non-monetary pricing? An incentive program I reviewed for an industry association had the same problem: too many conditions, too many edge cases. The incentive amount is simple. The guardrails around it aren't.
 - A platform partnership I structured recently landed cleanly because it was designed as a one-page handshake. Zero commission, a flat admin fee, and a standard buyer's premium. Three numbers. That's the standard.
+
+Related: [The Silent Switch](/thoughts/the-silent-switch/)

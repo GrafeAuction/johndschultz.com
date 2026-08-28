@@ -71,3 +71,5 @@ Own the experience gap and keep the paper. Don't invent a policy failure in the 
 
 **What if you apologize by rewriting the terms?**  
 You train the next person that paper is optional. Next time is worse, and they expect the same rewrite. You've sold a precedent you didn't mean to sell.
+
+Related: [The Silent Switch](/thoughts/the-silent-switch/)
