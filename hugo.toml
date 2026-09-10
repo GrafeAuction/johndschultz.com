@@ -141,6 +141,12 @@ enableRobotsTXT = true
   weight = 30
 
 [[menu.main]]
+  identifier = "workshops"
+  name = "Workshops"
+  url = "/workshops/"
+  weight = 35
+
+[[menu.main]]
   identifier = "about"
   name = "About"
   url = "/about/"
