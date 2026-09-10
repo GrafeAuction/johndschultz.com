@@ -1,0 +1,16 @@
+<form class="workshop-inquiry" id="workshop-inquiry" aria-describedby="inquiry-help">
+  <label for="workshop-company">Company or organizing group</label>
+  <input id="workshop-company" name="company" autocomplete="organization" maxlength="200" required>
+  <label for="workshop-needs">What would you like your team to work on?</label>
+  <textarea id="workshop-needs" name="needs" rows="4" maxlength="3000" required></textarea>
+  <label for="workshop-duration">Preferred duration</label>
+  <select id="workshop-duration" name="duration"><option>Not sure yet</option><option>One day</option><option>Two days</option><option>Three days</option></select>
+  <label for="workshop-location">Location</label>
+  <input id="workshop-location" name="location" autocomplete="address-level2" maxlength="200">
+  <label for="workshop-timing">Preferred timing</label>
+  <input id="workshop-timing" name="timing" placeholder="Month, date range, or flexible" maxlength="200">
+  <p id="inquiry-help">This form prepares an email in your mail app. Review it and send it there. You can also email <a href="mailto:john.schultz@grafeauction.com?subject=Private%20workshop%20inquiry">john.schultz@grafeauction.com</a> directly.</p>
+  <button type="submit" class="cta-button" id="inquiry-submit" hidden>Prepare inquiry email</button>
+  <p id="inquiry-status" role="status"></p>
+</form>
+<script src="/js/workshop-inquiry.js" defer></script>

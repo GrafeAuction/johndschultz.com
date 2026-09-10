@@ -1,0 +1,8 @@
+.workshop-inquiry { display: grid; gap: .6rem; margin: 1.5rem 0; }
+.workshop-inquiry label { font-weight: 600; margin-top: .6rem; }
+.workshop-inquiry input, .workshop-inquiry textarea, .workshop-inquiry select { box-sizing: border-box; width: 100%; padding: .7rem; border: 1px solid var(--secondary); border-radius: 6px; background: var(--theme); color: var(--primary); font: inherit; }
+.workshop-inquiry textarea { resize: vertical; }
+.workshop-inquiry :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+.workshop-inquiry .cta-button { justify-self: start; padding: .75rem 1rem; border: 1px solid var(--primary); border-radius: 6px; background: var(--primary); color: var(--theme); font: inherit; cursor: pointer; }
+.workshop-inquiry [hidden] { display: none; }
+.workshop-inquiry p { font-size: .9em; }

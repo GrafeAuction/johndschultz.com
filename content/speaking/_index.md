@@ -1,7 +1,8 @@
 ---
 title: "Speaking"
 layout: "list"
-description: "Keynotes, workshops, and continuing education with John Schultz on AI, marketing, and auction operations. AMM lead instructor and CAI AI curriculum developer."
+description: "Practical talks and private company workshops with John Schultz on auction marketing, AI, prospecting, customer service, and team workflows."
+servicePage: true
 ShowToc: false
 ShowReadingTime: false
 hideMeta: true
@@ -9,11 +10,19 @@ hideMeta: true
 
 <div class="speaking-intro">
 
-I deliver high-impact keynotes, workshops, and continuing education masterclasses that bridge the gap between traditional industries and modern technology. As a Lead Instructor for the National Auction Association's Auction Marketing Management (AMM) program and the AI curriculum developer for the Certified Auctioneers Institute (CAI), my sessions are built for active practitioners, not theorists.
+I teach auction professionals and business teams how to make better marketing decisions, use AI in their daily work, and build processes their staff can repeat. I bring examples from my work as Partner and Chief Marketing and Technology Officer at Grafe Auction.
 
-**The Promise:** Your attendees will not just learn about the future. They will leave with a 30-day implementation plan, concrete workflows, and the practical capability to reclaim ten administrative hours every single week. Live demos, real-world constraints, and tools they can deploy the next morning.
+I'm a lead instructor for the National Auction Association's Auction Marketing Management (AMM) program and develop AI curriculum for the Certified Auctioneers Institute (CAI). Sessions combine practical explanations, live demonstrations, and exercises suited to the audience and the time available.
 
 </div>
+
+## Private company workshops
+
+Bring your owners and staff together for one, two, or three days of practical work on marketing, prospecting, customer service, and AI. One company can host, or several companies can organize a shared program.
+
+I use advance company assessments and discovery conversations to tailor the curriculum. Teams work on their own examples and leave with materials and next steps they can use in their businesses. Optional annual advisory support helps teams work through questions as they put those plans into practice.
+
+[Explore private workshops and discuss your group →](/workshops/)
 
 ## Topics
 
@@ -21,61 +30,49 @@ I deliver high-impact keynotes, workshops, and continuing education masterclasse
 
 <div class="topic-card">
 
-### From Old School to New School: Marketing & AI
+### From old school to new school: Marketing and AI
 
-Our flagship five-hour continuing education course designed to bridge the physical-digital divide. Auctioneers learn to build targeted buyer personas, optimize for the shift from traditional search engines to generative answers (SEO to GEO), and deploy multi-tool AI workflows to automate cataloging.
-*   **The Promise:** Draft a complete auction catalog in under fifteen minutes and reclaim ten administrative hours every single week.
-*   **Slogan:** *"AI is your leverage, not your replacement."*
+Connect the assets you sell to the customers most likely to buy them. We work through audience selection, useful content, search and AI discovery, and practical AI-assisted catalog and marketing workflows. Exercises include checking output and choosing what to improve next.
 
 </div>
 
 <div class="topic-card">
 
-### AI Adoption for Traditional Industries
+### AI adoption for traditional industries
 
-How to practically incorporate AI tools into daily operations without replacing the expertise that makes your business work. We break down the CLEAR prompting framework and the Symphony Effect (combining ChatGPT, Gemini, Claude, and Perplexity into seamless multi-tool workflows) using live, interactive demonstrations.
-*   **The Promise:** Move from theoretical understanding to active everyday utilization within thirty days.
-*   **Slogan:** *"AI is a tool, but your expertise is the filter."*
+Learn to give AI useful context, write clear instructions, and check its work. Demonstrations cover tasks such as research, drafting, and customer communication. The emphasis is on choosing a manageable starting point and keeping professional judgment in the process.
 
 </div>
 
 <div class="topic-card">
 
-### The Agentic Shift
+### The agentic shift
 
-What happens to your business when AI agents begin making decisions on behalf of your customers? Marketing assumes someone sees the ad; brand assumes someone recognizes the name. Every one of those assumptions breaks when the human leaves the loop. This talk traces the structural shift to systems where technology decides within human constraints.
-*   **The Promise:** Learn to position your brand and structure your data to be cited and chosen by AI decision agents.
-*   **Slogan:** *"Agents do not look at ads."*
+Explore how customer discovery and purchasing may change as people delegate more work to AI agents. We examine what that could mean for marketing, trust, and the information your business makes available online.
 
 </div>
 
 <div class="topic-card">
 
-### Leadership & Decision-Making
+### Leadership and decision-making
 
-Lessons from leading a national trade association through hard seasons (including as NAA President and Board Chair) and building a technology-driven company in a traditional industry. Focuses on practical frameworks for small, high-trust organizations: when to systematize and when to stay human, how principles outperform predictions, how to create room for debate without losing the main thing, and why the gap between knowing and doing is where most leadership fails.
-*   **The Promise:** Build self-sustaining systems that scale beyond the heroics of any single individual, and lead with steadiness when the path is not obvious.
-*   **Slogan:** *"Principles outperform predictions."*
+Lessons from auction practice and my service as NAA President and Board Chair. We work through decision responsibility, useful debate, and when a repeatable process helps. The focus is helping a team move work forward without every question returning to the owner.
 
 </div>
 
 <div class="topic-card">
 
-### Digital Marketing & Analytics
+### Digital marketing and analytics
 
-Cut through the noise of complex dashboards to identify the data that actually drives conversions. Learn to optimize your Google Business Profile (your free digital billboard) and establish a simple, weekly routine to find where prospects drop off before completing high-value actions.
-*   **The Promise:** Build a five-minute weekly data habit that reveals where your leads are dropping off.
-*   **Slogan:** *"Website visits mean nothing without action."*
+Connect marketing activity to customer actions, from inquiries and registrations to bidding. Learn to review reports, recognize where prospects drop off, and establish a short weekly routine for deciding what to adjust. Topics can include website content, Google Business Profile, and agency reporting.
 
 </div>
 
 <div class="topic-card">
 
-### Teaching From the Middle of It
+### Teaching from the middle of it
 
-Why the person one step ahead in the fog teaches better than the expert who mapped the terrain from a helicopter. This talk is about proximity as a teaching credential, the gap between accumulating knowledge and applying it, and why the most honest form of education happens when you are still figuring it out yourself. Built for educators, trainers, and leaders.
-*   **The Promise:** Upskill your team or organization effectively without needing to be an absolute expert beforehand.
-*   **Slogan:** *"Proximity is a teaching credential."*
+Help people use what you know while you continue learning yourself. This session draws on teaching from active practice: explaining a task, letting someone try it, and using their questions to improve the process. Built for educators, trainers, and team leaders.
 
 </div>
 
@@ -246,18 +243,17 @@ The 1-Hour AI Advantage · 1 hr
 
 </div>
 
-## Book Me
+## Book a session
 
 <div class="speaking-cta">
 
-I am available for keynotes, workshops, and continuing education sessions for state and national trade associations, corporate events, auction schools, and private training.
+I offer keynotes, workshops, and continuing education sessions for associations, corporate events, and auction schools, along with [private company workshops](/workshops/).
 
-### What I Deliver
-*   **Customized, Interactive Demos:** No dry slides or static lists. I run live, real-time tests on actual assets (real estate, equipment, or personal property) suggested by the audience.
-*   **Actionable Toolkits:** Attendees do not just take notes. They leave with a physical and digital toolbox, including the CLEAR Prompting Framework reference, multi-tool AI worksheets, and 30-day implementation roadmaps.
-*   **Continuing Education Credits:** Content is structured to qualify for state-level auctioneer and real estate continuing education (CE) requirements, as demonstrated by the five-hour approved curriculum.
+The format determines the work we can do together. A keynote introduces ideas and examples; a workshop gives participants time to practice. For private programs, advance discovery shapes the exercises, materials, and implementation planning.
 
-If you are looking for a speaker who bridges traditional industry expertise with modern technology strategy, I would like to hear from you.
+Continuing education eligibility depends on the specific course and jurisdiction. We'll confirm approval requirements for your event before advertising credit; a custom workshop does not automatically carry CE approval.
+
+Email me with your audience, topic, location, and preferred timing.
 
 <a class="cta-button" href="mailto:john.schultz@grafeauction.com">john.schultz&#64;grafeauction.com</a>
 

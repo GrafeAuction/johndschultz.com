@@ -92,7 +92,21 @@
 }
 </script>
 {{- end }}
-{{- if .IsPage }}
+{{- if .Params.servicePage }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": {{ .Permalink | jsonify }},
+  "name": {{ .Title | plainify | jsonify }},
+  "description": {{ .Description | plainify | jsonify }},
+  "url": {{ .Permalink | jsonify }},
+  "isPartOf": { "@id": "https://johndschultz.com/#website" },
+  "about": { "@id": "https://johndschultz.com/#person" },
+  "inLanguage": "en-US"
+}
+</script>
+{{- else if .IsPage }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
