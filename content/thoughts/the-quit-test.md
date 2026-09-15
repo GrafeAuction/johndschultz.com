@@ -44,4 +44,4 @@ There's a companion problem: security to seat hard people. This card is only the
 2. Where am I postponing a C conversation because severance, history, or discomfort feels cheaper than admitting I'd feel nothing if they left?
 3. For hires and acquisitions, can the quit test be applied before day one (reference calls, work samples, "what would I feel if this person declined") or only after enough shared work that the gut has data?
 
-Related: [Acquiring Capability vs. Hiring Headcount](/thoughts/acquiring-capability-vs-hiring-headcount/)
+Related: [Acquiring Capability vs. Hiring Headcount](/thoughts/acquiring-capability-vs-hiring-headcount/), [Hiring before the need](/thoughts/hiring-before-the-need/)

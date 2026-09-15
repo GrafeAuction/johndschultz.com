@@ -44,4 +44,4 @@ I think this is where the auction industry is headed. The companies that figure 
 
 The assets that compound in a business are the ones you own. That's true for bidder databases. It's true for brand. It's true for client relationships. And it turns out it's true for the team that builds everything else.
 
-Related: [The Quit Test](/thoughts/the-quit-test/)
+Related: [The Quit Test](/thoughts/the-quit-test/), [Hiring before the need](/thoughts/hiring-before-the-need/)
