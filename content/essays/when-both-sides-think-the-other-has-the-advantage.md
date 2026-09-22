@@ -1,6 +1,6 @@
 ---
 title: "When both sides think the other has the advantage"
-date: 2026-09-15
+date: 2026-09-21
 description: "Why I suspect simulcast can weaken bidder trust."
 tags: ["auctions", "operations", "decision-making"]
 ShowToc: true
