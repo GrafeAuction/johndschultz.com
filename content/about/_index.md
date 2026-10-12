@@ -15,13 +15,13 @@ I write about the intersection of traditional commerce and digital systems, test
 
 My perspective is built on more than three decades of active operations, beginning in 1992 at my grandfather's estate auction. That day still sits under everything that followed.
 
-Today, as Partner and Chief Marketing & Technology Officer at [Grafe Auction Company](https://grafeauction.com), I help run a national platform conducting nearly 290 commercial and industrial online auctions a year across all 48 states. High volume. Real transactions. Digital theories get proven or discarded fast.
+Today, as Partner and Chief Marketing & Technology Officer at [Grafe Auction Company](https://grafeauction.com), I help run a national platform conducting nearly 290 commercial and industrial online auctions a year in all 50 states and Puerto Rico. High volume. Real transactions. Digital theories get proven or discarded fast.
 
 Before Grafe, I spent sixteen years as Vice President of Operations and Auctioneer at Schultz Auctioneers Landmark Realty. During those same years I also worked as a law clerk for a solo attorney in small-town Minnesota. Parallel tracks. That clerk work still shapes how I write, think with others, and represent a voice larger than my own ([Shared Thinking, One Voice](/thoughts/shared-thinking-one-voice/)).
 
-I care about the next generation of practitioners. I served as the 76th President of the [National Auction Association](https://auctioneers.org) (2024–2025) and as Board Chair (2025–2026), including executive transition and long-term institutional decisions for the association. I am a Lead Instructor for the Auction Marketing Management (AMM) program and develop the artificial intelligence curriculum for the Certified Auctioneers Institute (CAI) at Indiana University. Previously, I served as the 60th President of the Minnesota State Auctioneers Association and as founding President of the Minnesota State Auctioneer's Foundation.
+I care about the next generation of practitioners. I served as the 76th President of the [National Auction Association](https://auctioneers.org) (2024–2025) and as Board Chair (2025–2026), including executive transition and long-term institutional decisions for the association. I am a Lead Instructor for the Auction Marketing Management (AMM) program and developed the inaugural artificial intelligence curriculum for the Certified Auctioneers Institute (CAI) at Indiana University. Previously, I served as the 60th President of the Minnesota State Auctioneers Association (MSAA) and as founding President of the Minnesota State Auctioneer's Foundation.
 
-Peers have marked that path with the Pat Massart Leadership Award, the National Auction Association President's Award of Distinction, and the Golden Gavel Award from the Minnesota State Auctioneers Association. The titles end. The work is what stays.
+Peers have marked that path with the CAI Pat Massart Leadership Award, the National Auction Association President's Award of Distinction, and the Golden Gavel Award from the MSAA. The titles end. The work is what stays.
 
 I live in Grand Meadow, Minnesota, with my wife Billie Jo and our daughter Anna Claire.
 

@@ -12,7 +12,7 @@ hideMeta: true
 
 I teach auction professionals and business teams how to make better marketing decisions, use AI in their daily work, and build processes their staff can repeat. I bring examples from my work as Partner and Chief Marketing and Technology Officer at Grafe Auction.
 
-I'm a lead instructor for the National Auction Association's Auction Marketing Management (AMM) program and develop AI curriculum for the Certified Auctioneers Institute (CAI). Sessions combine practical explanations, live demonstrations, and exercises suited to the audience and the time available.
+I'm a lead instructor for the National Auction Association's Auction Marketing Management (AMM) program and developed the inaugural AI curriculum for the Certified Auctioneers Institute (CAI). Sessions combine practical explanations, live demonstrations, and exercises suited to the audience and the time available.
 
 </div>
 
