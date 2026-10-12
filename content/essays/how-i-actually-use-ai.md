@@ -16,7 +16,7 @@ faq:
     answer: "Garbage in, garbage out. If notes are not named, tagged, and linked the same way, the model has nothing reliable to retrieve or connect."
 ---
 
-Grafe Auction runs about 290 auctions a year across 48 states. Each campaign takes 10 to 14 days from start to finish. I'm the partner responsible for marketing, technology, and operations. That pace doesn't leave much room for a system that's clever but doesn't hold up under pressure. It also doesn't leave room for losing a thought from January that turns out to be the missing piece in February.
+Grafe Auction runs about 290 auctions a year in all 50 states and Puerto Rico. Each campaign takes 10 to 14 days from start to finish. I'm the partner responsible for marketing, technology, and operations. That pace doesn't leave much room for a system that's clever but doesn't hold up under pressure. It also doesn't leave room for losing a thought from January that turns out to be the missing piece in February.
 
 The personal knowledge management crowd has an orthodoxy right now: tools don't matter, just write. The AI crowd has its own: throw everything at the model and let it figure it out. Both are half right. Tools alone don't create insight. Models alone can't connect what they've never been given.
 

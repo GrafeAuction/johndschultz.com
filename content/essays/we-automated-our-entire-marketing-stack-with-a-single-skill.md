@@ -9,7 +9,7 @@ TocOpen: false
 draft: false
 ---
 
-Grafe Auction runs about 290 auctions a year across 48 states. Each campaign takes 10 to 14 days from start to finish. That's roughly one new marketing campaign going live every business day. Ad copy, search keywords, geographic targeting, photo selection, platform-specific formatting. Every time.
+Grafe Auction runs about 290 auctions a year in all 50 states and Puerto Rico. Each campaign takes 10 to 14 days from start to finish. That's roughly one new marketing campaign going live every business day. Ad copy, search keywords, geographic targeting, photo selection, platform-specific formatting. Every time.
 
 For years, each campaign started the same way: a blank page. Someone opens the lot catalog, scans through it, figures out what's worth highlighting, writes the ad copy, picks the photos, formats everything for Facebook and Google, selects the target markets. Then does it again tomorrow. And the day after that.
 

@@ -20,7 +20,7 @@ It's attributed to John A. Shedd, published in 1928. One of those quotes that ge
 
 There's a version of safety that looks responsible but is actually just avoidance. Staying in the harbor feels like stewardship, like you're protecting the ship. But the ship was built to move cargo and reach ports you can't see from the dock. A ship that never leaves isn't well-maintained. It's wasted.
 
-I keep coming back to the tension between building and preserving. Grafe runs 290 auctions a year across 48 states. We're not sitting still. But I think there are decisions I've deferred because the current trajectory feels safe enough. Revenue diversification conversations I haven't pushed. Technology bets I've studied but not made. The harbor isn't inactivity. It's the comfortable pace that doesn't require me to risk anything new.
+I keep coming back to the tension between building and preserving. Grafe runs 290 auctions a year in all 50 states and Puerto Rico. We're not sitting still. But I think there are decisions I've deferred because the current trajectory feels safe enough. Revenue diversification conversations I haven't pushed. Technology bets I've studied but not made. The harbor isn't inactivity. It's the comfortable pace that doesn't require me to risk anything new.
 
 The quote also connects to something I wrote in [The Measure](/essays/the-measure/): the comfortable fiction that there's always more time. Staying in the harbor assumes the harbor will always be there. It assumes calm water. It assumes the cargo doesn't spoil while you wait.
 
