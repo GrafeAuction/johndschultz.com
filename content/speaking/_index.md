@@ -46,6 +46,14 @@ Learn to give AI useful context, write clear instructions, and check its work. D
 
 <div class="topic-card">
 
+### AI and real estate marketing
+
+Three standalone sessions for agents and auction marketers. The Guardrails covers where AI is confidently wrong and which handoffs can hurt you. Turning Your Database Into Deals covers pre-call research, matching buyers and sellers, and follow-up that doesn't slip. What's Working Now Versus the Hype covers short-form content, local presence and reviews, and content people and AI tools can find.
+
+</div>
+
+<div class="topic-card">
+
 ### The agentic shift
 
 Explore how customer discovery and purchasing may change as people delegate more work to AI agents. We examine what that could mean for marketing, trust, and the information your business makes available online.
@@ -57,6 +65,14 @@ Explore how customer discovery and purchasing may change as people delegate more
 ### Leadership and decision-making
 
 Lessons from auction practice and my service as NAA President and Board Chair. We work through decision responsibility, useful debate, and when a repeatable process helps. The focus is helping a team move work forward without every question returning to the owner.
+
+</div>
+
+<div class="topic-card">
+
+### Auctioneer ethics: Principles, perils and professionalism
+
+Work through the NAA Code of Ethics with real case studies: the fiduciary duty owed to clients, disclosure, communication with buyers and sellers, and where the antitrust lines fall. We practice a five-step approach to ethical decisions and apply timeless principles to new platforms and AI, including when to disclose AI use.
 
 </div>
 
@@ -83,11 +99,65 @@ Help people use what you know while you continue learning yourself. This session
 <div class="speaking-engagements">
 
 <div class="engagement">
+<div class="engagement-date">Mar 2027</div>
+<div class="engagement-detail">
+<strong>NAA Certified Auctioneers Institute (CAI)</strong><br>
+<span class="engagement-meta">Indiana University · Bloomington, IN</span><br>
+Partnering for Profit · 1.5 hr
+</div>
+</div>
+
+<div class="engagement">
+<div class="engagement-date">Mar 2027</div>
+<div class="engagement-detail">
+<strong>Auctioneers Association of Ontario Convention</strong><br>
+<span class="engagement-meta">Ingersoll, ON</span><br>
+Marketing & AI
+</div>
+</div>
+
+<div class="engagement">
+<div class="engagement-date">Feb 2027</div>
+<div class="engagement-detail">
+<strong>Iowa Auctioneers Association Convention</strong><br>
+<span class="engagement-meta">Des Moines, IA</span><br>
+Auction Marketing
+</div>
+</div>
+
+<div class="engagement">
+<div class="engagement-date">Jan 2027</div>
+<div class="engagement-detail">
+<strong>Minnesota State Auctioneers Association</strong><br>
+<span class="engagement-meta">St. Cloud, MN</span><br>
+Auction Marketing Management (AMM) · Lead Instructor
+</div>
+</div>
+
+<div class="engagement">
+<div class="engagement-date">Jan 2027</div>
+<div class="engagement-detail">
+<strong>Ohio Auctioneers Association Conference</strong><br>
+<span class="engagement-meta">The Ohioan · Lewis Center, OH</span><br>
+Practical AI for the Auction Professional · 2 hr + Round Table
+</div>
+</div>
+
+<div class="engagement">
 <div class="engagement-date">Dec 2026</div>
 <div class="engagement-detail">
 <strong>NAA Designation Academy</strong><br>
 <span class="engagement-meta">Caesars Palace · Las Vegas, NV</span><br>
 Auction Marketing Management (AMM) · Lead Instructor
+</div>
+</div>
+
+<div class="engagement">
+<div class="engagement-date">Nov 2026</div>
+<div class="engagement-detail">
+<strong>Industrial Auctioneers Association Annual Members' Meeting</strong><br>
+<span class="engagement-meta">Carlsbad, CA</span><br>
+Put It to Work: AI in Practice · Friday Education Program
 </div>
 </div>
 
@@ -229,7 +299,7 @@ AI Unveiled: From Old School to New School · 3 hr
 <div class="engagement-date">Jan 2026</div>
 <div class="engagement-detail">
 <strong>Wisconsin Auctioneers Association Conference</strong><br>
-AI Unveiled + Ethics & AI · 2 hr + 1 hr
+AI Unveiled · 2 hr + Auctioneer Ethics: Principles, Perils & Professionalism · 3 hr
 </div>
 </div>
 
