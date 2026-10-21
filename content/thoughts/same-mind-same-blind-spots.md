@@ -25,3 +25,5 @@ The uncomfortable version: rereading my own email before sending is same-model v
 1. Where else does the producer grade his own work? In our auction business, setup checklists verified by the crew that did the setup is the obvious candidate.
 2. Is there a cost threshold below which same-mind review is fine? Typo-level checking probably doesn't need independence; judgment-level checking always does.
 3. Does this argue for keeping one deliberately different mind in every important loop (an outside reviewer, a contrarian in the room), even when the different mind is individually weaker?
+
+Related: [When the AIs Disagree, I Pay Attention](/essays/when-the-ais-disagree-i-pay-attention/)
