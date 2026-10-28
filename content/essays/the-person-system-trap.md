@@ -113,4 +113,4 @@ The grip holds everything. The surrender hands everything to tools and stops thi
 **How do you start?**  
 Triage into three buckets: only you, someone else with guardrails, or automate. Document the middle and bottom. Keep the judgment that is actually yours.
 
-Related: [How I Actually Use AI](/essays/how-i-actually-use-ai/), [If an AI Can't Find Your Auctions](/essays/ai-cant-find-your-auctions/).
+Related: [How I Actually Use AI](/essays/how-i-actually-use-ai/), [If an AI Can't Find Your Auctions](/essays/ai-cant-find-your-auctions/), [Guardrails After](/essays/guardrails-after/).
