@@ -131,4 +131,4 @@ Where the models disagree, where something failed, and the edge cases nobody's r
 
 Install the desktop app for Claude or ChatGPT, connect it to your own files, and use it on one real task you already do. Ten structured notes and one skill is still the right first step.
 
-Related: [How I Actually Use AI](/essays/how-i-actually-use-ai/), [Same Mind, Same Blind Spots](/thoughts/same-mind-same-blind-spots/)
+Related: [How I Actually Use AI](/essays/how-i-actually-use-ai/), [Same Mind, Same Blind Spots](/thoughts/same-mind-same-blind-spots/), [Guardrails After](/essays/guardrails-after/)

@@ -95,4 +95,4 @@ You write the rule. After an AI-drafted reply went out without my approval, ever
 **Where does the time AI saves actually go?**
 For me, more nuance, more critical thinking, and some more relationships. Most of it goes into projects we couldn't staff or afford before.
 
-Related: [The Person-System Trap](/essays/the-person-system-trap/), [How I Actually Use AI](/essays/how-i-actually-use-ai/).
+Related: [The Person-System Trap](/essays/the-person-system-trap/), [How I Actually Use AI](/essays/how-i-actually-use-ai/), [When the AIs Disagree, I Pay Attention](/essays/when-the-ais-disagree-i-pay-attention/).

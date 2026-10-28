@@ -167,7 +167,7 @@ Git handles version control. An auto-commit hook fires after every file edit, so
 Every note follows the same template. The metadata block at the top is what makes the downstream tools work.
 
 ```
-# Phone Call — [Name]
+# Phone Call: [Name]
 
 **Date:** February 12, 2026
 **Type:** Phone Call
@@ -182,10 +182,10 @@ Every note follows the same template. The metadata block at the top is what make
 ## Related Notes
 
 ### Notes
-- [[260213_thoughts_digital_exhaust]] — Thought card this call sparked
+- [[260213_thoughts_digital_exhaust]]: Thought card this call sparked
 
 ### References
-- [[person_name]] — Contact reference
+- [[person_name]]: Contact reference
 
 #phonecall #technology
 ```
@@ -256,4 +256,4 @@ No. Start with a naming convention, a few tags, the same template every time, an
 **What breaks most AI knowledge setups?**  
 Inconsistent structure. If captures are not named, tagged, and linked the same way, retrieval fails and the model invents bridges that are not there. The fix is boring discipline, not a better prompt.
 
-Related: [If an AI Can't Find Your Auctions](/essays/ai-cant-find-your-auctions/), [The Person-System Trap](/essays/the-person-system-trap/).
+Related: [If an AI Can't Find Your Auctions](/essays/ai-cant-find-your-auctions/), [The Person-System Trap](/essays/the-person-system-trap/), [Guardrails After](/essays/guardrails-after/).
