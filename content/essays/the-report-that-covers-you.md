@@ -70,3 +70,5 @@ Every firm has a deliverable it files under client service that's really self-pr
 So here's the one I'm sitting with, for our shop and for anyone else running sales for a living: what are you handing clients that covers you instead of informing them, and could the same data, moved earlier, do the opposite?
 
 The report that explains the result is insurance. The one that changes it is the product.
+
+Related: [The 150-Mile Circle](/essays/the-150-mile-circle/)
