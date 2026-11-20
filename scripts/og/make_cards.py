@@ -30,10 +30,11 @@ AVATAR = ROOT / "static/images/john-schultz-avatar-800.jpg"
 OUT = ROOT / "static/images/og"
 SECTIONS = {"essays": "Essay", "thoughts": "Thought", "concepts": "Concept"}
 
-# Palette: Grafe navy (approved 2026-11-19). Contrast vs BG, WCAG:
-# TITLE 12.7:1, LABEL 7.4:1, SUB 10.2:1 (all AAA).
-BG, BAR, RING = "#0E3552", "#378CC9", "#378CC9"
-TITLE, LABEL, SUB, RULE = "#FFFFFF", "#9FCBEA", "#D9E8F3", "#2E5878"
+# Palette: Grafe deep blue with a white photo ring (top row of the
+# 2026-11-19 mockups; switched from the navy middle row 2026-11-20).
+# Contrast vs BG, WCAG: TITLE 8.7:1, LABEL/SUB 7.8:1 (all AAA).
+BG, BAR, RING = "#164F76", "#378CC9", "#FFFFFF"
+TITLE, LABEL, SUB, RULE = "#FFFFFF", "#EDF4F8", "#EDF4F8", "#3A6E93"
 
 W, H, M = 1200, 630, 80
 PHOTO = 280
