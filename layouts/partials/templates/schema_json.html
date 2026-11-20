@@ -16,17 +16,17 @@
         "name": "Grafe Auction Company",
         "url": "https://grafeauction.com"
       },
-      "description": {{ site.Params.description | plainify | jsonify }},
+      "description": {{ site.Params.description | plainify | jsonify | safeJS }},
       "sameAs": [
-        {{- range $i, $e := site.Params.schema.sameAs }}{{ if $i }}, {{ end }}{{ $e | jsonify }}{{ end }}
+        {{- range $i, $e := site.Params.schema.sameAs }}{{ if $i }}, {{ end }}{{ $e | jsonify | safeJS }}{{ end }}
       ]
     },
     {
       "@type": "WebSite",
       "@id": "https://johndschultz.com/#website",
-      "name": {{ site.Title | jsonify }},
-      "url": {{ site.Home.Permalink | jsonify }},
-      "description": {{ site.Params.description | plainify | jsonify }},
+      "name": {{ site.Title | jsonify | safeJS }},
+      "url": {{ site.Home.Permalink | jsonify | safeJS }},
+      "description": {{ site.Params.description | plainify | jsonify | safeJS }},
       "publisher": { "@id": "https://johndschultz.com/#person" },
       "inLanguage": "en-US"
     }
@@ -51,8 +51,8 @@
     {
       "@type": "ListItem",
       "position": {{ add 1 $index  }},
-      "name": {{ $bc_pg.Name | jsonify }},
-      "item": {{ $bc_pg.Permalink | jsonify }}
+      "name": {{ $bc_pg.Name | jsonify | safeJS }},
+      "item": {{ $bc_pg.Permalink | jsonify | safeJS }}
     }
     {{- end }}
   {{- end }}
@@ -60,8 +60,8 @@
     {
       "@type": "ListItem",
       "position": {{len $bc_list}},
-      "name": {{ .Name | jsonify }},
-      "item": {{ .Permalink | jsonify }}
+      "name": {{ .Name | jsonify | safeJS }},
+      "item": {{ .Permalink | jsonify | safeJS }}
     }
   ]
 }
@@ -84,7 +84,7 @@
   },
   "description": "Partner and CMTO at Grafe Auction. Past Board Chair (2025-2026) and 76th President (2024-2025) of the National Auction Association. CAI, AMM. Writer on auctions, technology, and leadership.",
   "sameAs": [
-    {{- range $i, $e := site.Params.schema.sameAs }}{{ if $i }}, {{ end }}{{ $e | jsonify }}{{ end }}
+    {{- range $i, $e := site.Params.schema.sameAs }}{{ if $i }}, {{ end }}{{ $e | jsonify | safeJS }}{{ end }}
   ],
   "alumniOf": [
     { "@type": "Organization", "name": "World Wide College of Auctioneering" }
@@ -97,10 +97,10 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "@id": {{ .Permalink | jsonify }},
-  "name": {{ .Title | plainify | jsonify }},
-  "description": {{ .Description | plainify | jsonify }},
-  "url": {{ .Permalink | jsonify }},
+  "@id": {{ .Permalink | jsonify | safeJS }},
+  "name": {{ .Title | plainify | jsonify | safeJS }},
+  "description": {{ .Description | plainify | jsonify | safeJS }},
+  "url": {{ .Permalink | jsonify | safeJS }},
   "isPartOf": { "@id": "https://johndschultz.com/#website" },
   "about": { "@id": "https://johndschultz.com/#person" },
   "inLanguage": "en-US"
@@ -111,22 +111,22 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": {{ .Title | plainify | jsonify }},
-  "name": {{ .Title | plainify | jsonify }},
-  "description": {{ with .Description | plainify }}{{ . | jsonify }}{{ else }}{{ .Summary | plainify | jsonify }}{{ end }},
+  "headline": {{ .Title | plainify | jsonify | safeJS }},
+  "name": {{ .Title | plainify | jsonify | safeJS }},
+  "description": {{ with .Description | plainify }}{{ . | jsonify | safeJS }}{{ else }}{{ .Summary | plainify | jsonify | safeJS }}{{ end }},
   "keywords": [
     {{- if .Params.keywords }}
-    {{ range $i, $e := .Params.keywords }}{{ if $i }}, {{ end }}{{ $e | jsonify }}{{ end }}
+    {{ range $i, $e := .Params.keywords }}{{ if $i }}, {{ end }}{{ $e | jsonify | safeJS }}{{ end }}
     {{- else }}
-    {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e | jsonify }}{{ end }}
+    {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e | jsonify | safeJS }}{{ end }}
     {{- end }}
   ],
-  "articleBody": {{ .Content | plainify | jsonify }},
+  "articleBody": {{ .Content | plainify | jsonify | safeJS }},
   "wordCount": {{ .WordCount }},
   "inLanguage": "en-US",
   "image": {{ partial "og-image.html" . | jsonify | safeJS }},
-  "datePublished": {{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
-  "dateModified": {{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+  "datePublished": {{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" | jsonify | safeJS }},
+  "dateModified": {{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | jsonify | safeJS }},
   "author": {
     "@type": "Person",
     "@id": "https://johndschultz.com/#person",
@@ -135,7 +135,7 @@
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": {{ .Permalink | jsonify }}
+    "@id": {{ .Permalink | jsonify | safeJS }}
   },
   "publisher": {
     "@type": "Person",
@@ -159,10 +159,10 @@
     {{- range $i, $item := . }}{{ if $i }}, {{ end }}
     {
       "@type": "Question",
-      "name": {{ $item.question | jsonify }},
+      "name": {{ $item.question | jsonify | safeJS }},
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": {{ $item.answer | jsonify }}
+        "text": {{ $item.answer | jsonify | safeJS }}
       }
     }
     {{- end }}
