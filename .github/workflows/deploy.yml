@@ -32,6 +32,14 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Generate social preview cards
+        run: |
+          pip install pillow==11.3.0 pyyaml==6.0.2
+          python scripts/og/make_cards.py
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production

@@ -1,0 +1,22 @@
+{{- /* One source for the social preview image URL (og:image, twitter:image, JSON-LD).
+     Posts in essays/thoughts/concepts get static/images/og/<section>/<ContentBaseName>.jpg,
+     made by scripts/og/make_cards.py in the deploy workflow; everything else gets
+     images/og/default.jpg; old og-default.jpg is the last resort (local builds
+     without the generator). Front matter cover.image still wins. */ -}}
+{{- $url := "" -}}
+{{- if .Params.cover.image -}}
+  {{- $url = .Params.cover.image | absURL -}}
+{{- else -}}
+  {{- $card := "" -}}
+  {{- if and .File (in (slice "essays" "thoughts" "concepts") .Section) .IsPage -}}
+    {{- $card = printf "images/og/%s/%s.jpg" .Section .File.ContentBaseName -}}
+  {{- end -}}
+  {{- if and $card (fileExists (printf "static/%s" $card)) -}}
+    {{- $url = $card | absURL -}}
+  {{- else if fileExists "static/images/og/default.jpg" -}}
+    {{- $url = "images/og/default.jpg" | absURL -}}
+  {{- else -}}
+    {{- $url = "images/og-default.jpg" | absURL -}}
+  {{- end -}}
+{{- end -}}
+{{- return $url -}}

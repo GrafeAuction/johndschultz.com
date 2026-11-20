@@ -57,7 +57,7 @@ enableRobotsTXT = true
   env = "production"
   defaultTheme = "auto"
   # Default Open Graph / Twitter image (site-wide fallback)
-  images = ["images/og-default.jpg"]
+  images = ["images/og/default.jpg"]
   keywords = ["John Schultz", "auction", "auctioneer", "Grafe Auction", "AI", "leadership", "marketing", "technology"]
   ShowReadingTime = true
   ShowShareButtons = false
